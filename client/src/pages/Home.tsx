@@ -65,7 +65,7 @@ export default function Home() {
 
             <div className="grid md:grid-cols-2 gap-12 mb-16">
               <div className="bg-white rounded-2xl p-8 shadow-md">
-                <h3 className="text-2xl font-medium mb-4">Our Mission</h3>
+                <h3 className="text-2xl font-medium mb-4">Our Principles</h3>
                 <p className="text-gray-600 leading-relaxed">
                   We believe the web should be a place for deep engagement, not surface-level consumption. 
                   iDIG provides resonant tools that help you create meaningful connections with content, 
