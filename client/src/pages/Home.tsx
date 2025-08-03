@@ -21,8 +21,11 @@ export default function Home() {
                 <span className="logo-dig ml-2">DIG</span>
                 <span className="logo-io">.io</span>
               </h1>
-              <p className="text-xl md:text-2xl apple-blue font-medium">
-                Resonant Tools for Curious Minds
+              <p className="text-xl md:text-2xl font-medium">
+                <span className="apple-blue">Resonant</span>
+                <span className="charcoal"> Tools for </span>
+                <span className="apple-blue">Curious</span>
+                <span className="charcoal"> Minds</span>
               </p>
             </div>
 
