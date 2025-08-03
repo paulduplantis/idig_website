@@ -23,7 +23,7 @@
   --destructive-foreground: hsl(60, 9%, 98%);
   --ring: hsl(207, 90%, 54%);
   --radius: 0.75rem;
-  --charcoal: hsl(0, 0%, 15%);
+  --charcoal: hsl(0, 0%, 18%);
   --apple-blue: hsl(207, 90%, 54%);
   --light-gray: hsl(210, 20%, 97%);
   --border-gray: hsl(214, 20%, 90%);
@@ -123,7 +123,7 @@ html {
   margin-right: 0.35rem;
   font-family: 'Helvetica Neue', 'Avenir Next', Avenir, 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 300;
-  color: hsl(0, 0%, 15%);
+  color: hsl(0, 0%, 18%);
 }
 
 .logo-dig {
@@ -131,7 +131,7 @@ html {
   letter-spacing: 0.05em;
   font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Avenir Next', Avenir, sans-serif;
   font-weight: 400;
-  color: hsl(0, 0%, 15%);
+  color: hsl(0, 0%, 18%);
 }
 
 .logo-io {
