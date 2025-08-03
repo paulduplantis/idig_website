@@ -61,6 +61,11 @@
     @apply font-sans antialiased bg-background text-foreground;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   }
+  
+  .logo-font {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Avenir Next', Avenir, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 300;
+  }
 
   .apple-blue {
     color: hsl(207, 90%, 54%);
@@ -115,14 +120,20 @@ html {
 /* Logo spacing */
 .logo-i {
   font-style: italic;
-  margin-right: 0.25rem;
+  margin-right: 0.35rem;
+  font-family: 'Helvetica Neue', 'Avenir Next', Avenir, 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 300;
 }
 
 .logo-dig {
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Avenir Next', Avenir, sans-serif;
+  font-weight: 400;
 }
 
 .logo-io {
   color: hsl(207, 90%, 54%);
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Avenir Next', Avenir, sans-serif;
+  font-weight: 300;
 }
