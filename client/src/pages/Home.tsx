@@ -59,7 +59,7 @@ export default function Home() {
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-light mb-6">About iDIG</h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Building tools that help curious minds engage more deeply with the content they discover online.
+                iDIG (Deep Inquiry Generator) is a framework designed to amplify human curiosity through the use of tools to encourage deep and contextual insights into web content. 
               </p>
             </div>
 
@@ -67,9 +67,8 @@ export default function Home() {
               <div className="bg-white rounded-2xl p-8 shadow-md">
                 <h3 className="text-2xl font-medium mb-4">Our Principles</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  We believe the web should be a place for deep engagement, not surface-level consumption. 
-                  iDIG provides resonant tools that help you create meaningful connections with content, 
-                  fostering understanding and insight.
+                  No cookies to track or resell user activity. No passive popups. No data handled outside local or private storage. No outside advertising networks. UI built around user agency.
+
                 </p>
               </div>
               
