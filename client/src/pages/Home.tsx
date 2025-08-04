@@ -181,7 +181,7 @@ export default function Home() {
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-light mb-6">About iDIG</h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
-                iDIG (Deep Inquiry Generator) is a framework designed to amplify human curiosity through the use of tools to encourage deep and contextual insights into web content. 
+                iDIG (Deep Inquiry Generator) is a framework and community in development designed to amplify human curiosity through the use of tools to encourage deep and contextual insights into the information we engage with. 
               </p>
               <Link href="/about" className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium">
                 More
@@ -220,7 +220,7 @@ export default function Home() {
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-light mb-6">We the Resonant Builders</h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                A guide to creating tools and systems that resonate with human curiosity and foster meaningful engagement.
+                A book inviting resonant builders to create tools and systems to encourage human curiosity and foster meaningful engagement.
               </p>
             </div>
 
