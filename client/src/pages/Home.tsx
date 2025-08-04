@@ -33,7 +33,7 @@ export default function Home() {
             <SlidePresentation />
 
             {/* Video Demo Placeholder */}
-            <div className="bg-gray-100 rounded-2xl p-12 shadow-lg">
+            <div className="bg-gray-100 rounded-2xl p-12 shadow-lg mb-16">
               <div className="text-center">
                 <div className="w-24 h-24 bg-gray-300 rounded-full flex items-center justify-center mx-auto mb-6">
                   <svg className="w-8 h-8 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
