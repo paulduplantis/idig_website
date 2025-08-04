@@ -60,23 +60,24 @@ export default function Home() {
               </div>
 
               {/* Demo Selector Carousel */}
-              <div className="relative">
+              <div className="flex items-center gap-4">
                 {/* Left Arrow */}
-                <button className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-10 h-10 bg-white rounded-full shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-200 apple-button">
+                <button 
+                  onClick={() => {
+                    const carousel = document.getElementById('demo-carousel');
+                    if (carousel) {
+                      carousel.scrollBy({ left: -280, behavior: 'smooth' });
+                    }
+                  }}
+                  className="flex-shrink-0 w-10 h-10 bg-white rounded-full shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-200 apple-button"
+                >
                   <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
 
-                {/* Right Arrow */}
-                <button className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-10 h-10 bg-white rounded-full shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-200 apple-button">
-                  <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-
                 {/* Carousel Container */}
-                <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide" id="demo-carousel">
+                <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide flex-1" id="demo-carousel">
                 {/* iDIG Lens Card */}
                 <div className="relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 border-blue-500">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 opacity-90"></div>
@@ -153,6 +154,21 @@ export default function Home() {
                   </div>
                 </div>
                 </div>
+
+                {/* Right Arrow */}
+                <button 
+                  onClick={() => {
+                    const carousel = document.getElementById('demo-carousel');
+                    if (carousel) {
+                      carousel.scrollBy({ left: 280, behavior: 'smooth' });
+                    }
+                  }}
+                  className="flex-shrink-0 w-10 h-10 bg-white rounded-full shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-200 apple-button"
+                >
+                  <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
               </div>
             </div>
 
