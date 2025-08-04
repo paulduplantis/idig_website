@@ -32,8 +32,8 @@ export default function Home() {
             {/* Slide Presentation */}
             <SlidePresentation />
 
-            {/* Demo Selection Cards */}
-            <div className="mb-16">
+            {/* Demo Player */}
+            <div className="mb-8">
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-medium mb-4 charcoal">Experience iDIG</h3>
                 <p className="text-gray-600">
@@ -41,79 +41,98 @@ export default function Home() {
                 </p>
               </div>
               
-              <div className="grid md:grid-cols-2 gap-6">
-                {/* iDIG Lens */}
-                <div className="relative group cursor-pointer rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 apple-button">
+              {/* Main Demo Player */}
+              <div className="bg-gray-100 rounded-2xl p-12 shadow-lg mb-8">
+                <div className="text-center">
+                  <div className="w-32 h-32 bg-gray-300 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg className="w-12 h-12 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <h4 className="text-2xl font-medium mb-4 charcoal">iDIG Lens Demo</h4>
+                  <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+                    See the web through your own lens — highlight, save, and explore insights with snapshots, breadcrumbs, and microlinks.
+                  </p>
+                  <div className="text-sm text-gray-500">
+                    Video demo coming soon
+                  </div>
+                </div>
+              </div>
+
+              {/* Demo Selector Carousel */}
+              <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
+                {/* iDIG Lens Card */}
+                <div className="relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 border-blue-500">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 opacity-90"></div>
-                  <div className="relative p-8 h-64 flex flex-col justify-between text-white">
+                  <div className="relative p-6 h-32 flex flex-col justify-between text-white">
                     <div>
-                      <h4 className="text-xl font-semibold mb-3">iDIG Lens</h4>
-                      <p className="text-sm opacity-90 leading-relaxed">
-                        See the web through your own lens — highlight, save, and explore insights with snapshots, breadcrumbs, and microlinks.
+                      <h5 className="text-lg font-semibold mb-2">iDIG Lens</h5>
+                      <p className="text-xs opacity-90 line-clamp-2">
+                        Highlight, save, and explore insights
                       </p>
                     </div>
-                    <div className="flex items-center text-sm font-medium">
-                      <span>Watch Demo</span>
-                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex items-center text-xs font-medium">
+                      <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h1m4 0h1" />
                       </svg>
+                      <span>Active</span>
                     </div>
                   </div>
                 </div>
 
-                {/* iDIG Feeds */}
-                <div className="relative group cursor-pointer rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 apple-button">
+                {/* iDIG Feeds Card */}
+                <div className="relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 border-transparent hover:border-green-500">
                   <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-teal-600 opacity-90"></div>
-                  <div className="relative p-8 h-64 flex flex-col justify-between text-white">
+                  <div className="relative p-6 h-32 flex flex-col justify-between text-white">
                     <div>
-                      <h4 className="text-xl font-semibold mb-3">iDIG Feeds</h4>
-                      <p className="text-sm opacity-90 leading-relaxed">
-                        Turn any search into a discovery engine by curating live job, article, or opportunity feeds powered by Boolean logic.
+                      <h5 className="text-lg font-semibold mb-2">iDIG Feeds</h5>
+                      <p className="text-xs opacity-90 line-clamp-2">
+                        Turn searches into discovery engines
                       </p>
                     </div>
-                    <div className="flex items-center text-sm font-medium">
-                      <span>Watch Demo</span>
-                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex items-center text-xs font-medium">
+                      <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
                       </svg>
+                      <span>Select</span>
                     </div>
                   </div>
                 </div>
 
-                {/* iDIG Matching */}
-                <div className="relative group cursor-pointer rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 apple-button">
+                {/* iDIG Matching Card */}
+                <div className="relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 border-transparent hover:border-orange-500">
                   <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-red-600 opacity-90"></div>
-                  <div className="relative p-8 h-64 flex flex-col justify-between text-white">
+                  <div className="relative p-6 h-32 flex flex-col justify-between text-white">
                     <div>
-                      <h4 className="text-xl font-semibold mb-3">iDIG Matching</h4>
-                      <p className="text-sm opacity-90 leading-relaxed">
-                        Instantly align resumes, job descriptions, or people by matching skills, experiences, and insights using AI-powered logic.
+                      <h5 className="text-lg font-semibold mb-2">iDIG Matching</h5>
+                      <p className="text-xs opacity-90 line-clamp-2">
+                        AI-powered skill and experience matching
                       </p>
                     </div>
-                    <div className="flex items-center text-sm font-medium">
-                      <span>Watch Demo</span>
-                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                    <div className="flex items-center text-xs font-medium">
+                      <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" />
                       </svg>
+                      <span>Select</span>
                     </div>
                   </div>
                 </div>
 
-                {/* iDIG Scenes */}
-                <div className="relative group cursor-pointer rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 apple-button">
+                {/* iDIG Scenes Card */}
+                <div className="relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 border-transparent hover:border-indigo-500">
                   <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-700 opacity-90"></div>
-                  <div className="relative p-8 h-64 flex flex-col justify-between text-white">
+                  <div className="relative p-6 h-32 flex flex-col justify-between text-white">
                     <div>
-                      <h4 className="text-xl font-semibold mb-3">iDIG Scenes</h4>
-                      <p className="text-sm opacity-90 leading-relaxed">
-                        Curate rich experiences around books, tools, or ideas by weaving together articles, products, and personal commentary.
+                      <h5 className="text-lg font-semibold mb-2">iDIG Scenes</h5>
+                      <p className="text-xs opacity-90 line-clamp-2">
+                        Curate rich experiences around ideas
                       </p>
                     </div>
-                    <div className="flex items-center text-sm font-medium">
-                      <span>Watch Demo</span>
-                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex items-center text-xs font-medium">
+                      <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                       </svg>
+                      <span>Select</span>
                     </div>
                   </div>
                 </div>
