@@ -49,13 +49,16 @@ export default function Home() {
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <h4 className="text-2xl font-medium mb-4 charcoal">iDIG Lens Demo</h4>
+                  <h4 className="text-2xl font-medium mb-4 charcoal">iDIG Demo</h4>
                   <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-                    See the web through your own lens — highlight, save, and explore insights with snapshots, breadcrumbs, and microlinks.
+                    Interactive demonstration of iDIG capabilities including the movable menu system and core features.
                   </p>
-                  <div className="text-sm text-gray-500">
-                    Video demo coming soon
-                  </div>
+                  <button 
+                    onClick={() => window.open('/demo/idig-demo', '_blank')}
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg transition-colors font-medium"
+                  >
+                    Start Demo
+                  </button>
                 </div>
               </div>
 
@@ -79,7 +82,10 @@ export default function Home() {
                 {/* Carousel Container */}
                 <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide flex-1" id="demo-carousel">
                 {/* iDIG Lens Card */}
-                <div className="relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 border-blue-500">
+                <div 
+                  onClick={() => window.open('/demo/idig-demo', '_blank')}
+                  className="relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 border-blue-500"
+                >
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 opacity-90"></div>
                   <div className="relative p-6 h-32 flex flex-col justify-between text-white">
                     <div>
