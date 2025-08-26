@@ -35,7 +35,7 @@ export default function Demo() {
       case 'idig-lens':
         return {
           id: '2',
-          title: 'iDIG Lens',
+          title: 'iDIG Lens Demo',
           slug: 'idig-lens',
           description: 'Highlight, save, and explore insights',
           slides: [
@@ -45,6 +45,13 @@ export default function Demo() {
               title: 'iDIG Lens',
               content: 'Highlight and save text from any webpage to build your personal knowledge base. Transform casual browsing into deep learning by capturing insights as you discover them.',
               order: 1
+            },
+            {
+              id: '2',
+              type: 'video',
+              title: 'iDIG Lens in Action',
+              videoUrl: '/objects/uploads/idig-lens-demo.mp4',
+              order: 2
             }
           ]
         };

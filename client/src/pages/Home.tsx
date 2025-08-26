@@ -23,8 +23,8 @@ const demoContents: Record<string, DemoContent> = {
     id: 'idig-lens',
     title: 'iDIG Lens Demo',
     description: 'Highlight and save text from any webpage to build your personal knowledge base. Transform casual browsing into deep learning by capturing insights as you discover them.',
-    features: ['Highlight text across any webpage', 'Save insights to personal knowledge base', 'Build connections between ideas', 'Export and organize discoveries'],
-    videoUrl: '/objects/uploads/idig-lens-demo.mp4' // Will be updated once you upload your video
+    features: ['Highlight text across any webpage', 'Save insights to personal knowledge base', 'Build connections between ideas', 'Export and organize discoveries']
+    // videoUrl will be added once you upload your video
   },
   'idig-feeds': {
     id: 'idig-feeds',
