@@ -24,7 +24,7 @@ const demoContents: Record<string, DemoContent> = {
     title: 'iDIG Lens Demo',
     description: 'Highlight and save text from any webpage to build your personal knowledge base. Transform casual browsing into deep learning by capturing insights as you discover them.',
     features: ['Highlight text across any webpage', 'Save insights to personal knowledge base', 'Build connections between ideas', 'Export and organize discoveries'],
-    videoUrl: '/public-objects/iDIG%20Demo.mp4'
+    videoUrl: '/objects/iDIG%20Demo.mp4'
   },
   'idig-feeds': {
     id: 'idig-feeds',
@@ -86,7 +86,7 @@ export default function Home() {
                 </p>
                 <div className="mt-4">
                   <a 
-                    href="/public-objects/iDIG%20Demo.mp4" 
+                    href="/objects/iDIG%20Demo.mp4" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-blue-500 hover:text-blue-600 underline text-sm"
