@@ -3,8 +3,51 @@ import SlidePresentation from "@/components/SlidePresentation";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { useState } from "react";
+
+interface DemoContent {
+  id: string;
+  title: string;
+  description: string;
+  features?: string[];
+}
+
+const demoContents: Record<string, DemoContent> = {
+  'idig-demo': {
+    id: 'idig-demo',
+    title: 'iDIG Demo',
+    description: 'Interactive demonstration of iDIG capabilities including the movable menu system and core features.'
+  },
+  'idig-lens': {
+    id: 'idig-lens',
+    title: 'iDIG Lens Demo',
+    description: 'Highlight and save text from any webpage to build your personal knowledge base. Transform casual browsing into deep learning by capturing insights as you discover them.',
+    features: ['Highlight text across any webpage', 'Save insights to personal knowledge base', 'Build connections between ideas', 'Export and organize discoveries']
+  },
+  'idig-feeds': {
+    id: 'idig-feeds',
+    title: 'iDIG Feeds Demo',
+    description: 'Convert your search queries into intelligent discovery feeds. Track topics of interest and receive curated content that deepens your understanding over time.',
+    features: ['Turn searches into smart feeds', 'Track topics automatically', 'Curated content delivery', 'Deep learning pathways']
+  },
+  'idig-matching': {
+    id: 'idig-matching',
+    title: 'iDIG Matching Demo',
+    description: 'Intelligent matching system that connects your skills, interests, and learning goals with relevant opportunities, people, and resources across the web.',
+    features: ['AI-powered skill matching', 'Connect with opportunities', 'Find relevant resources', 'Network with like-minded people']
+  },
+  'idig-scenes': {
+    id: 'idig-scenes',
+    title: 'iDIG Scenes Demo',
+    description: 'Create immersive, contextual environments around your ideas. Organize related content, conversations, and insights into rich, explorable scenes.',
+    features: ['Create idea environments', 'Organize related content', 'Build contextual scenes', 'Explore connections visually']
+  }
+};
 
 export default function Home() {
+  const [selectedDemo, setSelectedDemo] = useState<string>('idig-demo');
+  const currentDemo = demoContents[selectedDemo];
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
@@ -49,11 +92,25 @@ export default function Home() {
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <h4 className="text-2xl font-medium mb-4 charcoal">iDIG Demo</h4>
+                  <h4 className="text-2xl font-medium mb-4 charcoal">{currentDemo.title}</h4>
                   <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-                    Interactive demonstration of iDIG capabilities including the movable menu system and core features.
+                    {currentDemo.description}
                   </p>
-                  <Link href="/demo/idig-demo">
+                  {currentDemo.features && (
+                    <div className="mb-6">
+                      <ul className="text-gray-600 text-sm space-y-2 max-w-md mx-auto">
+                        {currentDemo.features.map((feature, index) => (
+                          <li key={index} className="flex items-center justify-center">
+                            <svg className="w-4 h-4 text-blue-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  <Link href={`/demo/${currentDemo.id}`}>
                     <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg transition-colors font-medium">
                       Start Demo
                     </button>
@@ -81,8 +138,12 @@ export default function Home() {
                 {/* Carousel Container */}
                 <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide flex-1" id="demo-carousel">
                 {/* iDIG Lens Card */}
-                <Link href="/demo/idig-lens">
-                  <div className="relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 border-blue-500">
+                <div 
+                  onClick={() => setSelectedDemo('idig-lens')}
+                  className={`relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 ${
+                    selectedDemo === 'idig-lens' ? 'border-blue-500' : 'border-transparent hover:border-blue-500'
+                  }`}
+                >
                 
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 opacity-90"></div>
                   <div className="relative p-6 h-32 flex flex-col justify-between text-white">
@@ -99,12 +160,15 @@ export default function Home() {
                       <span>Active</span>
                     </div>
                   </div>
-                  </div>
-                </Link>
+                </div>
 
                 {/* iDIG Feeds Card */}
-                <Link href="/demo/idig-feeds">
-                  <div className="relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 border-transparent hover:border-green-500">
+                <div 
+                  onClick={() => setSelectedDemo('idig-feeds')}
+                  className={`relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 ${
+                    selectedDemo === 'idig-feeds' ? 'border-green-500' : 'border-transparent hover:border-green-500'
+                  }`}
+                >
                   <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-teal-600 opacity-90"></div>
                   <div className="relative p-6 h-32 flex flex-col justify-between text-white">
                     <div>
@@ -120,12 +184,15 @@ export default function Home() {
                       <span>Select</span>
                     </div>
                   </div>
-                  </div>
-                </Link>
+                </div>
 
                 {/* iDIG Matching Card */}
-                <Link href="/demo/idig-matching">
-                  <div className="relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 border-transparent hover:border-orange-500">
+                <div 
+                  onClick={() => setSelectedDemo('idig-matching')}
+                  className={`relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 ${
+                    selectedDemo === 'idig-matching' ? 'border-orange-500' : 'border-transparent hover:border-orange-500'
+                  }`}
+                >
                   <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-red-600 opacity-90"></div>
                   <div className="relative p-6 h-32 flex flex-col justify-between text-white">
                     <div>
@@ -141,12 +208,15 @@ export default function Home() {
                       <span>Select</span>
                     </div>
                   </div>
-                  </div>
-                </Link>
+                </div>
 
                 {/* iDIG Scenes Card */}
-                <Link href="/demo/idig-scenes">
-                  <div className="relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 border-transparent hover:border-indigo-500">
+                <div 
+                  onClick={() => setSelectedDemo('idig-scenes')}
+                  className={`relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 ${
+                    selectedDemo === 'idig-scenes' ? 'border-indigo-500' : 'border-transparent hover:border-indigo-500'
+                  }`}
+                >
                   <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-700 opacity-90"></div>
                   <div className="relative p-6 h-32 flex flex-col justify-between text-white">
                     <div>
@@ -162,8 +232,7 @@ export default function Home() {
                       <span>Select</span>
                     </div>
                   </div>
-                  </div>
-                </Link>
+                </div>
                 </div>
 
                 {/* Right Arrow */}
