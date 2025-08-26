@@ -29,29 +29,100 @@ export default function Demo() {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // Mock data for now - will be replaced with API call
-  const mockPresentation: DemoPresentation = {
-    id: '1',
-    title: 'iDIG Demo',
-    slug: 'idig-demo',
-    description: 'Interactive demonstration of iDIG capabilities',
-    slides: [
-      {
-        id: '1',
-        type: 'intro',
-        title: 'iDIG (Deep Inquiry Generator)',
-        content: 'iDIG (Deep Inquiry Generator) is a chrome extension in development. The following presentation is for demonstration purposes only.\n\nI will add more text later.',
-        order: 1
-      },
-      {
-        id: '2', 
-        type: 'video',
-        title: 'iDIG Movable Menu',
-        videoUrl: '/objects/uploads/idig-movable-menu.mp4', // Will be updated with actual path
-        order: 2
-      }
-    ]
+  // Mock data for different demos
+  const getDemoPresentation = (slug: string): DemoPresentation => {
+    switch (slug) {
+      case 'idig-lens':
+        return {
+          id: '2',
+          title: 'iDIG Lens',
+          slug: 'idig-lens',
+          description: 'Highlight, save, and explore insights',
+          slides: [
+            {
+              id: '1',
+              type: 'intro',
+              title: 'iDIG Lens',
+              content: 'Highlight and save text from any webpage to build your personal knowledge base. Transform casual browsing into deep learning by capturing insights as you discover them.',
+              order: 1
+            }
+          ]
+        };
+      case 'idig-feeds':
+        return {
+          id: '3',
+          title: 'iDIG Feeds',
+          slug: 'idig-feeds',
+          description: 'Turn searches into discovery engines',
+          slides: [
+            {
+              id: '1',
+              type: 'intro',
+              title: 'iDIG Feeds',
+              content: 'Convert your search queries into intelligent discovery feeds. Track topics of interest and receive curated content that deepens your understanding over time.',
+              order: 1
+            }
+          ]
+        };
+      case 'idig-matching':
+        return {
+          id: '4',
+          title: 'iDIG Matching',
+          slug: 'idig-matching',
+          description: 'AI-powered skill and experience matching',
+          slides: [
+            {
+              id: '1',
+              type: 'intro',
+              title: 'iDIG Matching',
+              content: 'Intelligent matching system that connects your skills, interests, and learning goals with relevant opportunities, people, and resources across the web.',
+              order: 1
+            }
+          ]
+        };
+      case 'idig-scenes':
+        return {
+          id: '5',
+          title: 'iDIG Scenes',
+          slug: 'idig-scenes',
+          description: 'Curate rich experiences around ideas',
+          slides: [
+            {
+              id: '1',
+              type: 'intro',
+              title: 'iDIG Scenes',
+              content: 'Create immersive, contextual environments around your ideas. Organize related content, conversations, and insights into rich, explorable scenes.',
+              order: 1
+            }
+          ]
+        };
+      default: // idig-demo
+        return {
+          id: '1',
+          title: 'iDIG Demo',
+          slug: 'idig-demo',
+          description: 'Interactive demonstration of iDIG capabilities',
+          slides: [
+            {
+              id: '1',
+              type: 'intro',
+              title: 'iDIG (Deep Inquiry Generator)',
+              content: 'iDIG (Deep Inquiry Generator) is a chrome extension in development. The following presentation is for demonstration purposes only.\n\nI will add more text later.',
+              order: 1
+            },
+            {
+              id: '2', 
+              type: 'video',
+              title: 'iDIG Movable Menu',
+              videoUrl: '/objects/uploads/idig-movable-menu.mp4', // Will be updated with actual path
+              order: 2
+            }
+          ]
+        };
+    }
   };
+
+  const mockPresentation = getDemoPresentation(slug);
 
   const { data: presentation } = useQuery({
     queryKey: ['/api/presentations', slug],

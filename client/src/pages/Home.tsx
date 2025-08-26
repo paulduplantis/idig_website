@@ -53,12 +53,11 @@ export default function Home() {
                   <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
                     Interactive demonstration of iDIG capabilities including the movable menu system and core features.
                   </p>
-                  <button 
-                    onClick={() => window.open('/demo/idig-demo', '_blank')}
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg transition-colors font-medium"
-                  >
-                    Start Demo
-                  </button>
+                  <Link href="/demo/idig-demo">
+                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg transition-colors font-medium">
+                      Start Demo
+                    </button>
+                  </Link>
                 </div>
               </div>
 
@@ -82,10 +81,9 @@ export default function Home() {
                 {/* Carousel Container */}
                 <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide flex-1" id="demo-carousel">
                 {/* iDIG Lens Card */}
-                <div 
-                  onClick={() => window.open('/demo/idig-demo', '_blank')}
-                  className="relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 border-blue-500"
-                >
+                <Link href="/demo/idig-lens">
+                  <div className="relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 border-blue-500">
+                
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 opacity-90"></div>
                   <div className="relative p-6 h-32 flex flex-col justify-between text-white">
                     <div>
@@ -101,10 +99,12 @@ export default function Home() {
                       <span>Active</span>
                     </div>
                   </div>
-                </div>
+                  </div>
+                </Link>
 
                 {/* iDIG Feeds Card */}
-                <div className="relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 border-transparent hover:border-green-500">
+                <Link href="/demo/idig-feeds">
+                  <div className="relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 border-transparent hover:border-green-500">
                   <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-teal-600 opacity-90"></div>
                   <div className="relative p-6 h-32 flex flex-col justify-between text-white">
                     <div>
@@ -120,10 +120,12 @@ export default function Home() {
                       <span>Select</span>
                     </div>
                   </div>
-                </div>
+                  </div>
+                </Link>
 
                 {/* iDIG Matching Card */}
-                <div className="relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 border-transparent hover:border-orange-500">
+                <Link href="/demo/idig-matching">
+                  <div className="relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 border-transparent hover:border-orange-500">
                   <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-red-600 opacity-90"></div>
                   <div className="relative p-6 h-32 flex flex-col justify-between text-white">
                     <div>
@@ -139,10 +141,12 @@ export default function Home() {
                       <span>Select</span>
                     </div>
                   </div>
-                </div>
+                  </div>
+                </Link>
 
                 {/* iDIG Scenes Card */}
-                <div className="relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 border-transparent hover:border-indigo-500">
+                <Link href="/demo/idig-scenes">
+                  <div className="relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 border-transparent hover:border-indigo-500">
                   <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-700 opacity-90"></div>
                   <div className="relative p-6 h-32 flex flex-col justify-between text-white">
                     <div>
@@ -158,7 +162,8 @@ export default function Home() {
                       <span>Select</span>
                     </div>
                   </div>
-                </div>
+                  </div>
+                </Link>
                 </div>
 
                 {/* Right Arrow */}
