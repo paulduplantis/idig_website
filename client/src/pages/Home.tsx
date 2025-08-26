@@ -45,7 +45,7 @@ const demoContents: Record<string, DemoContent> = {
 };
 
 export default function Home() {
-  const [selectedDemo, setSelectedDemo] = useState<string>('idig-demo');
+  const [selectedDemo, setSelectedDemo] = useState<string>('idig-lens');
   const currentDemo = demoContents[selectedDemo];
 
   return (
