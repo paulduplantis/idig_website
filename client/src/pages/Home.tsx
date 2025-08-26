@@ -84,6 +84,16 @@ export default function Home() {
                 <p className="text-gray-600">
                   Explore how iDIG transforms your interaction with web content
                 </p>
+                <div className="mt-4">
+                  <a 
+                    href="/public-objects/iDIG%20Demo.mp4" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:text-blue-600 underline text-sm"
+                  >
+                    Test Video Link - iDIG Demo.mp4
+                  </a>
+                </div>
               </div>
               
               {/* Main Demo Player */}
