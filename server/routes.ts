@@ -71,6 +71,48 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Direct bucket file access for files in bucket root
+  app.get("/bucket-files/:fileName(*)", async (req, res) => {
+    const bucketId = process.env.DEFAULT_OBJECT_STORAGE_BUCKET_ID;
+    if (!bucketId) {
+      return res.status(500).json({ error: "Bucket not configured" });
+    }
+    
+    try {
+      const { objectStorageClient } = await import("./objectStorage");
+      const bucket = objectStorageClient.bucket(bucketId);
+      const file = bucket.file(req.params.fileName);
+      
+      const [exists] = await file.exists();
+      if (!exists) {
+        return res.sendStatus(404);
+      }
+      
+      // Get file metadata
+      const [metadata] = await file.getMetadata();
+      
+      // Set appropriate headers
+      res.set({
+        "Content-Type": metadata.contentType || "application/octet-stream",
+        "Content-Length": metadata.size,
+        "Cache-Control": "public, max-age=3600",
+      });
+
+      // Stream the file to the response
+      const stream = file.createReadStream();
+      stream.on("error", (err) => {
+        console.error("Stream error:", err);
+        if (!res.headersSent) {
+          res.status(500).json({ error: "Error streaming file" });
+        }
+      });
+      stream.pipe(res);
+    } catch (error) {
+      console.error("Error accessing bucket file:", error);
+      return res.sendStatus(500);
+    }
+  });
+
   // Upload URL endpoint for video uploads
   app.post("/api/objects/upload", async (req, res) => {
     const objectStorageService = new ObjectStorageService();
