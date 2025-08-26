@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Slide {
@@ -31,6 +31,15 @@ export default function SlidePresentation() {
   const goToNext = () => {
     setCurrentSlide((prev) => (prev < slides.length - 1 ? prev + 1 : 0));
   };
+
+  // Auto-advance slides every 20 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      goToNext();
+    }, 20000); // 20 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   const slide = slides[currentSlide];
 
