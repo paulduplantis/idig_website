@@ -10,6 +10,7 @@ interface DemoContent {
   title: string;
   description: string;
   features?: string[];
+  videoUrl?: string;
 }
 
 const demoContents: Record<string, DemoContent> = {
@@ -22,7 +23,8 @@ const demoContents: Record<string, DemoContent> = {
     id: 'idig-lens',
     title: 'iDIG Lens Demo',
     description: 'Highlight and save text from any webpage to build your personal knowledge base. Transform casual browsing into deep learning by capturing insights as you discover them.',
-    features: ['Highlight text across any webpage', 'Save insights to personal knowledge base', 'Build connections between ideas', 'Export and organize discoveries']
+    features: ['Highlight text across any webpage', 'Save insights to personal knowledge base', 'Build connections between ideas', 'Export and organize discoveries'],
+    videoUrl: '/objects/uploads/idig-lens-demo.mp4' // Will be updated once you upload your video
   },
   'idig-feeds': {
     id: 'idig-feeds',
@@ -87,11 +89,28 @@ export default function Home() {
               {/* Main Demo Player */}
               <div className="bg-gray-100 rounded-2xl p-12 shadow-lg mb-8">
                 <div className="text-center">
-                  <div className="w-32 h-32 bg-gray-300 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <svg className="w-12 h-12 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  {currentDemo.videoUrl ? (
+                    // Video preview mode
+                    <div className="mb-6">
+                      <div className="max-w-2xl mx-auto bg-black rounded-lg overflow-hidden shadow-lg">
+                        <video
+                          className="w-full h-auto max-h-80"
+                          controls
+                          poster="/api/placeholder/640/360"
+                        >
+                          <source src={currentDemo.videoUrl} type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
+                    </div>
+                  ) : (
+                    // Play icon mode for demos without video
+                    <div className="w-32 h-32 bg-gray-300 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <svg className="w-12 h-12 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                  )}
                   <h4 className="text-2xl font-medium mb-4 charcoal">{currentDemo.title}</h4>
                   <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
                     {currentDemo.description}
@@ -112,7 +131,7 @@ export default function Home() {
                   )}
                   <Link href={`/demo/${currentDemo.id}`}>
                     <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg transition-colors font-medium">
-                      Start Demo
+                      {currentDemo.videoUrl ? 'View Full Demo' : 'Start Demo'}
                     </button>
                   </Link>
                 </div>
