@@ -50,7 +50,7 @@ export default function Demo() {
               id: '2',
               type: 'video',
               title: 'iDIG Lens in Action',
-              videoUrl: '/objects/uploads/iDIG Demo.mp4',
+              videoUrl: '/public-objects/iDIG Demo.mp4',
               order: 2
             }
           ]
