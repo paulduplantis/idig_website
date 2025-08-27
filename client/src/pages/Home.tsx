@@ -307,53 +307,21 @@ export default function Home() {
 
         {/* Book Preview Section */}
         <section className="py-20">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-light mb-6">We the Resonant Builders</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                A book inviting resonant builders to create tools and systems to encourage human curiosity and foster meaningful engagement.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-              {/* Featured Chapters */}
-              <Link href="/book/chapter/1" className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-200 group block">
-                <div className="text-blue-500 text-sm font-medium mb-2">Chapter 1</div>
-                <h3 className="text-lg font-medium mb-3 group-hover:text-blue-500 transition-colors">
-                  The Foundation of Resonance
-                </h3>
-                <p className="text-gray-500 text-sm">
-                  Understanding the principles that make tools truly resonate with users.
+          <div className="max-w-4xl mx-auto px-6">
+            <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-2xl border border-gray-100">
+              <div className="text-center">
+                <h2 className="text-4xl md:text-5xl font-light mb-6">We the Resonant Builders</h2>
+                <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
+                  A book inviting resonant builders to create tools and systems to encourage human curiosity and foster meaningful engagement.
                 </p>
-              </Link>
-
-              <Link href="/book/chapter/2" className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-200 group block">
-                <div className="text-blue-500 text-sm font-medium mb-2">Chapter 2</div>
-                <h3 className="text-lg font-medium mb-3 group-hover:text-blue-500 transition-colors">
-                  Curiosity-Driven Design
-                </h3>
-                <p className="text-gray-500 text-sm">
-                  Designing interfaces that nurture and amplify human curiosity.
-                </p>
-              </Link>
-
-              <Link href="/book/chapter/3" className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-200 group block">
-                <div className="text-blue-500 text-sm font-medium mb-2">Chapter 3</div>
-                <h3 className="text-lg font-medium mb-3 group-hover:text-blue-500 transition-colors">
-                  Building for Depth
-                </h3>
-                <p className="text-gray-500 text-sm">
-                  Creating experiences that encourage deep engagement over surface-level interaction.
-                </p>
-              </Link>
-            </div>
-
-            <div className="text-center">
-              <Link href="/book">
-                <Button className="apple-button bg-gray-800 hover:bg-gray-700 text-white px-8 py-4 text-lg font-medium shadow-lg">
-                  View All Chapters
-                </Button>
-              </Link>
+                <p className="text-lg text-gray-500 mb-6">Coming Soon</p>
+                <Link href="/book" className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium">
+                  Learn more
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
             </div>
           </div>
         </section>
