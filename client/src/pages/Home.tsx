@@ -88,7 +88,7 @@ export default function Home() {
               </div>
               
               {/* Main Demo Player */}
-              <div className="bg-white rounded-2xl p-12 shadow-2xl border border-gray-100 mb-8">
+              <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-2xl border border-gray-100 mb-8">
                 <div className="text-center">
                   {currentDemo.videoUrl ? (
                     // Video preview mode
