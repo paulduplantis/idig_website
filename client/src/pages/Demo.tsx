@@ -29,6 +29,10 @@ export default function Demo() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  
+  // Check if this is a shared link visit
+  const urlParams = new URLSearchParams(window.location.search);
+  const isSharedView = urlParams.has('shared');
 
   // Mock data for different demos
   const getDemoPresentation = (slug: string): DemoPresentation => {
@@ -169,8 +173,8 @@ export default function Demo() {
 
   const shareVideo = async () => {
     if (presentation) {
-      // Create the demo presentation URL within the site
-      const demoUrl = `${window.location.origin}/demo/${presentation.slug}`;
+      // Create the demo presentation URL with shared parameter
+      const demoUrl = `${window.location.origin}/demo/${presentation.slug}?shared=true`;
       
       try {
         if (navigator.share) {
@@ -313,8 +317,8 @@ export default function Demo() {
                 Your browser does not support the video tag.
               </video>
               
-              {/* Prominent Play Demo Button Overlay */}
-              {!isPlaying && (
+              {/* Prominent Play Demo Button Overlay - Only for shared links */}
+              {!isPlaying && isSharedView && (
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <div className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full shadow-lg transition-all hover:scale-105 pointer-events-auto cursor-pointer flex items-center space-x-3 text-lg font-medium"
                        onClick={() => {
