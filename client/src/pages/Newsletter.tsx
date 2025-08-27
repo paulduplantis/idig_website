@@ -145,6 +145,12 @@ export default function Newsletter() {
             <p className="text-gray-400 text-sm">
               Resonant Tools for Curious Minds
             </p>
+            {/* Discreet admin link - only visible if you know to look for it */}
+            <div className="mt-4">
+              <Link href="/admin" className="text-gray-600 hover:text-gray-500 text-xs transition-colors" data-testid="link-admin">
+                •
+              </Link>
+            </div>
           </div>
         </div>
       </footer>

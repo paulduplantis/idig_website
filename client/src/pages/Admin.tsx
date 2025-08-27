@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
-import { Download, Copy, Users, Mail } from "lucide-react";
+import { Download, Copy, Users, Mail, Lock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import type { Newsletter, BlogSubscription } from "@shared/schema";
 
@@ -15,7 +15,89 @@ interface Subscriber {
 
 export default function Admin() {
   const [activeTab, setActiveTab] = useState<'newsletter' | 'blog'>('newsletter');
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [password, setPassword] = useState("");
   const { toast } = useToast();
+
+  // Simple password protection - you can change this password
+  const ADMIN_PASSWORD = "resonant2024";
+
+  useEffect(() => {
+    // Check if already authenticated in this session
+    const authenticated = sessionStorage.getItem('admin_authenticated');
+    if (authenticated === 'true') {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (password === ADMIN_PASSWORD) {
+      setIsAuthenticated(true);
+      sessionStorage.setItem('admin_authenticated', 'true');
+      toast({
+        title: "Access granted",
+        description: "Welcome to the admin panel.",
+      });
+    } else {
+      toast({
+        title: "Access denied",
+        description: "Incorrect password. Please try again.",
+        variant: "destructive",
+      });
+    }
+  };
+
+  // Show login form if not authenticated
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-white">
+        <Navigation />
+        
+        <main className="pt-20">
+          <section className="py-20">
+            <div className="max-w-md mx-auto px-6">
+              <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200">
+                <div className="text-center mb-8">
+                  <Lock className="w-12 h-12 mx-auto mb-4 text-gray-400" />
+                  <h1 className="text-3xl font-light mb-4">Admin Access</h1>
+                  <p className="text-gray-600">
+                    Enter the admin password to manage subscribers
+                  </p>
+                </div>
+
+                <form onSubmit={handleLogin} className="space-y-4">
+                  <input
+                    type="password"
+                    placeholder="Admin password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    required
+                    data-testid="input-admin-password"
+                  />
+                  <Button
+                    type="submit"
+                    className="apple-button w-full py-3 font-medium"
+                    data-testid="button-admin-login"
+                  >
+                    Access Admin Panel
+                  </Button>
+                </form>
+
+                <div className="mt-6 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                  <p className="text-sm text-yellow-800">
+                    <strong>Security Note:</strong> The current password is "resonant2024". 
+                    You can change this in the Admin.tsx file.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    );
+  }
 
   const newsletterQuery = useQuery<Newsletter[]>({
     queryKey: ['/api/admin/newsletter-subscribers'],
