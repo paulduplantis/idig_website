@@ -14,6 +14,7 @@ export default function Navigation() {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/newsletter", label: "The Resonant Builders Monthly" },
+    { href: "/blog", label: "The Resonant Builders Blog" },
     { href: "/book", label: "We the Resonant Builders" },
     { href: "/contact", label: "Contact" },
   ];
