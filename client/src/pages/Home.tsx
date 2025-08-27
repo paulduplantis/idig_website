@@ -88,7 +88,7 @@ export default function Home() {
               </div>
               
               {/* Main Demo Player */}
-              <div className="bg-gray-100 rounded-2xl p-12 shadow-lg mb-8">
+              <div className="bg-white rounded-2xl p-12 shadow-2xl border border-gray-100 mb-8">
                 <div className="text-center">
                   {currentDemo.videoUrl ? (
                     // Video preview mode
@@ -114,22 +114,22 @@ export default function Home() {
                       />
                     </div>
                   )}
-                  <h4 className="text-2xl font-medium mb-4 charcoal">{currentDemo.title}</h4>
+
                   <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
                     {currentDemo.description}
                   </p>
                   {currentDemo.features && (
                     <div className="mb-6">
-                      <ul className="text-gray-600 text-sm space-y-2 max-w-md mx-auto">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-600 text-sm max-w-2xl mx-auto">
                         {currentDemo.features.map((feature, index) => (
-                          <li key={index} className="flex items-center justify-center">
+                          <div key={index} className="flex items-center justify-center">
                             <svg className="w-4 h-4 text-blue-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                             </svg>
                             {feature}
-                          </li>
+                          </div>
                         ))}
-                      </ul>
+                      </div>
                     </div>
                   )}
                   <Link href={`/demo/${currentDemo.id}`}>
