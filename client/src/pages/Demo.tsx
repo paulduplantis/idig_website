@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useLocation } from "wouter";
 import { useQuery } from "@tanstack/react-query";
+import { Share2 } from "lucide-react";
 
 interface DemoSlide {
   id: string;
@@ -166,6 +167,35 @@ export default function Demo() {
     }, 100);
   };
 
+  const shareVideo = async () => {
+    if (currentSlideData?.videoUrl) {
+      try {
+        if (navigator.share) {
+          // Use native share API if available
+          await navigator.share({
+            title: `${presentation?.title} - Video Demo`,
+            text: `Check out this demo video: ${presentation?.title}`,
+            url: currentSlideData.videoUrl,
+          });
+        } else {
+          // Fallback to clipboard
+          await navigator.clipboard.writeText(currentSlideData.videoUrl);
+          // You could add a toast notification here
+          console.log('Video link copied to clipboard!');
+        }
+      } catch (error) {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = currentSlideData.videoUrl;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        console.log('Video link copied to clipboard!');
+      }
+    }
+  };
+
   const handleKeyPress = (e: KeyboardEvent) => {
     switch (e.key) {
       case 'ArrowRight':
@@ -230,12 +260,24 @@ export default function Demo() {
             ← Back to iDIG
           </button>
           <h1 className="text-xl font-medium">{presentation.title}</h1>
-          <button
-            onClick={toggleFullscreen}
-            className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition-colors"
-          >
-            Fullscreen
-          </button>
+          <div className="flex items-center space-x-3">
+            {currentSlideData?.type === 'video' && (
+              <button
+                onClick={shareVideo}
+                className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition-colors flex items-center space-x-2"
+                title="Share video"
+              >
+                <Share2 size={16} />
+                <span>Share</span>
+              </button>
+            )}
+            <button
+              onClick={toggleFullscreen}
+              className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition-colors"
+            >
+              Fullscreen
+            </button>
+          </div>
         </div>
       )}
 
