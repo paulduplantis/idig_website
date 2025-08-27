@@ -259,7 +259,6 @@ export default function Demo() {
             className="w-full h-full object-contain"
             controls
             autoPlay={true}
-            muted={true}
             preload="metadata"
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
