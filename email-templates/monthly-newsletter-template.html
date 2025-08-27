@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Resonant Builders Monthly - Issue #[ISSUE_NUMBER]</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 650px;
+            margin: 40px auto;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background: #007aff;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .logo {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .issue-info {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 12px;
+        }
+        .tagline {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        .content {
+            padding: 40px;
+        }
+        .intro {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 40px;
+            text-align: center;
+            font-style: italic;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+        .section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            border-left: 4px solid #007aff;
+            padding-left: 16px;
+        }
+        .article {
+            margin-bottom: 28px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .article-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+        .article-meta {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 12px;
+        }
+        .article-excerpt {
+            color: #555;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        .read-more {
+            color: #007aff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+        }
+        .read-more::after {
+            content: "→";
+            margin-left: 4px;
+        }
+        .spotlight {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
+            padding: 24px;
+            border-radius: 10px;
+            margin: 24px 0;
+            border-left: 4px solid #007aff;
+        }
+        .spotlight-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #007aff;
+            margin-bottom: 12px;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .tool-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        .tool-name {
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        .tool-description {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        .tool-link {
+            color: #007aff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .quote {
+            background: #fff8f0;
+            border-left: 4px solid #ff9500;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .quote-text {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 8px;
+        }
+        .quote-author {
+            font-size: 14px;
+            color: #888;
+            font-weight: 500;
+        }
+        .cta-section {
+            background: #007aff;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        .cta-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #007aff;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-top: 16px;
+        }
+        .resources {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .resources ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .resources li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .resources li::before {
+            content: "📖";
+            position: absolute;
+            left: 0;
+        }
+        .footer {
+            background: #1a1a1a;
+            color: #ccc;
+            padding: 40px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .footer-logo {
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .social-links {
+            margin: 20px 0;
+        }
+        .social-links a {
+            color: #007aff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .unsubscribe {
+            color: #888;
+            text-decoration: underline;
+            margin-top: 15px;
+            display: inline-block;
+        }
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px 10px;
+                border-radius: 8px;
+            }
+            .content {
+                padding: 30px 20px;
+            }
+            .header {
+                padding: 30px 20px;
+            }
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">iDIG.io</div>
+            <div class="issue-info">The Resonant Builders Monthly • Issue #[ISSUE_NUMBER] • [MONTH_YEAR]</div>
+            <div class="tagline">Resonant Tools for Curious Minds</div>
+        </div>
+        
+        <div class="content">
+            <!-- Welcome Message -->
+            <div class="intro">
+                Welcome to another edition of The Resonant Builders Monthly, where we explore the intersection of technology, design, and human curiosity.
+            </div>
+
+            <!-- This Month's Theme -->
+            <div class="section">
+                <h2 class="section-title">This Month's Theme: [THEME_TITLE]</h2>
+                <div class="article">
+                    <div class="article-excerpt">
+                        [THEME_DESCRIPTION - A 2-3 sentence introduction to this month's theme or focus area]
+                    </div>
+                </div>
+            </div>
+
+            <!-- Builder Insights -->
+            <div class="section">
+                <h2 class="section-title">Builder Insights</h2>
+                
+                <div class="article">
+                    <div class="article-title">[INSIGHT_TITLE_1]</div>
+                    <div class="article-meta">Deep dive • [READING_TIME] min read</div>
+                    <div class="article-excerpt">
+                        [INSIGHT_EXCERPT_1 - A compelling summary that makes readers want to learn more about this building principle or practice]
+                    </div>
+                    <a href="[INSIGHT_URL_1]" class="read-more">Read the full exploration</a>
+                </div>
+
+                <div class="article">
+                    <div class="article-title">[INSIGHT_TITLE_2]</div>
+                    <div class="article-meta">Case study • [READING_TIME] min read</div>
+                    <div class="article-excerpt">
+                        [INSIGHT_EXCERPT_2 - Another valuable insight or case study from the world of resonant tool building]
+                    </div>
+                    <a href="[INSIGHT_URL_2]" class="read-more">Explore this case study</a>
+                </div>
+            </div>
+
+            <!-- Community Spotlight -->
+            <div class="section">
+                <h2 class="section-title">Community Spotlight</h2>
+                
+                <div class="spotlight">
+                    <div class="spotlight-title">Builder: [BUILDER_NAME]</div>
+                    <div class="article-excerpt">
+                        <strong>What they're building:</strong> [PROJECT_DESCRIPTION]<br><br>
+                        <strong>Why it matters:</strong> [PROJECT_IMPACT]<br><br>
+                        <strong>Resonant principle in action:</strong> [PRINCIPLE_DEMONSTRATED]
+                    </div>
+                </div>
+
+                <div class="quote">
+                    <div class="quote-text">
+                        "[BUILDER_QUOTE - An inspiring or insightful quote from the featured builder about their approach to creating resonant tools]"
+                    </div>
+                    <div class="quote-author">— [BUILDER_NAME], [BUILDER_TITLE]</div>
+                </div>
+            </div>
+
+            <!-- Tools & Resources -->
+            <div class="section">
+                <h2 class="section-title">Tools Worth Exploring</h2>
+                <p>This month's curated selection of tools that embody resonant design principles:</p>
+                
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-name">[TOOL_NAME_1]</div>
+                        <div class="tool-description">[TOOL_DESCRIPTION_1 - What makes this tool resonant and worth exploring]</div>
+                        <a href="[TOOL_URL_1]" class="tool-link">Explore tool →</a>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-name">[TOOL_NAME_2]</div>
+                        <div class="tool-description">[TOOL_DESCRIPTION_2 - Another tool that demonstrates excellent user agency or design]</div>
+                        <a href="[TOOL_URL_2]" class="tool-link">Explore tool →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design Philosophy -->
+            <div class="section">
+                <h2 class="section-title">Design Philosophy</h2>
+                
+                <div class="article">
+                    <div class="article-title">[PHILOSOPHY_TITLE]</div>
+                    <div class="article-meta">Philosophy • [READING_TIME] min read</div>
+                    <div class="article-excerpt">
+                        [PHILOSOPHY_EXCERPT - An exploration of a design principle, user agency concept, or philosophical approach to building resonant tools]
+                    </div>
+                    <a href="[PHILOSOPHY_URL]" class="read-more">Dive deeper into this concept</a>
+                </div>
+            </div>
+
+            <!-- Reading List -->
+            <div class="section">
+                <h2 class="section-title">Recommended Reading</h2>
+                <div class="resources">
+                    <ul>
+                        <li><a href="[READING_URL_1]" style="color: #007aff; text-decoration: none; font-weight: 500;">[READING_TITLE_1]</a> - [READING_DESCRIPTION_1]</li>
+                        <li><a href="[READING_URL_2]" style="color: #007aff; text-decoration: none; font-weight: 500;">[READING_TITLE_2]</a> - [READING_DESCRIPTION_2]</li>
+                        <li><a href="[READING_URL_3]" style="color: #007aff; text-decoration: none; font-weight: 500;">[READING_TITLE_3]</a> - [READING_DESCRIPTION_3]</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- iDIG Updates -->
+            <div class="section">
+                <h2 class="section-title">iDIG Development Updates</h2>
+                
+                <div class="article">
+                    <div class="article-title">[UPDATE_TITLE]</div>
+                    <div class="article-meta">Product update • New features</div>
+                    <div class="article-excerpt">
+                        [UPDATE_DESCRIPTION - Share what's new with iDIG, upcoming features, or behind-the-scenes development insights]
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <div class="cta-title">Try iDIG Early Access</div>
+                    <p>Experience the future of curious engagement with web content.</p>
+                    <a href="[EARLY_ACCESS_URL]" class="cta-button">Get Early Access</a>
+                </div>
+            </div>
+
+            <!-- Community Engagement -->
+            <div class="section">
+                <h2 class="section-title">Join the Conversation</h2>
+                <div class="article-excerpt">
+                    We're building more than tools—we're cultivating a community of builders who prioritize human agency and meaningful digital experiences. Here's how to get involved:
+                </div>
+                
+                <div class="resources">
+                    <ul>
+                        <li><a href="[BLOG_URL]" style="color: #007aff; text-decoration: none; font-weight: 500;">Read our latest blog posts</a> - Fresh insights published weekly</li>
+                        <li><a href="[CONTACT_URL]" style="color: #007aff; text-decoration: none; font-weight: 500;">Share your own building story</a> - We'd love to feature your work</li>
+                        <li><a href="[DEMO_URL]" style="color: #007aff; text-decoration: none; font-weight: 500;">Try our interactive demos</a> - See resonant tools in action</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-logo">iDIG.io</div>
+            <p>Resonant Tools for Curious Minds</p>
+            
+            <div class="social-links">
+                <a href="[WEBSITE_URL]">Visit Website</a> | 
+                <a href="[BLOG_URL]">Blog</a> | 
+                <a href="[CONTACT_URL]">Contact</a>
+            </div>
+            
+            <p style="margin-top: 30px; font-size: 12px;">
+                You're receiving this because you subscribed to The Resonant Builders Monthly at iDIG.io.<br>
+                We respect your inbox and send only one curated newsletter per month.
+            </p>
+            
+            <a href="[UNSUBSCRIBE_URL]" class="unsubscribe">Unsubscribe from monthly newsletter</a>
+        </div>
+    </div>
+</body>
+</html>
