@@ -168,30 +168,32 @@ export default function Demo() {
   };
 
   const shareVideo = async () => {
-    if (currentSlideData?.videoUrl) {
+    if (presentation) {
+      // Create the demo presentation URL within the site
+      const demoUrl = `${window.location.origin}/demo/${presentation.slug}`;
+      
       try {
         if (navigator.share) {
           // Use native share API if available
           await navigator.share({
-            title: `${presentation?.title} - Video Demo`,
-            text: `Check out this demo video: ${presentation?.title}`,
-            url: currentSlideData.videoUrl,
+            title: `${presentation.title} - iDIG Demo`,
+            text: `Check out this interactive demo: ${presentation.title}`,
+            url: demoUrl,
           });
         } else {
           // Fallback to clipboard
-          await navigator.clipboard.writeText(currentSlideData.videoUrl);
-          // You could add a toast notification here
-          console.log('Video link copied to clipboard!');
+          await navigator.clipboard.writeText(demoUrl);
+          console.log('Demo link copied to clipboard!');
         }
       } catch (error) {
         // Fallback for older browsers
         const textArea = document.createElement('textarea');
-        textArea.value = currentSlideData.videoUrl;
+        textArea.value = demoUrl;
         document.body.appendChild(textArea);
         textArea.select();
         document.execCommand('copy');
         document.body.removeChild(textArea);
-        console.log('Video link copied to clipboard!');
+        console.log('Demo link copied to clipboard!');
       }
     }
   };
