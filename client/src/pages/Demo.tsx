@@ -266,8 +266,9 @@ export default function Demo() {
         )}
       </div>
 
-      {/* Bottom Controls */}
-      <div className="p-6 flex items-center justify-between bg-gray-900/50">
+      {/* Bottom Controls - Hidden for single slide presentations */}
+      {presentation.slides.length > 1 && (
+        <div className="p-6 flex items-center justify-between bg-gray-900/50">
         <button
           onClick={handlePrevious}
           disabled={isFirstSlide}
@@ -303,6 +304,7 @@ export default function Demo() {
           {isLastSlide ? 'Finish' : 'Next'}
         </button>
       </div>
+      )}
 
       {/* Keyboard shortcuts hint */}
       {isFullscreen && (
