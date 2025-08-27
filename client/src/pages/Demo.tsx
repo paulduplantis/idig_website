@@ -258,7 +258,8 @@ export default function Demo() {
           <video
             className="w-full h-full object-contain"
             controls
-            autoPlay={false}
+            autoPlay={true}
+            muted={true}
             preload="metadata"
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
