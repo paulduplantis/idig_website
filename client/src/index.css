@@ -75,25 +75,7 @@
     color: hsl(0, 0%, 20%);
   }
 
-  /* Remove video player gradient overlay */
-  .video-no-gradient::-webkit-media-controls-panel {
-    background: rgba(0, 0, 0, 0.4) !important;
-    background-image: none !important;
-    backdrop-filter: blur(10px);
-  }
-  
-  .video-no-gradient::-webkit-media-controls-background {
-    background: transparent !important;
-  }
-  
-  .video-no-gradient {
-    background: transparent !important;
-  }
 
-  /* Try to hide the gradient on Chrome/Safari */
-  .video-no-gradient::-webkit-media-controls-overlay-enclosure {
-    background: transparent !important;
-  }
 
   .light-gray-bg {
     background-color: hsl(210, 20%, 97%);
