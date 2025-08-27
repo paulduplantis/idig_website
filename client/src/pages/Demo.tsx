@@ -242,12 +242,15 @@ export default function Demo() {
 
         {currentSlideData.type === 'video' && (
           <video
-            className="w-full h-full object-contain"
+            className="w-full h-full object-contain video-no-gradient"
             controls
             autoPlay={false}
             preload="metadata"
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
+            style={{
+              backgroundColor: 'transparent'
+            }}
           >
             <source src={currentSlideData.videoUrl} type="video/mp4" />
             Your browser does not support the video tag.
