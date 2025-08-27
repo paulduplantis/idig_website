@@ -44,7 +44,7 @@ export default function SlidePresentation() {
   const slide = slides[currentSlide];
 
   return (
-    <div className="relative light-gray-bg rounded-2xl p-12 md:p-16 mb-16 shadow-lg">
+    <div className="relative bg-white rounded-2xl px-12 md:px-16 pt-6 md:pt-8 pb-12 md:pb-16 mb-16 shadow-2xl border border-gray-100">
       {/* Navigation Arrows */}
       <div className="flex items-center justify-between absolute top-1/2 left-4 right-4 transform -translate-y-1/2">
         <button 
