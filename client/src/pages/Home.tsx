@@ -107,6 +107,7 @@ export default function Home() {
                   ) : (
                     // iDIG Interface preview for demos without video
                     <div className="mb-6">
+                      <h4 className="text-2xl font-medium mb-4 charcoal">{currentDemo.title.replace(' Demo', '')}</h4>
                       <img 
                         src="/attached_assets/image_1756278431066.png" 
                         alt="iDIG Interface"
