@@ -79,13 +79,6 @@ export default function Home() {
 
             {/* Demo Player */}
             <div className="mb-8" data-testid="demo-section">
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-medium mb-4 charcoal">Experience iDIG</h3>
-                <p className="text-gray-600">
-                  Explore how iDIG transforms your interaction with web content
-                </p>
-
-              </div>
               
               {/* Main Demo Player */}
               <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-2xl border border-gray-100 mb-8">
