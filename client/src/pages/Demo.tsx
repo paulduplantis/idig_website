@@ -41,17 +41,10 @@ export default function Demo() {
           slides: [
             {
               id: '1',
-              type: 'intro',
-              title: 'iDIG Lens',
-              content: 'Highlight and save text from any webpage to build your personal knowledge base. Transform casual browsing into deep learning by capturing insights as you discover them.',
-              order: 1
-            },
-            {
-              id: '2',
               type: 'video',
-              title: 'iDIG Lens in Action',
+              title: 'iDIG Lens Demo',
               videoUrl: 'https://f004.backblazeb2.com/file/idigdemo/idig_demo_final.mp4',
-              order: 2
+              order: 1
             }
           ]
         };
