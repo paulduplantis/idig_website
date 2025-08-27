@@ -30,6 +30,17 @@ export default function Admin() {
     }
   }, []);
 
+  // Always call hooks - but only enable queries when authenticated
+  const newsletterQuery = useQuery<Newsletter[]>({
+    queryKey: ['/api/admin/newsletter-subscribers'],
+    enabled: isAuthenticated && activeTab === 'newsletter'
+  });
+
+  const blogQuery = useQuery<BlogSubscription[]>({
+    queryKey: ['/api/admin/blog-subscribers'],
+    enabled: isAuthenticated && activeTab === 'blog'
+  });
+
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     if (password === ADMIN_PASSWORD) {
@@ -98,16 +109,6 @@ export default function Admin() {
       </div>
     );
   }
-
-  const newsletterQuery = useQuery<Newsletter[]>({
-    queryKey: ['/api/admin/newsletter-subscribers'],
-    enabled: activeTab === 'newsletter'
-  });
-
-  const blogQuery = useQuery<BlogSubscription[]>({
-    queryKey: ['/api/admin/blog-subscribers'],
-    enabled: activeTab === 'blog'
-  });
 
   const currentData = activeTab === 'newsletter' ? newsletterQuery.data : blogQuery.data;
   const isLoading = activeTab === 'newsletter' ? newsletterQuery.isLoading : blogQuery.isLoading;
