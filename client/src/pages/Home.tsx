@@ -306,7 +306,7 @@ export default function Home() {
         </section>
 
         {/* Book Preview Section */}
-        <section className="py-20">
+        <section className="py-8">
           <div className="max-w-4xl mx-auto px-6">
             <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-2xl border border-gray-100">
               <div className="text-center">
