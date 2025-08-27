@@ -154,7 +154,7 @@ export default function Contact() {
                     
                     <Button
                       type="submit"
-                      className="w-full apple-button bg-blue-500 hover:bg-blue-600 text-white py-3"
+                      className="w-full apple-button py-3"
                       disabled={contactMutation.isPending}
                     >
                       {contactMutation.isPending ? "Sending..." : "Send Message"}

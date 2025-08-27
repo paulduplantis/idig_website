@@ -215,7 +215,7 @@ export default function Chapter() {
               <div>
                 {chapter.nextChapter && (
                   <Link href={`/book/chapter/${chapter.nextChapter}`}>
-                    <Button className="apple-button bg-blue-500 hover:bg-blue-600 text-white">
+                    <Button className="apple-button">
                       Next Chapter
                       <ChevronRight className="w-4 h-4 ml-2" />
                     </Button>

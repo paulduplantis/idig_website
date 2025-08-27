@@ -53,7 +53,7 @@ export default function NewsletterSignup() {
         />
         <Button 
           type="submit" 
-          className="apple-button bg-blue-500 hover:bg-blue-600 text-white px-6"
+          className="apple-button px-6"
           disabled={newsletterMutation.isPending}
         >
           {newsletterMutation.isPending ? "Subscribing..." : "Subscribe"}
