@@ -48,7 +48,7 @@ export default function Demo() {
               id: '1',
               type: 'video',
               title: 'iDIG Lens Demo',
-              videoUrl: '/attached_assets/iDIG Movable Menu_1755270493575.mp4',
+              videoUrl: 'https://f004.backblazeb2.com/file/idigdemo/idig_demo_final.mp4',
               order: 1
             }
           ]
