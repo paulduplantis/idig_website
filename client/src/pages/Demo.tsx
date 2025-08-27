@@ -241,7 +241,7 @@ export default function Demo() {
         )}
 
         {currentSlideData.type === 'video' && (
-          <div className="w-full h-full relative">
+          <div className="w-full h-full">
             <video
               className="w-full h-full object-contain"
               controls
@@ -253,13 +253,6 @@ export default function Demo() {
               <source src={currentSlideData.videoUrl} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-            {currentSlideData.title && (
-              <div className="absolute top-4 left-4 right-4">
-                <h2 className="text-xl font-light text-white bg-black bg-opacity-50 px-4 py-2 rounded-lg text-center backdrop-blur-sm">
-                  {currentSlideData.title}
-                </h2>
-              </div>
-            )}
           </div>
         )}
 
