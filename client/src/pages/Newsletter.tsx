@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import NewsletterSignup from "@/components/NewsletterSignup";
+import BlogSignup from "@/components/BlogSignup";
 
 export default function Newsletter() {
   return (
@@ -40,9 +41,66 @@ export default function Newsletter() {
               </div>
             </div>
 
-            {/* Newsletter Signup */}
+            {/* Subscription Options */}
             <div className="mb-16">
-              <NewsletterSignup />
+              <h2 className="text-3xl font-light mb-8 text-center">Choose Your Subscription</h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                
+                {/* Monthly Newsletter */}
+                <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                  <div className="text-center mb-6">
+                    <h3 className="text-2xl font-medium mb-4">Monthly Newsletter</h3>
+                    <p className="text-gray-600 mb-6">
+                      Receive The Resonant Builders Monthly with curated insights, community spotlights, and iDIG updates delivered once per month.
+                    </p>
+                    <div className="text-sm text-gray-500 mb-6">
+                      <strong>What you'll get:</strong>
+                      <ul className="list-disc list-inside mt-2 text-left space-y-1">
+                        <li>Monthly curated content and insights</li>
+                        <li>Community builder spotlights</li>
+                        <li>Early access to iDIG features</li>
+                        <li>Recommended resources and reading</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <NewsletterSignup />
+                </div>
+
+                {/* Blog Updates */}
+                <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                  <div className="text-center mb-6">
+                    <h3 className="text-2xl font-medium mb-4">Blog Post Notifications</h3>
+                    <p className="text-gray-600 mb-6">
+                      Get notified whenever we publish new blog posts with deep explorations into resonant tool building and design philosophy.
+                    </p>
+                    <div className="text-sm text-gray-500 mb-6">
+                      <strong>What you'll get:</strong>
+                      <ul className="list-disc list-inside mt-2 text-left space-y-1">
+                        <li>Immediate notification of new blog posts</li>
+                        <li>In-depth technical and philosophical content</li>
+                        <li>Case studies and implementation guides</li>
+                        <li>Community discussions and insights</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  {/* Blog Signup Form */}
+                  <BlogSignup />
+                </div>
+              </div>
+
+              {/* Both Subscriptions Option */}
+              <div className="mt-8 text-center">
+                <div className="bg-blue-50 rounded-2xl p-6 border border-blue-200">
+                  <h3 className="text-xl font-medium mb-3">Want Both?</h3>
+                  <p className="text-gray-600 mb-4">
+                    You can subscribe to both the monthly newsletter and blog notifications to stay fully connected with the resonant builders community.
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    Simply sign up for each option above. You can manage your preferences or unsubscribe from either at any time.
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Previous Issues Preview */}

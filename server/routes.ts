@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertNewsletterSchema, insertContactSchema } from "@shared/schema";
+import { insertNewsletterSchema, insertBlogSubscriptionSchema, insertContactSchema } from "@shared/schema";
 import { z } from "zod";
 import {
   ObjectStorageService,
@@ -28,6 +28,27 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ message: "Invalid email format" });
       }
       res.status(500).json({ message: "Failed to subscribe to newsletter" });
+    }
+  });
+
+  // Blog subscription endpoint
+  app.post("/api/blog-subscription", async (req, res) => {
+    try {
+      const data = insertBlogSubscriptionSchema.parse(req.body);
+      
+      // Check if email already exists
+      const existing = await storage.getBlogSubscriptionByEmail(data.email);
+      if (existing) {
+        return res.status(400).json({ message: "Email already subscribed to blog updates" });
+      }
+      
+      const blogSubscription = await storage.createBlogSubscription(data);
+      res.json({ message: "Successfully subscribed to blog updates", blogSubscription });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ message: "Invalid email format" });
+      }
+      res.status(500).json({ message: "Failed to subscribe to blog updates" });
     }
   });
 

@@ -9,6 +9,12 @@ export const newsletters = pgTable("newsletters", {
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
+export const blogSubscriptions = pgTable("blog_subscriptions", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  email: text("email").notNull().unique(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
 export const contacts = pgTable("contacts", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   name: text("name").notNull(),
@@ -44,6 +50,10 @@ export const insertNewsletterSchema = createInsertSchema(newsletters).pick({
   email: true,
 });
 
+export const insertBlogSubscriptionSchema = createInsertSchema(blogSubscriptions).pick({
+  email: true,
+});
+
 export const insertContactSchema = createInsertSchema(contacts).pick({
   name: true,
   email: true,
@@ -70,6 +80,8 @@ export const insertPresentationSlideSchema = createInsertSchema(presentationSlid
 
 export type InsertNewsletter = z.infer<typeof insertNewsletterSchema>;
 export type Newsletter = typeof newsletters.$inferSelect;
+export type InsertBlogSubscription = z.infer<typeof insertBlogSubscriptionSchema>;
+export type BlogSubscription = typeof blogSubscriptions.$inferSelect;
 export type InsertContact = z.infer<typeof insertContactSchema>;
 export type Contact = typeof contacts.$inferSelect;
 export type InsertPresentation = z.infer<typeof insertPresentationSchema>;
