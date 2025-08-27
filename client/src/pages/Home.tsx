@@ -108,7 +108,7 @@ export default function Home() {
                     // iDIG Interface preview for demos without video
                     <div className="mb-6">
                       <img 
-                        src="@assets/image_1756278431066.png" 
+                        src="/attached_assets/image_1756278431066.png" 
                         alt="iDIG Interface"
                         className="w-full max-w-2xl h-auto rounded-lg shadow-lg mx-auto"
                       />
