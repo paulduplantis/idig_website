@@ -64,6 +64,7 @@ export default function Home() {
               <h1 className="text-5xl md:text-7xl font-light mb-6">
                 <span className="logo-i">i</span>
                 <span className="logo-dig ml-2">DIG</span>
+              
               </h1>
               <p className="text-xl md:text-2xl font-medium">
                 <span className="apple-blue">Resonant</span>
@@ -83,6 +84,7 @@ export default function Home() {
                 <p className="text-gray-600">
                   Explore how iDIG transforms your interaction with web content
                 </p>
+
               </div>
               
               {/* Main Demo Player */}
@@ -157,98 +159,102 @@ export default function Home() {
 
                 {/* Carousel Container */}
                 <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide flex-1" id="demo-carousel">
-                  {/* iDIG Lens Card */}
-                  <div 
-                    onClick={() => setSelectedDemo('idig-lens')}
-                    className={`relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 apple-button border-2 bg-white/80 backdrop-blur-sm border-white/20 ${
-                      selectedDemo === 'idig-lens' ? 'border-blue-500' : 'hover:border-blue-300'
-                    }`}
-                  >
-                    <div className="p-6 h-32 flex flex-col justify-between text-gray-700">
-                      <div>
-                        <h5 className="text-lg font-semibold mb-2 text-gray-800">iDIG Lens</h5>
-                        <p className="text-xs text-gray-600 line-clamp-2">
-                          Highlight, save, and explore insights
-                        </p>
-                      </div>
-                      <div className="flex items-center text-xs font-medium text-gray-500">
-                        <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h1m4 0h1" />
-                        </svg>
-                        <span>Active</span>
-                      </div>
+                {/* iDIG Lens Card */}
+                <div 
+                  onClick={() => setSelectedDemo('idig-lens')}
+                  className={`relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 ${
+                    selectedDemo === 'idig-lens' ? 'border-blue-500' : 'border-transparent hover:border-blue-500'
+                  }`}
+                >
+                
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 opacity-90"></div>
+                  <div className="relative p-6 h-32 flex flex-col justify-between text-white">
+                    <div>
+                      <h5 className="text-lg font-semibold mb-2">iDIG Lens</h5>
+                      <p className="text-xs opacity-90 line-clamp-2">
+                        Highlight, save, and explore insights
+                      </p>
+                    </div>
+                    <div className="flex items-center text-xs font-medium">
+                      <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h1m4 0h1" />
+                      </svg>
+                      <span>Active</span>
                     </div>
                   </div>
+                </div>
 
-                  {/* iDIG Feeds Card */}
-                  <div 
-                    onClick={() => setSelectedDemo('idig-feeds')}
-                    className={`relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 apple-button border-2 bg-white/80 backdrop-blur-sm border-white/20 ${
-                      selectedDemo === 'idig-feeds' ? 'border-green-500' : 'hover:border-green-300'
-                    }`}
-                  >
-                    <div className="p-6 h-32 flex flex-col justify-between text-gray-700">
-                      <div>
-                        <h5 className="text-lg font-semibold mb-2 text-gray-800">iDIG Feeds</h5>
-                        <p className="text-xs text-gray-600 line-clamp-2">
-                          Turn searches into discovery engines
-                        </p>
-                      </div>
-                      <div className="flex items-center text-xs font-medium text-gray-500">
-                        <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
-                        </svg>
-                        <span>Select</span>
-                      </div>
+                {/* iDIG Feeds Card */}
+                <div 
+                  onClick={() => setSelectedDemo('idig-feeds')}
+                  className={`relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 ${
+                    selectedDemo === 'idig-feeds' ? 'border-green-500' : 'border-transparent hover:border-green-500'
+                  }`}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-teal-600 opacity-90"></div>
+                  <div className="relative p-6 h-32 flex flex-col justify-between text-white">
+                    <div>
+                      <h5 className="text-lg font-semibold mb-2">iDIG Feeds</h5>
+                      <p className="text-xs opacity-90 line-clamp-2">
+                        Turn searches into discovery engines
+                      </p>
+                    </div>
+                    <div className="flex items-center text-xs font-medium">
+                      <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                      </svg>
+                      <span>Select</span>
                     </div>
                   </div>
+                </div>
 
-                  {/* iDIG Matching Card */}
-                  <div 
-                    onClick={() => setSelectedDemo('idig-matching')}
-                    className={`relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 apple-button border-2 bg-white/80 backdrop-blur-sm border-white/20 ${
-                      selectedDemo === 'idig-matching' ? 'border-orange-500' : 'hover:border-orange-300'
-                    }`}
-                  >
-                    <div className="p-6 h-32 flex flex-col justify-between text-gray-700">
-                      <div>
-                        <h5 className="text-lg font-semibold mb-2 text-gray-800">iDIG Matching</h5>
-                        <p className="text-xs text-gray-600 line-clamp-2">
-                          AI-powered skill and experience matching
-                        </p>
-                      </div>
-                      <div className="flex items-center text-xs font-medium text-gray-500">
-                        <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                        <span>Connect</span>
-                      </div>
+                {/* iDIG Matching Card */}
+                <div 
+                  onClick={() => setSelectedDemo('idig-matching')}
+                  className={`relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 ${
+                    selectedDemo === 'idig-matching' ? 'border-orange-500' : 'border-transparent hover:border-orange-500'
+                  }`}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-red-600 opacity-90"></div>
+                  <div className="relative p-6 h-32 flex flex-col justify-between text-white">
+                    <div>
+                      <h5 className="text-lg font-semibold mb-2">iDIG Matching</h5>
+                      <p className="text-xs opacity-90 line-clamp-2">
+                        AI-powered skill and experience matching
+                      </p>
+                    </div>
+                    <div className="flex items-center text-xs font-medium">
+                      <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" />
+                      </svg>
+                      <span>Select</span>
                     </div>
                   </div>
+                </div>
 
-                  {/* iDIG Scenes Card */}
-                  <div 
-                    onClick={() => setSelectedDemo('idig-scenes')}
-                    className={`relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 ${
-                      selectedDemo === 'idig-scenes' ? 'border-indigo-500' : 'border-transparent hover:border-indigo-500'
-                    }`}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-700 opacity-90"></div>
-                    <div className="relative p-6 h-32 flex flex-col justify-between text-white">
-                      <div>
-                        <h5 className="text-lg font-semibold mb-2">iDIG Scenes</h5>
-                        <p className="text-xs opacity-90 line-clamp-2">
-                          Curate rich experiences around ideas
-                        </p>
-                      </div>
-                      <div className="flex items-center text-xs font-medium">
-                        <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                        </svg>
-                        <span>Select</span>
-                      </div>
+                {/* iDIG Scenes Card */}
+                <div 
+                  onClick={() => setSelectedDemo('idig-scenes')}
+                  className={`relative flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 ${
+                    selectedDemo === 'idig-scenes' ? 'border-indigo-500' : 'border-transparent hover:border-indigo-500'
+                  }`}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-700 opacity-90"></div>
+                  <div className="relative p-6 h-32 flex flex-col justify-between text-white">
+                    <div>
+                      <h5 className="text-lg font-semibold mb-2">iDIG Scenes</h5>
+                      <p className="text-xs opacity-90 line-clamp-2">
+                        Curate rich experiences around ideas
+                      </p>
+                    </div>
+                    <div className="flex items-center text-xs font-medium">
+                      <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                      </svg>
+                      <span>Select</span>
                     </div>
                   </div>
+                </div>
                 </div>
 
                 {/* Right Arrow */}
@@ -267,6 +273,7 @@ export default function Home() {
                 </button>
               </div>
             </div>
+
           </div>
         </section>
 
@@ -291,6 +298,7 @@ export default function Home() {
                 <h3 className="text-2xl font-medium mb-4">Our Principles</h3>
                 <p className="text-gray-600 leading-relaxed">
                   No cookies to track or resell user activity. No passive popups. No data handled outside local or private storage. No outside advertising networks. UI built around user agency.
+
                 </p>
               </div>
               
