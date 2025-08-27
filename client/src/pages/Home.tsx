@@ -78,7 +78,7 @@ export default function Home() {
             <SlidePresentation />
 
             {/* Demo Player */}
-            <div className="mb-8">
+            <div className="mb-8" data-testid="demo-section">
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-medium mb-4 charcoal">Experience iDIG</h3>
                 <p className="text-gray-600">

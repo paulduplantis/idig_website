@@ -152,6 +152,20 @@ export default function Demo() {
     }
   };
 
+  const exitToHomepage = () => {
+    navigate('/');
+    // Small delay to ensure navigation completes before scrolling
+    setTimeout(() => {
+      const demoSection = document.querySelector('[data-testid="demo-section"]');
+      if (demoSection) {
+        demoSection.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'center' 
+        });
+      }
+    }, 100);
+  };
+
   const handleKeyPress = (e: KeyboardEvent) => {
     switch (e.key) {
       case 'ArrowRight':
@@ -210,7 +224,7 @@ export default function Demo() {
       {!isFullscreen && (
         <div className="bg-gray-900 p-4 flex items-center justify-between">
           <button
-            onClick={() => navigate('/')}
+            onClick={exitToHomepage}
             className="text-blue-400 hover:text-blue-300 transition-colors"
           >
             ← Back to iDIG
@@ -298,7 +312,7 @@ export default function Demo() {
         </div>
 
         <button
-          onClick={isLastSlide ? () => navigate('/') : handleNext}
+          onClick={isLastSlide ? exitToHomepage : handleNext}
           className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-lg transition-colors text-white"
         >
           {isLastSlide ? 'Finish' : 'Next'}
