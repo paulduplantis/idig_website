@@ -299,17 +299,37 @@ export default function Demo() {
         )}
 
         {currentSlideData.type === 'video' && (
-          <video
-            className="w-full h-full object-contain"
-            controls
-            autoPlay={true}
-            preload="metadata"
-            onPlay={() => setIsPlaying(true)}
-            onPause={() => setIsPlaying(false)}
-          >
-            <source src={currentSlideData.videoUrl} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <div className="w-full h-full flex items-center justify-center p-4">
+            <div className="relative w-full max-w-6xl">
+              <video
+                className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
+                controls
+                autoPlay={true}
+                preload="metadata"
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+              >
+                <source src={currentSlideData.videoUrl} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              
+              {/* Prominent Play Demo Button Overlay */}
+              {!isPlaying && (
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full shadow-lg transition-all hover:scale-105 pointer-events-auto cursor-pointer flex items-center space-x-3 text-lg font-medium"
+                       onClick={() => {
+                         const video = document.querySelector('video');
+                         if (video) video.play();
+                       }}>
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                    <span>Play Demo</span>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
         )}
 
         {currentSlideData.type === 'callout' && (
