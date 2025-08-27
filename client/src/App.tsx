@@ -6,6 +6,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Newsletter from "@/pages/Newsletter";
+import MonthlySubscription from "@/pages/MonthlySubscription";
+import BlogSubscription from "@/pages/BlogSubscription";
 import Blog from "@/pages/Blog";
 import Book from "@/pages/Book";
 import Contact from "@/pages/Contact";
@@ -19,6 +21,8 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/newsletter" component={Newsletter} />
+      <Route path="/monthly-subscription" component={MonthlySubscription} />
+      <Route path="/blog-subscription" component={BlogSubscription} />
       <Route path="/blog" component={Blog} />
       <Route path="/book" component={Book} />
       <Route path="/contact" component={Contact} />

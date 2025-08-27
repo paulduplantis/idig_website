@@ -1,6 +1,6 @@
 import Navigation from "@/components/Navigation";
-import NewsletterSignup from "@/components/NewsletterSignup";
-import BlogSignup from "@/components/BlogSignup";
+import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 export default function Newsletter() {
   return (
@@ -63,7 +63,13 @@ export default function Newsletter() {
                       </ul>
                     </div>
                   </div>
-                  <NewsletterSignup />
+                  <div className="text-center">
+                    <Link href="/monthly-subscription">
+                      <Button className="apple-button px-8 py-3 font-medium" data-testid="button-monthly-subscribe">
+                        Subscribe to Monthly Newsletter
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
 
                 {/* Blog Updates */}
@@ -85,7 +91,13 @@ export default function Newsletter() {
                   </div>
                   
                   {/* Blog Signup Form */}
-                  <BlogSignup />
+                  <div className="text-center">
+                    <Link href="/blog-subscription">
+                      <Button className="apple-button px-8 py-3 font-medium" data-testid="button-blog-subscribe">
+                        Subscribe to Blog Updates
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               </div>
 

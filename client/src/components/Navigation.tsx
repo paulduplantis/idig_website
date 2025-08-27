@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function Navigation() {
   const [location] = useLocation();
@@ -38,17 +39,27 @@ export default function Navigation() {
             </span>
           </Link>
 
-          {/* Hamburger Menu Button */}
-          <button 
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2"
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
+          <div className="flex items-center gap-4">
+            {/* Subscribe Button */}
+            <Link href="/newsletter">
+              <Button className="apple-button px-4 py-2 text-sm font-medium" data-testid="button-subscribe">
+                Subscribe
+              </Button>
+            </Link>
+            
+            {/* Hamburger Menu Button */}
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2"
+              data-testid="button-menu-toggle"
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Dropdown Navigation */}

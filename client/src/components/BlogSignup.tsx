@@ -10,13 +10,7 @@ export default function BlogSignup() {
 
   const blogMutation = useMutation({
     mutationFn: async (email: string) => {
-      return apiRequest("/api/blog-subscription", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
+      return apiRequest("POST", "/api/blog-subscription", { email });
     },
     onSuccess: () => {
       toast({
@@ -52,11 +46,13 @@ export default function BlogSignup() {
           className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           required
           disabled={blogMutation.isPending}
+          data-testid="input-blog-email"
         />
         <Button
           type="submit"
           className="apple-button px-6 py-3 font-medium"
           disabled={blogMutation.isPending}
+          data-testid="button-blog-submit"
         >
           {blogMutation.isPending ? "Subscribing..." : "Subscribe"}
         </Button>
