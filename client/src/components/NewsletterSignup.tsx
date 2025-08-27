@@ -36,7 +36,7 @@ export default function NewsletterSignup() {
   };
 
   return (
-    <div className="bg-white rounded-2xl p-8 shadow-md text-center">
+    <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 text-center">
       <h3 className="text-4xl md:text-5xl font-light mb-4">The Resonant Builders Monthly</h3>
       <p className="text-gray-600 mb-6">
         Join our newsletter for insights on building tools for curious minds.

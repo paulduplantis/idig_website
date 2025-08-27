@@ -81,7 +81,7 @@ export default function Home() {
             <div className="mb-8" data-testid="demo-section">
               
               {/* Main Demo Player */}
-              <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-2xl border border-gray-100 mb-8">
+              <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200 mb-8">
                 <div className="text-center">
                   {currentDemo.videoUrl ? (
                     // Video preview mode
@@ -269,7 +269,7 @@ export default function Home() {
         {/* About Preview Section */}
         <section className="pt-8 pb-20">
           <div className="max-w-4xl mx-auto px-6">
-            <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-2xl border border-gray-100 mb-16">
+            <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200 mb-16">
               <div className="text-center">
                 <h2 className="text-4xl md:text-5xl font-light mb-6">About iDIG</h2>
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
@@ -285,7 +285,7 @@ export default function Home() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-12 mb-16">
-              <div className="bg-white rounded-2xl p-8 shadow-md">
+              <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
                 <h3 className="text-2xl font-medium mb-4">Our Principles</h3>
                 <p className="text-gray-600 leading-relaxed">
                   No cookies to track or resell user activity. No passive popups. No data handled outside local or private storage. No outside advertising networks. UI built around user agency.
@@ -293,7 +293,7 @@ export default function Home() {
                 </p>
               </div>
               
-              <div className="bg-white rounded-2xl p-8 shadow-md">
+              <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
                 <h3 className="text-2xl font-medium mb-4">The Vision</h3>
                 <p className="text-gray-600 leading-relaxed">
                   A web where every curious mind has access to tools that amplify their ability to learn, 
@@ -310,7 +310,7 @@ export default function Home() {
         {/* Book Preview Section */}
         <section className="py-4">
           <div className="max-w-4xl mx-auto px-6">
-            <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-2xl border border-gray-100">
+            <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200">
               <div className="text-center">
                 <h2 className="text-4xl md:text-5xl font-light mb-6">We the Resonant Builders</h2>
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
