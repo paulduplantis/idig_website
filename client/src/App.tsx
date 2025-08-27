@@ -13,6 +13,7 @@ import Book from "@/pages/Book";
 import Contact from "@/pages/Contact";
 import Chapter from "@/pages/Chapter";
 import Demo from "@/pages/Demo";
+import Admin from "@/pages/Admin";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -29,6 +30,7 @@ function Router() {
       <Route path="/book/chapter/:chapterNumber" component={Chapter} />
       <Route path="/demo/:slug" component={Demo} />
       <Route path="/demo" component={Demo} />
+      <Route path="/admin" component={Admin} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -13,6 +13,10 @@ export interface IStorage {
   // Contact methods
   createContact(contact: InsertContact): Promise<Contact>;
   getContacts(): Promise<Contact[]>;
+  
+  // Admin methods
+  getAllNewsletterSubscribers(): Promise<Newsletter[]>;
+  getAllBlogSubscribers(): Promise<BlogSubscription[]>;
 }
 
 export class MemStorage implements IStorage {
@@ -73,6 +77,14 @@ export class MemStorage implements IStorage {
 
   async getContacts(): Promise<Contact[]> {
     return Array.from(this.contacts.values());
+  }
+
+  async getAllNewsletterSubscribers(): Promise<Newsletter[]> {
+    return Array.from(this.newsletters.values());
+  }
+
+  async getAllBlogSubscribers(): Promise<BlogSubscription[]> {
+    return Array.from(this.blogSubscriptions.values());
   }
 }
 

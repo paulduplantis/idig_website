@@ -76,6 +76,25 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Admin endpoints for subscriber lists
+  app.get("/api/admin/newsletter-subscribers", async (req, res) => {
+    try {
+      const subscribers = await storage.getAllNewsletterSubscribers();
+      res.json(subscribers);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to retrieve newsletter subscribers" });
+    }
+  });
+
+  app.get("/api/admin/blog-subscribers", async (req, res) => {
+    try {
+      const subscribers = await storage.getAllBlogSubscribers();
+      res.json(subscribers);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to retrieve blog subscribers" });
+    }
+  });
+
   // Object storage endpoints for video serving
   app.get("/objects/:objectPath(*)", async (req, res) => {
     const objectStorageService = new ObjectStorageService();
