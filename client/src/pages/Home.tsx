@@ -83,31 +83,14 @@ export default function Home() {
               {/* Main Demo Player */}
               <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200 mb-8">
                 <div className="text-center">
-                  {currentDemo.videoUrl ? (
-                    // Video preview mode
-                    <div className="mb-6">
-                      <div className="max-w-2xl mx-auto bg-black rounded-lg overflow-hidden shadow-lg">
-                        <video
-                          className="w-full h-auto max-h-80"
-                          controls
-                          poster="/api/placeholder/640/360"
-                        >
-                          <source src={currentDemo.videoUrl} type="video/mp4" />
-                          Your browser does not support the video tag.
-                        </video>
-                      </div>
-                    </div>
-                  ) : (
-                    // iDIG Interface preview for demos without video
-                    <div className="mb-6">
-                      <h4 className="text-2xl font-medium mb-4 charcoal">{currentDemo.title.replace(' Demo', '')}</h4>
-                      <img 
-                        src="/attached_assets/image_1756278431066.png" 
-                        alt="iDIG Interface"
-                        className="w-full max-w-2xl h-auto rounded-lg shadow-lg mx-auto"
-                      />
-                    </div>
-                  )}
+                  <div className="mb-6">
+                    <h4 className="text-2xl font-medium mb-4 charcoal">{currentDemo.title.replace(' Demo', '')}</h4>
+                    <img 
+                      src="/attached_assets/image_1756278431066.png" 
+                      alt="iDIG Interface"
+                      className="w-full max-w-2xl h-auto rounded-lg shadow-lg mx-auto"
+                    />
+                  </div>
 
                   <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
                     {currentDemo.description}
