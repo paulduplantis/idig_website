@@ -241,25 +241,25 @@ export default function Demo() {
         )}
 
         {currentSlideData.type === 'video' && (
-          <div className="w-full h-full flex items-center justify-center p-8">
-            <div className="w-full max-w-4xl">
-              {currentSlideData.title && (
-                <h2 className="text-2xl font-light mb-6 text-center text-gray-300">
+          <div className="w-full h-full relative">
+            <video
+              className="w-full h-full object-contain"
+              controls
+              autoPlay={false}
+              preload="metadata"
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
+            >
+              <source src={currentSlideData.videoUrl} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            {currentSlideData.title && (
+              <div className="absolute top-4 left-4 right-4">
+                <h2 className="text-xl font-light text-white bg-black bg-opacity-50 px-4 py-2 rounded-lg text-center backdrop-blur-sm">
                   {currentSlideData.title}
                 </h2>
-              )}
-              <video
-                className="w-full h-auto rounded-lg shadow-2xl"
-                controls
-                autoPlay={false}
-                preload="metadata"
-                onPlay={() => setIsPlaying(true)}
-                onPause={() => setIsPlaying(false)}
-              >
-                <source src={currentSlideData.videoUrl} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
+              </div>
+            )}
           </div>
         )}
 
