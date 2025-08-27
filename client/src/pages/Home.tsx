@@ -267,7 +267,7 @@ export default function Home() {
         </section>
 
         {/* About Preview Section */}
-        <section className="py-20">
+        <section className="pt-8 pb-20">
           <div className="max-w-4xl mx-auto px-6">
             <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-2xl border border-gray-100 mb-16">
               <div className="text-center">
