@@ -105,11 +105,13 @@ export default function Home() {
                       </div>
                     </div>
                   ) : (
-                    // Play icon mode for demos without video
-                    <div className="w-32 h-32 bg-gray-300 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <svg className="w-12 h-12 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                      </svg>
+                    // iDIG Interface preview for demos without video
+                    <div className="mb-6">
+                      <img 
+                        src="@assets/image_1756278431066.png" 
+                        alt="iDIG Interface"
+                        className="w-full max-w-2xl h-auto rounded-lg shadow-lg mx-auto"
+                      />
                     </div>
                   )}
                   <h4 className="text-2xl font-medium mb-4 charcoal">{currentDemo.title}</h4>
