@@ -7,6 +7,7 @@ import {
   ObjectStorageService,
   ObjectNotFoundError,
 } from "./objectStorage";
+import path from "path";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Newsletter subscription endpoint
@@ -123,6 +124,20 @@ export async function registerRoutes(app: Express): Promise<Server> {
       console.error("Error getting upload URL:", error);
       res.status(500).json({ error: "Failed to get upload URL" });
     }
+  });
+
+  // Serve attached assets (images, videos, etc.)
+  app.get("/attached_assets/:filename", (req, res) => {
+    const filename = req.params.filename;
+    const filePath = path.join(process.cwd(), "attached_assets", filename);
+    
+    // Send the file with proper headers
+    res.sendFile(filePath, (err) => {
+      if (err) {
+        console.error("Error serving attached asset:", err);
+        res.status(404).json({ error: "File not found" });
+      }
+    });
   });
 
   const httpServer = createServer(app);
