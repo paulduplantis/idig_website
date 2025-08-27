@@ -127,9 +127,9 @@ export default function Home() {
                     </div>
                   )}
                   <Link href={`/demo/${currentDemo.id}`}>
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg transition-colors font-medium">
+                    <Button className="apple-button px-8 py-3 font-medium">
                       {currentDemo.videoUrl ? 'View Full Demo' : 'Start Demo'}
-                    </button>
+                    </Button>
                   </Link>
                 </div>
               </div>
