@@ -7,7 +7,7 @@ export default function About() {
       <Navigation />
       
       <main className="pt-20">
-        <section className="py-20 light-gray-bg">
+        <section className="py-20">
           <div className="max-w-4xl mx-auto px-6">
             <div className="text-center mb-16">
               <h1 className="text-4xl md:text-5xl font-light mb-6">About iDIG</h1>
