@@ -205,7 +205,7 @@ export default function Demo() {
   const isFirstSlide = currentSlide === 0;
 
   return (
-    <div className={`${isFullscreen ? 'fixed inset-0 z-50' : 'min-h-screen'} bg-black text-white flex flex-col`}>
+    <div className={`${isFullscreen ? 'fixed inset-0 z-50' : 'min-h-screen'} ${currentSlideData?.type === 'video' ? 'bg-transparent' : 'bg-black'} text-white flex flex-col`}>
       {/* Header Controls */}
       {!isFullscreen && (
         <div className="bg-gray-900 p-4 flex items-center justify-between">
@@ -226,7 +226,7 @@ export default function Demo() {
       )}
 
       {/* Main Content Area */}
-      <div className="flex-1 flex items-center justify-center relative">
+      <div className={`flex-1 ${currentSlideData?.type === 'video' ? 'flex' : 'flex items-center justify-center'} relative`}>
         {currentSlideData.type === 'intro' && (
           <div className="max-w-4xl mx-auto px-8 text-center">
             <h2 className="text-5xl md:text-7xl font-light mb-8 leading-tight">
@@ -241,19 +241,17 @@ export default function Demo() {
         )}
 
         {currentSlideData.type === 'video' && (
-          <div className="w-full h-full">
-            <video
-              className="w-full h-full object-contain"
-              controls
-              autoPlay={false}
-              preload="metadata"
-              onPlay={() => setIsPlaying(true)}
-              onPause={() => setIsPlaying(false)}
-            >
-              <source src={currentSlideData.videoUrl} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
+          <video
+            className="w-full h-full object-contain"
+            controls
+            autoPlay={false}
+            preload="metadata"
+            onPlay={() => setIsPlaying(true)}
+            onPause={() => setIsPlaying(false)}
+          >
+            <source src={currentSlideData.videoUrl} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         )}
 
         {currentSlideData.type === 'callout' && (
