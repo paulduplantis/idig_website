@@ -199,24 +199,20 @@ export default function Admin() {
                   Access your HTML email templates for copy-paste into your email client:
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  <a 
-                    href="/email-templates/monthly-newsletter-template.html" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
+                  <button
+                    onClick={() => window.open(`${window.location.origin}/email-templates/monthly-newsletter-template.html`, '_blank')}
                     className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
-                    data-testid="link-monthly-template"
+                    data-testid="button-monthly-template"
                   >
                     Monthly Newsletter Template
-                  </a>
-                  <a 
-                    href="/email-templates/blog-notification-template.html" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
+                  </button>
+                  <button
+                    onClick={() => window.open(`${window.location.origin}/email-templates/blog-notification-template.html`, '_blank')}
                     className="inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-sm font-medium"
-                    data-testid="link-blog-template"
+                    data-testid="button-blog-template"
                   >
                     Blog Notification Template
-                  </a>
+                  </button>
                 </div>
                 <p className="text-xs text-blue-700 mt-3">
                   Templates open in new tabs. Copy the HTML source and customize with your content before sending.
