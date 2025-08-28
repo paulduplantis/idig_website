@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import SlidePresentation from "@/components/SlidePresentation";
 import NewsletterSignup from "@/components/NewsletterSignup";
+import BlogSignup from "@/components/BlogSignup";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { useState } from "react";
@@ -299,12 +300,20 @@ export default function Home() {
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
                   Insights, reflections, and deep explorations into building tools that serve human curiosity and foster meaningful digital experiences.
                 </p>
-                <Link href="/blog" className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium">
+                <Link href="/blog" className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium mb-8">
                   Explore the Blog
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
+                
+                {/* Blog Subscription */}
+                <div className="max-w-md mx-auto">
+                  <p className="text-sm text-gray-600 mb-4">
+                    Get notified when we publish new posts:
+                  </p>
+                  <BlogSignup />
+                </div>
               </div>
             </div>
           </div>
