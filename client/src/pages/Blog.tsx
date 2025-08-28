@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import { Link } from "wouter";
+import BlogSignup from "@/components/BlogSignup";
 
 export default function Blog() {
   return (
@@ -111,18 +112,28 @@ export default function Blog() {
               </div>
             </div>
 
-            {/* Newsletter CTA */}
-            <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200 text-center">
-              <h2 className="text-3xl font-light mb-4">Stay Connected</h2>
-              <p className="text-gray-600 mb-6">
-                Get notified when we publish new blog posts and exclusive insights from the resonant building community.
-              </p>
-              <Link href="/newsletter" className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium">
-                Subscribe to The Resonant Builders Monthly
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
+            {/* Blog Subscription */}
+            <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-light mb-4">Get Blog Updates</h2>
+                <p className="text-gray-600 mb-6">
+                  Subscribe to receive notifications when we publish new blog posts and insights from the resonant building community.
+                </p>
+              </div>
+              
+              <BlogSignup />
+              
+              <div className="mt-6 text-center">
+                <p className="text-sm text-gray-500 mb-2">
+                  Looking for our monthly newsletter instead?
+                </p>
+                <Link href="/newsletter" className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium text-sm">
+                  Subscribe to The Resonant Builders Monthly
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
             </div>
           </div>
         </section>
