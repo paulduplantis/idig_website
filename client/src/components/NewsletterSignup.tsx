@@ -4,6 +4,7 @@ import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Link } from "wouter";
 
 export default function NewsletterSignup() {
   const [email, setEmail] = useState("");
@@ -41,7 +42,7 @@ export default function NewsletterSignup() {
       <p className="text-gray-600 mb-6">
         Join our newsletter for insights on building tools for curious minds.
       </p>
-      <form onSubmit={handleSubmit} className="max-w-md mx-auto flex gap-3">
+      <form onSubmit={handleSubmit} className="max-w-md mx-auto flex gap-3 mb-4">
         <Input 
           type="email" 
           placeholder="Enter your email" 
@@ -59,6 +60,15 @@ export default function NewsletterSignup() {
           {newsletterMutation.isPending ? "Subscribing..." : "Subscribe"}
         </Button>
       </form>
+      
+      <div className="mt-4">
+        <Link href="/newsletter" className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium" data-testid="link-explore-newsletter">
+          Explore Newsletter
+          <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </Link>
+      </div>
     </div>
   );
 }
