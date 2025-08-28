@@ -57,9 +57,6 @@ export default function BlogSignup() {
           {blogMutation.isPending ? "Subscribing..." : "Subscribe"}
         </Button>
       </div>
-      <p className="text-xs text-gray-500 text-center">
-        Unsubscribe anytime. We respect your privacy and won't share your email.
-      </p>
     </form>
   );
 }

@@ -309,9 +309,6 @@ export default function Home() {
                 
                 {/* Blog Subscription */}
                 <div className="max-w-md mx-auto">
-                  <p className="text-sm text-gray-600 mb-4">
-                    Get notified when we publish new posts:
-                  </p>
                   <BlogSignup />
                 </div>
               </div>
