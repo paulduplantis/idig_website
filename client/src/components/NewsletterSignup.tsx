@@ -39,10 +39,20 @@ export default function NewsletterSignup() {
   return (
     <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 text-center">
       <h3 className="text-4xl md:text-5xl font-light mb-4">The Resonant Builders Monthly</h3>
-      <p className="text-gray-600 mb-6">
+      <p className="text-gray-600 mb-4">
         Join our newsletter for insights on building tools for curious minds.
       </p>
-      <form onSubmit={handleSubmit} className="max-w-md mx-auto flex gap-3 mb-4">
+      
+      <div className="mb-6">
+        <Link href="/newsletter" className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium" data-testid="link-explore-newsletter">
+          Explore Newsletter
+          <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </Link>
+      </div>
+      
+      <form onSubmit={handleSubmit} className="max-w-md mx-auto flex gap-3">
         <Input 
           type="email" 
           placeholder="Enter your email" 
@@ -60,15 +70,6 @@ export default function NewsletterSignup() {
           {newsletterMutation.isPending ? "Subscribing..." : "Subscribe"}
         </Button>
       </form>
-      
-      <div className="mt-4">
-        <Link href="/newsletter" className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium" data-testid="link-explore-newsletter">
-          Explore Newsletter
-          <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </Link>
-      </div>
     </div>
   );
 }
