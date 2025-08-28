@@ -138,17 +138,17 @@ export default function Newsletter() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center">
             <div className="text-xl font-medium mb-4">
-              <span className="logo-i">i</span>
-              <span className="logo-dig ml-1">DIG</span>
-              <span className="logo-io">.io</span>
+              <span className="logo-i text-blue-500">i</span>
+              <span className="logo-dig ml-1 text-blue-500">DIG</span>
+              <span className="logo-io text-blue-500">.io</span>
             </div>
             <p className="text-gray-400 text-sm">
               Resonant Tools for Curious Minds
             </p>
-            {/* Discreet admin link - only visible if you know to look for it */}
+            {/* Admin link */}
             <div className="mt-4">
-              <Link href="/admin" className="text-gray-600 hover:text-gray-500 text-xs transition-colors" data-testid="link-admin">
-                •
+              <Link href="/admin" className="text-gray-600 hover:text-blue-500 text-sm transition-colors" data-testid="link-admin">
+                Admin
               </Link>
             </div>
           </div>
