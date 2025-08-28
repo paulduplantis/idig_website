@@ -192,6 +192,37 @@ export default function Admin() {
                 </div>
               </div>
 
+              {/* Email Templates */}
+              <div className="bg-blue-50 rounded-lg p-6 mb-8 border border-blue-200">
+                <h3 className="text-lg font-semibold mb-4 text-blue-900">Email Templates</h3>
+                <p className="text-sm text-blue-800 mb-4">
+                  Access your HTML email templates for copy-paste into your email client:
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <a 
+                    href="/email-templates/monthly-newsletter-template.html" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+                    data-testid="link-monthly-template"
+                  >
+                    Monthly Newsletter Template
+                  </a>
+                  <a 
+                    href="/email-templates/blog-notification-template.html" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-sm font-medium"
+                    data-testid="link-blog-template"
+                  >
+                    Blog Notification Template
+                  </a>
+                </div>
+                <p className="text-xs text-blue-700 mt-3">
+                  Templates open in new tabs. Copy the HTML source and customize with your content before sending.
+                </p>
+              </div>
+
               {/* Action Buttons */}
               <div className="flex justify-center gap-4 mb-8">
                 <Button

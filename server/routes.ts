@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertNewsletterSchema, insertBlogSubscriptionSchema, insertContactSchema } from "@shared/schema";
 import { z } from "zod";
+import * as path from "path";
 import {
   ObjectStorageService,
   ObjectNotFoundError,
@@ -93,6 +94,21 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       res.status(500).json({ message: "Failed to retrieve blog subscribers" });
     }
+  });
+
+  // Serve email templates
+  app.get("/email-templates/:templateName", (req, res) => {
+    const { templateName } = req.params;
+    const allowedTemplates = [
+      'monthly-newsletter-template.html',
+      'blog-notification-template.html'
+    ];
+    
+    if (!allowedTemplates.includes(templateName)) {
+      return res.status(404).send('Template not found');
+    }
+    
+    res.sendFile(path.join(process.cwd(), 'email-templates', templateName));
   });
 
   // Object storage endpoints for video serving
