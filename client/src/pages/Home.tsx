@@ -89,7 +89,13 @@ export default function Home() {
               <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200 mb-8">
                 <div className="text-center">
                   <div className="mb-6">
-                    <h4 className="text-2xl font-medium mb-4 charcoal">{currentDemo.title.replace(' Demo', '')}</h4>
+                    <h4 className="text-2xl font-medium mb-4 charcoal">
+                      {selectedDemo === 'idig-lens' && <>i<em>DIG</em> Lens</>}
+                      {selectedDemo === 'idig-feeds' && <>i<em>DIG</em> Feeds</>}
+                      {selectedDemo === 'idig-matching' && <>i<em>DIG</em> Matching</>}
+                      {selectedDemo === 'idig-scenes' && <>i<em>DIG</em> Scenes</>}
+                      {selectedDemo === 'idig-demo' && <>i<em>DIG</em></>}
+                    </h4>
                     <img 
                       src="/attached_assets/image_1756278431066.png" 
                       alt="i<em>DIG</em> Interface"
