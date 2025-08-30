@@ -65,6 +65,14 @@ export default function Blog() {
                   
                   <p>This tool is not special. People are or can be special. This tool is to illuminate this potential, not influence it.</p>
                 </div>
+                <div className="mt-6 pt-4 border-t border-gray-200">
+                  <Link href="/blog/introduction-to-idig" className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium">
+                    Read Full Post
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </div>
 

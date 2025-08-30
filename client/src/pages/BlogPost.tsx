@@ -38,7 +38,7 @@ const blogPosts: Record<string, BlogPostData> = {
 };
 
 export default function BlogPost() {
-  const params = useParams();
+  const params = useParams<{ id: string }>();
   const [showShareOptions, setShowShareOptions] = useState(false);
   const postId = params.id;
   const post = postId ? blogPosts[postId] : null;

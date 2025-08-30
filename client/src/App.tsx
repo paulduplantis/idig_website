@@ -25,8 +25,8 @@ function Router() {
       <Route path="/newsletter" component={Newsletter} />
       <Route path="/monthly-subscription" component={MonthlySubscription} />
       <Route path="/blog-subscription" component={BlogSubscription} />
-      <Route path="/blog" component={Blog} />
       <Route path="/blog/:id" component={BlogPost} />
+      <Route path="/blog" component={Blog} />
       <Route path="/book" component={Book} />
       <Route path="/contact" component={Contact} />
       <Route path="/book/chapter/:chapterNumber" component={Chapter} />
