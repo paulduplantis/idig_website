@@ -33,7 +33,7 @@ export default function Blog() {
 
             {/* Introduction to iDIG Blog Post */}
             <div className="mb-16">
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+              <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 h-96 overflow-hidden">
                 <div className="mb-6">
                   <span className="text-sm text-blue-500 font-medium">Introduction</span>
                   <span className="text-gray-400 mx-2">•</span>
