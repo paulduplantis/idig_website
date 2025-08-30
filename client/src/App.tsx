@@ -13,6 +13,7 @@ import Book from "@/pages/Book";
 import Contact from "@/pages/Contact";
 import Chapter from "@/pages/Chapter";
 import Demo from "@/pages/Demo";
+import BlogPost from "@/pages/BlogPost";
 import Admin from "@/pages/Admin";
 import NotFound from "@/pages/not-found";
 
@@ -25,6 +26,7 @@ function Router() {
       <Route path="/monthly-subscription" component={MonthlySubscription} />
       <Route path="/blog-subscription" component={BlogSubscription} />
       <Route path="/blog" component={Blog} />
+      <Route path="/blog/:id" component={BlogPost} />
       <Route path="/book" component={Book} />
       <Route path="/contact" component={Contact} />
       <Route path="/book/chapter/:chapterNumber" component={Chapter} />
