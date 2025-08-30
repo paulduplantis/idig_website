@@ -78,7 +78,7 @@ export default function Home() {
             <SlidePresentation />
 
             {/* iDIG Solutions Header */}
-            <div className="text-center mb-16">
+            <div className="text-center mb-8">
               <h2 className="text-4xl md:text-5xl font-light mb-6">i<em>DIG</em> Solutions</h2>
             </div>
 
