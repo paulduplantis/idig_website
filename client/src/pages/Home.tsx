@@ -95,7 +95,7 @@ export default function Home() {
               <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200 mb-8 h-96">
                 <div className="text-center h-full flex flex-col">
                   <div className="mb-6">
-                    <h4 className={`text-2xl font-medium charcoal ${selectedDemo === 'idig-feeds' || selectedDemo === 'idig-matching' || selectedDemo === 'idig-attractor' ? 'mb-0' : 'mb-4'}`}>
+                    <h4 className="text-2xl font-medium charcoal mb-0">
                       {selectedDemo === 'idig-lens' && <>i<em>DIG</em> Lens</>}
                       {selectedDemo === 'idig-feeds' && <>i<em>DIG</em> Feeds</>}
                       {selectedDemo === 'idig-matching' && <>i<em>DIG</em> Matching</>}
