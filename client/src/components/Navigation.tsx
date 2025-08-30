@@ -33,7 +33,7 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <span className="text-2xl font-medium">
-              <span className="logo-i">i</span><span className="logo-dig" style={{fontStyle: 'italic'}}>DIG</span>
+i<em>DIG</em>
               <span className="logo-io">.io</span>
             </span>
           </Link>

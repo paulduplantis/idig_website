@@ -63,7 +63,7 @@ export default function Home() {
             {/* Logo and Tagline */}
             <div className="mb-16">
               <h1 className="text-5xl md:text-7xl font-light mb-6">
-                <span className="logo-i">i</span><span className="logo-dig" style={{fontStyle: 'italic'}}>DIG</span>
+                i<em>DIG</em>
               
               </h1>
               <p className="text-xl md:text-2xl font-medium">
