@@ -1,8 +1,14 @@
 import Navigation from "@/components/Navigation";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import BlogSignup from "@/components/BlogSignup";
 
 export default function Blog() {
+  const [, navigate] = useLocation();
+
+  const handleBlogPostClick = () => {
+    navigate("/blog/introduction-to-idig");
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
@@ -33,9 +39,13 @@ export default function Blog() {
                   <span className="text-gray-400 mx-2">•</span>
                   <span className="text-sm text-gray-500">August 30, 2025</span>
                 </div>
-                <Link href="/blog/introduction-to-idig">
-                  <h3 className="text-3xl font-medium mb-6 hover:text-blue-600 transition-colors cursor-pointer">Introduction to i<em>DIG</em></h3>
-                </Link>
+                <h3 
+                  onClick={handleBlogPostClick}
+                  className="text-3xl font-medium mb-6 hover:text-blue-600 transition-colors cursor-pointer"
+                  data-testid="link-blog-post-title"
+                >
+                  Introduction to i<em>DIG</em>
+                </h3>
                 <div className="text-gray-700 leading-relaxed space-y-4">
                   <p>I have to admit, I don't know what i<em>DIG</em> will become or if it will become anything of note for that matter. All I know is I needed to build it. Maybe just to prove to myself I could but also to possibly start a conversation around what role the individual has in the information they create, consume, and share. Should they be in the driver seat or merely the passengers? Should they be in control of their experiences or should these experiences become available to the highest bidder?</p>
                   
@@ -66,12 +76,16 @@ export default function Blog() {
                   <p>This tool is not special. People are or can be special. This tool is to illuminate this potential, not influence it.</p>
                 </div>
                 <div className="mt-6 pt-4 border-t border-gray-200">
-                  <Link href="/blog/introduction-to-idig" className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium">
+                  <button 
+                    onClick={handleBlogPostClick}
+                    className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium"
+                    data-testid="button-read-full-post"
+                  >
                     Read Full Post
                     <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                  </Link>
+                  </button>
                 </div>
               </div>
             </div>
