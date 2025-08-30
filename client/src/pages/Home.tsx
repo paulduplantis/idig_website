@@ -39,6 +39,12 @@ const demoContents: Record<string, DemoContent> = {
     description: 'Match and mashup information from cards in Lens from iDIG Feeds to surface relationships that may otherwise remain hidden. Use cases include matching resumes to job descriptions, social worker profiles to individuals in need, or data to emerging trends.\n\nAccelerate decision-making by surfacing the strongest alignments across diverse inputs. Reduce noise by tuning matches to their specific context and goals.\n\nAll matches remain stored in local or private environments, protecting sensitive information.',
     features: ['Status: Next in development after iDIG Feeds']
   },
+  'idig-attractor': {
+    id: 'idig-attractor',
+    title: 'i<em>DIG</em> Attractor Demo',
+    description: 'Currently in alpha development as an experiment in shaping the flow of discovery. Filter and refine feeds through both AI summaries and adaptive UI layouts that surface resonance across diverse inputs.\n\nUse cases include aligning resumes with job descriptions, connecting social worker profiles to needs, tuning research and news flows, or discovering books, movies, and sports that resonate.\n\nThe design draws on ideas from Quantum Social Sciences, exploring how entangled patterns might guide collective insight.\n\nAll attractor settings remain in local or private storage, ensuring sovereignty over what is discovered and shared.',
+    features: ['Status: Next in development after iDIG Matching']
+  },
   'idig-scenes': {
     id: 'idig-scenes',
     title: 'i<em>DIG</em> Scenes Demo',
@@ -89,14 +95,15 @@ export default function Home() {
               <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200 mb-8 h-96">
                 <div className="text-center h-full flex flex-col">
                   <div className="mb-6">
-                    <h4 className={`text-2xl font-medium charcoal ${selectedDemo === 'idig-feeds' || selectedDemo === 'idig-matching' ? 'mb-0' : 'mb-4'}`}>
+                    <h4 className={`text-2xl font-medium charcoal ${selectedDemo === 'idig-feeds' || selectedDemo === 'idig-matching' || selectedDemo === 'idig-attractor' ? 'mb-0' : 'mb-4'}`}>
                       {selectedDemo === 'idig-lens' && <>i<em>DIG</em> Lens</>}
                       {selectedDemo === 'idig-feeds' && <>i<em>DIG</em> Feeds</>}
                       {selectedDemo === 'idig-matching' && <>i<em>DIG</em> Matching</>}
+                      {selectedDemo === 'idig-attractor' && <>i<em>DIG</em> Attractor</>}
                       {selectedDemo === 'idig-scenes' && <>i<em>DIG</em> Scenes</>}
                       {selectedDemo === 'idig-demo' && <>i<em>DIG</em></>}
                     </h4>
-                    {selectedDemo !== 'idig-feeds' && selectedDemo !== 'idig-matching' && (
+                    {selectedDemo !== 'idig-feeds' && selectedDemo !== 'idig-matching' && selectedDemo !== 'idig-attractor' && (
                       <img 
                         src="/attached_assets/image_1756278431066.png" 
                         alt="i<em>DIG</em> Interface"
@@ -120,6 +127,13 @@ export default function Home() {
                         <p>Use cases include matching resumes to job descriptions, social worker profiles to individuals in need, or data to emerging trends.</p>
                         <p>Accelerate decision-making by surfacing the strongest alignments across diverse inputs. Reduce noise by tuning matches to their specific context and goals.</p>
                         <p>All matches remain stored in local or private environments, protecting sensitive information.</p>
+                      </div>
+                    ) : selectedDemo === 'idig-attractor' ? (
+                      <div className="space-y-4">
+                        <p>Currently in alpha development as an experiment in shaping the flow of discovery. Filter and refine feeds through both AI summaries and adaptive UI layouts that surface resonance across diverse inputs.</p>
+                        <p>Use cases include aligning resumes with job descriptions, connecting social worker profiles to needs, tuning research and news flows, or discovering books, movies, and sports that resonate.</p>
+                        <p>The design draws on ideas from Quantum Social Sciences, exploring how entangled patterns might guide collective insight.</p>
+                        <p>All attractor settings remain in local or private storage, ensuring sovereignty over what is discovered and shared.</p>
                       </div>
                     ) : (
                       <p>{currentDemo.description}</p>
@@ -221,6 +235,29 @@ export default function Home() {
                     <div className="flex items-center text-xs font-medium text-orange-600">
                       <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" />
+                      </svg>
+                      <span>Select</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* iDIG Attractor Card */}
+                <div 
+                  onClick={() => setSelectedDemo('idig-attractor')}
+                  className={`flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 bg-white ${
+                    selectedDemo === 'idig-attractor' ? 'border-purple-500' : 'border-gray-200 hover:border-purple-300'
+                  }`}
+                >
+                  <div className="p-6 h-32 flex flex-col justify-between">
+                    <div>
+                      <h5 className="text-lg font-semibold mb-2 text-gray-800">i<em>DIG</em> Attractor</h5>
+                      <p className="text-xs text-gray-600 line-clamp-2">
+                        Shape discovery flow with adaptive AI
+                      </p>
+                    </div>
+                    <div className="flex items-center text-xs font-medium text-purple-600">
+                      <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
                       <span>Select</span>
                     </div>
