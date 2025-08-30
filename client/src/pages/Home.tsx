@@ -30,7 +30,7 @@ const demoContents: Record<string, DemoContent> = {
   'idig-feeds': {
     id: 'idig-feeds',
     title: 'i<em>DIG</em> Feeds Demo',
-    description: 'Bring information into iDIG Lens through imports, RSS Feeds, and API calls. Organize ingested content into filterable cards for tunable discovery. Use cases include ingesting news, statistical data, resumes, job descriptions, contact info, affiliate products/services, research documents, etc. Discover and organize insights across diverse information streams, applying tags, search, highlights, and microlinks for deeper navigation. All information remains in local or private storage, ensuring sovereignty over what is discovered and shared.',
+    description: 'Bring information into iDIG Lens through imports, RSS Feeds, and API calls.\n\nOrganize ingested content into filterable cards for tunable discovery. Use cases include ingesting news, statistical data, resumes, job descriptions, contact info, affiliate products/services, research documents, etc.\n\nDiscover and organize insights across diverse information streams, applying tags, search, highlights, and microlinks for deeper navigation.\n\nAll information remains in local or private storage, ensuring sovereignty over what is discovered and shared.',
     features: ['Status: In early development']
   },
   'idig-matching': {
