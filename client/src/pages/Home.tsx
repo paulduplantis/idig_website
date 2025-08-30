@@ -30,8 +30,8 @@ const demoContents: Record<string, DemoContent> = {
   'idig-feeds': {
     id: 'idig-feeds',
     title: 'i<em>DIG</em> Feeds Demo',
-    description: 'Convert your search queries into intelligent discovery feeds. Track topics of interest and receive curated content that deepens your understanding over time.',
-    features: ['Turn searches into smart feeds', 'Track topics automatically', 'Curated content delivery', 'Deep learning pathways']
+    description: 'Bring information into iDIG Lens through imports, RSS Feeds, and API calls. Organize ingested content into filterable cards for quick scanning and discovery. Use cases include ingesting news, structured data, resumes, profiles, and research documents. Quickly surface relevant insights from large volumes of information without manual sorting. Enable teams to stay current by automatically updating feeds from chosen sources. All data can remain in local or private storage, ensuring sovereignty over what is discovered and shared.',
+    features: ['Status: In early development']
   },
   'idig-matching': {
     id: 'idig-matching',
@@ -96,11 +96,13 @@ export default function Home() {
                       {selectedDemo === 'idig-scenes' && <>i<em>DIG</em> Scenes</>}
                       {selectedDemo === 'idig-demo' && <>i<em>DIG</em></>}
                     </h4>
-                    <img 
-                      src="/attached_assets/image_1756278431066.png" 
-                      alt="i<em>DIG</em> Interface"
-                      className="w-full max-w-2xl h-auto rounded-lg shadow-lg mx-auto"
-                    />
+                    {selectedDemo !== 'idig-feeds' && (
+                      <img 
+                        src="/attached_assets/image_1756278431066.png" 
+                        alt="i<em>DIG</em> Interface"
+                        className="w-full max-w-2xl h-auto rounded-lg shadow-lg mx-auto"
+                      />
+                    )}
                   </div>
 
                   <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
