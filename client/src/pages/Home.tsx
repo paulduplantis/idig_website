@@ -36,7 +36,7 @@ const demoContents: Record<string, DemoContent> = {
   'idig-matching': {
     id: 'idig-matching',
     title: 'i<em>DIG</em> Matching Demo',
-    description: 'Connect cards with each other whether they are profiles, articles, videos, audio, or resources. Highlight meaningful relationships that might otherwise remain hidden. Use cases include matching resumes to job descriptions, social worker profiles to individuals in need, or data to emerging trends. Accelerate decision-making by surfacing the strongest alignments across diverse inputs. Enable teams to reduce noise by tuning matches to their specific context and goals. All matches remain stored in local or private environments, protecting sensitive information.',
+    description: 'Match and mashup information from cards in Lens from iDIG Feeds to surface relationships that may otherwise remain hidden. Use cases include matching resumes to job descriptions, social worker profiles to individuals in need, or data to emerging trends.\n\nAccelerate decision-making by surfacing the strongest alignments across diverse inputs. Reduce noise by tuning matches to their specific context and goals.\n\nAll matches remain stored in local or private environments, protecting sensitive information.',
     features: ['Status: Next in development after iDIG Feeds']
   },
   'idig-scenes': {
@@ -89,7 +89,7 @@ export default function Home() {
               <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200 mb-8 h-96">
                 <div className="text-center h-full flex flex-col">
                   <div className="mb-6">
-                    <h4 className={`text-2xl font-medium charcoal ${selectedDemo === 'idig-feeds' ? 'mb-0' : 'mb-4'}`}>
+                    <h4 className={`text-2xl font-medium charcoal ${selectedDemo === 'idig-feeds' || selectedDemo === 'idig-matching' ? 'mb-0' : 'mb-4'}`}>
                       {selectedDemo === 'idig-lens' && <>i<em>DIG</em> Lens</>}
                       {selectedDemo === 'idig-feeds' && <>i<em>DIG</em> Feeds</>}
                       {selectedDemo === 'idig-matching' && <>i<em>DIG</em> Matching</>}
@@ -112,6 +112,12 @@ export default function Home() {
                         <p>Organize ingested content into filterable cards for tunable discovery. Use cases include ingesting news, statistical data, resumes, job descriptions, contact info, affiliate products/services, research documents, etc.</p>
                         <p>Discover and organize insights across diverse information streams, applying tags, search, highlights, and microlinks for deeper navigation.</p>
                         <p>All information remains in local or private storage, ensuring sovereignty over what is discovered and shared.</p>
+                      </div>
+                    ) : selectedDemo === 'idig-matching' ? (
+                      <div className="space-y-4">
+                        <p>Match and mashup information from cards in Lens from iDIG Feeds to surface relationships that may otherwise remain hidden. Use cases include matching resumes to job descriptions, social worker profiles to individuals in need, or data to emerging trends.</p>
+                        <p>Accelerate decision-making by surfacing the strongest alignments across diverse inputs. Reduce noise by tuning matches to their specific context and goals.</p>
+                        <p>All matches remain stored in local or private environments, protecting sensitive information.</p>
                       </div>
                     ) : (
                       <p>{currentDemo.description}</p>
