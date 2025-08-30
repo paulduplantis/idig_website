@@ -34,7 +34,7 @@ export default function Newsletter() {
                     </div>
                     <div>
                       <h3 className="font-medium mb-2">Early Access</h3>
-                      <p className="text-sm">First looks at iDIG features and exclusive beta access opportunities.</p>
+                      <p className="text-sm">First looks at i<em>DIG</em> features and exclusive beta access opportunities.</p>
                     </div>
                   </div>
                 </div>
@@ -51,14 +51,14 @@ export default function Newsletter() {
                   <div className="text-center mb-6">
                     <h3 className="text-2xl font-medium mb-4">Monthly Newsletter</h3>
                     <p className="text-gray-600 mb-6">
-                      Receive The Resonant Builders Monthly with curated insights, community spotlights, and iDIG updates delivered once per month.
+                      Receive The Resonant Builders Monthly with curated insights, community spotlights, and i<em>DIG</em> updates delivered once per month.
                     </p>
                     <div className="text-sm text-gray-500 mb-6">
                       <strong>What you'll get:</strong>
                       <ul className="list-disc list-inside mt-2 text-left space-y-1">
                         <li>Monthly curated content and insights</li>
                         <li>Community builder spotlights</li>
-                        <li>Early access to iDIG features</li>
+                        <li>Early access to i<em>DIG</em> features</li>
                         <li>Recommended resources and reading</li>
                       </ul>
                     </div>

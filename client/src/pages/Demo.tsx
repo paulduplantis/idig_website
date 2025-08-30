@@ -40,14 +40,14 @@ export default function Demo() {
       case 'idig-lens':
         return {
           id: '2',
-          title: 'iDIG Lens Demo',
+          title: 'i<em>DIG</em> Lens Demo',
           slug: 'idig-lens',
           description: 'Highlight, save, and explore insights',
           slides: [
             {
               id: '1',
               type: 'video',
-              title: 'iDIG Lens Demo',
+              title: 'i<em>DIG</em> Lens Demo',
               videoUrl: 'https://f004.backblazeb2.com/file/idigdemo/idig_demo_final.mp4',
               order: 1
             }
@@ -56,14 +56,14 @@ export default function Demo() {
       case 'idig-feeds':
         return {
           id: '3',
-          title: 'iDIG Feeds',
+          title: 'i<em>DIG</em> Feeds',
           slug: 'idig-feeds',
           description: 'Turn searches into discovery engines',
           slides: [
             {
               id: '1',
               type: 'intro',
-              title: 'iDIG Feeds',
+              title: 'i<em>DIG</em> Feeds',
               content: 'Convert your search queries into intelligent discovery feeds. Track topics of interest and receive curated content that deepens your understanding over time.',
               order: 1
             }
@@ -72,14 +72,14 @@ export default function Demo() {
       case 'idig-matching':
         return {
           id: '4',
-          title: 'iDIG Matching',
+          title: 'i<em>DIG</em> Matching',
           slug: 'idig-matching',
           description: 'AI-powered skill and experience matching',
           slides: [
             {
               id: '1',
               type: 'intro',
-              title: 'iDIG Matching',
+              title: 'i<em>DIG</em> Matching',
               content: 'Intelligent matching system that connects your skills, interests, and learning goals with relevant opportunities, people, and resources across the web.',
               order: 1
             }
@@ -88,14 +88,14 @@ export default function Demo() {
       case 'idig-scenes':
         return {
           id: '5',
-          title: 'iDIG Scenes',
+          title: 'i<em>DIG</em> Scenes',
           slug: 'idig-scenes',
           description: 'Curate rich experiences around ideas',
           slides: [
             {
               id: '1',
               type: 'intro',
-              title: 'iDIG Scenes',
+              title: 'i<em>DIG</em> Scenes',
               content: 'Create immersive, contextual environments around your ideas. Organize related content, conversations, and insights into rich, explorable scenes.',
               order: 1
             }
@@ -104,21 +104,21 @@ export default function Demo() {
       default: // idig-demo
         return {
           id: '1',
-          title: 'iDIG Demo',
+          title: 'i<em>DIG</em> Demo',
           slug: 'idig-demo',
-          description: 'Interactive demonstration of iDIG capabilities',
+          description: 'Interactive demonstration of i<em>DIG</em> capabilities',
           slides: [
             {
               id: '1',
               type: 'intro',
-              title: 'iDIG (Deep Inquiry Generator)',
-              content: 'iDIG (Deep Inquiry Generator) is a chrome extension in development. The following presentation is for demonstration purposes only.\n\nI will add more text later.',
+              title: 'i<em>DIG</em> (Deep Inquiry Generator)',
+              content: 'i<em>DIG</em> (Deep Inquiry Generator) is a chrome extension in development. The following presentation is for demonstration purposes only.\n\nI will add more text later.',
               order: 1
             },
             {
               id: '2', 
               type: 'video',
-              title: 'iDIG Movable Menu',
+              title: 'i<em>DIG</em> Movable Menu',
               videoUrl: '/objects/uploads/idig-movable-menu.mp4', // Will be updated with actual path
               order: 2
             }
@@ -180,7 +180,7 @@ export default function Demo() {
         if (navigator.share) {
           // Use native share API if available
           await navigator.share({
-            title: `${presentation.title} - iDIG Demo`,
+            title: `${presentation.title} - i<em>DIG</em> Demo`,
             text: `Check out this interactive demo: ${presentation.title}`,
             url: demoUrl,
           });
@@ -263,7 +263,7 @@ export default function Demo() {
             onClick={exitToHomepage}
             className="text-blue-400 hover:text-blue-300 transition-colors"
           >
-            ← Back to iDIG
+            ← Back to i<em>DIG</em>
           </button>
           <h1 className="text-xl font-medium">{presentation.title}</h1>
           <div className="flex items-center space-x-3">

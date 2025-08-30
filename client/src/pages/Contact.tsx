@@ -80,7 +80,7 @@ export default function Contact() {
             <div className="text-center mb-16">
               <h1 className="text-4xl md:text-5xl font-light mb-6">Get in Touch</h1>
               <p className="text-xl text-gray-600">
-                Have questions about iDIG or want to join the early access program?
+                Have questions about i<em>DIG</em> or want to join the early access program?
               </p>
             </div>
 
@@ -169,7 +169,7 @@ export default function Contact() {
                   <CardContent className="p-8">
                     <h3 className="text-xl font-medium mb-4">Early Access Program</h3>
                     <p className="text-gray-600 mb-4">
-                      iDIG is currently in invite-only beta. Join our early access program to be among 
+                      i<em>DIG</em> is currently in invite-only beta. Join our early access program to be among 
                       the first to experience resonant tools for curious minds.
                     </p>
                     <div className="flex items-center text-blue-500">
@@ -189,7 +189,7 @@ export default function Contact() {
                       </div>
                       <div className="flex items-center text-gray-600">
                         <Users className="w-5 h-5 mr-3 text-blue-500" />
-                        <span>iDIG Tools</span>
+                        <span>i<em>DIG</em> Tools</span>
                       </div>
                       <div className="flex items-center text-gray-600">
                         <Globe className="w-5 h-5 mr-3 text-blue-500" />

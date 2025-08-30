@@ -11,12 +11,12 @@ const slides: Slide[] = [
   {
     id: 1,
     title: "A Curiosity Engine in Development",
-    content: "iDIG.io is a curiosity engine in development to empower people to explore, connect, and create resonantly without surrendering their privacy or agency. Data is stored locally or in private data stores for people to remain the sovereign curator of their own discoveries."
+    content: "i<em>DIG</em>.io is a curiosity engine in development to empower people to explore, connect, and create resonantly without surrendering their privacy or agency. Data is stored locally or in private data stores for people to remain the sovereign curator of their own discoveries."
   },
   {
     id: 2,
     title: "Building a Resonant Community", 
-    content: "iDIG is also a model to inspire a community of resonant builders to build within iDIG or on their own for the health of the connection as much as the wealth generated from it."
+    content: "i<em>DIG</em> is also a model to inspire a community of resonant builders to build within i<em>DIG</em> or on their own for the health of the connection as much as the wealth generated from it."
   }
   // Additional slides can be added here in the future
 ];

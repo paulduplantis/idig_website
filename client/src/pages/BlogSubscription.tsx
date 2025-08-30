@@ -62,7 +62,7 @@ export default function BlogSubscription() {
                     </svg>
                   </Link>
                   <Link href="/about" className="inline-flex items-center text-green-600 hover:text-green-700 transition-colors font-medium">
-                    Learn About iDIG
+                    Learn About i<em>DIG</em>
                     <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>

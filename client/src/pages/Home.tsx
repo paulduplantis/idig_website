@@ -17,31 +17,31 @@ interface DemoContent {
 const demoContents: Record<string, DemoContent> = {
   'idig-demo': {
     id: 'idig-demo',
-    title: 'iDIG Demo',
-    description: 'Interactive demonstration of iDIG capabilities including the movable menu system and core features.'
+    title: 'i<em>DIG</em> Demo',
+    description: 'Interactive demonstration of i<em>DIG</em> capabilities including the movable menu system and core features.'
   },
   'idig-lens': {
     id: 'idig-lens',
-    title: 'iDIG Lens Demo',
+    title: 'i<em>DIG</em> Lens Demo',
     description: 'Highlight and save text from any webpage to build your personal knowledge base. Transform casual browsing into deep learning by capturing insights as you discover them.',
     features: ['Highlight text across any webpage', 'Save insights to personal knowledge base', 'Build connections between ideas', 'Export and organize discoveries'],
     videoUrl: 'https://f004.backblazeb2.com/file/idigdemo/idig_demo_final.mp4'
   },
   'idig-feeds': {
     id: 'idig-feeds',
-    title: 'iDIG Feeds Demo',
+    title: 'i<em>DIG</em> Feeds Demo',
     description: 'Convert your search queries into intelligent discovery feeds. Track topics of interest and receive curated content that deepens your understanding over time.',
     features: ['Turn searches into smart feeds', 'Track topics automatically', 'Curated content delivery', 'Deep learning pathways']
   },
   'idig-matching': {
     id: 'idig-matching',
-    title: 'iDIG Matching Demo',
+    title: 'i<em>DIG</em> Matching Demo',
     description: 'Intelligent matching system that connects your skills, interests, and learning goals with relevant opportunities, people, and resources across the web.',
     features: ['AI-powered skill matching', 'Connect with opportunities', 'Find relevant resources', 'Network with like-minded people']
   },
   'idig-scenes': {
     id: 'idig-scenes',
-    title: 'iDIG Scenes Demo',
+    title: 'i<em>DIG</em> Scenes Demo',
     description: 'Create immersive, contextual environments around your ideas. Organize related content, conversations, and insights into rich, explorable scenes.',
     features: ['Create idea environments', 'Organize related content', 'Build contextual scenes', 'Explore connections visually']
   }
@@ -80,7 +80,7 @@ export default function Home() {
 
             {/* iDIG Solutions Header */}
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-light mb-6">iDIG Solutions</h2>
+              <h2 className="text-4xl md:text-5xl font-light mb-6">i<em>DIG</em> Solutions</h2>
             </div>
 
             {/* Demo Player */}
@@ -93,7 +93,7 @@ export default function Home() {
                     <h4 className="text-2xl font-medium mb-4 charcoal">{currentDemo.title.replace(' Demo', '')}</h4>
                     <img 
                       src="/attached_assets/image_1756278431066.png" 
-                      alt="iDIG Interface"
+                      alt="i<em>DIG</em> Interface"
                       className="w-full max-w-2xl h-auto rounded-lg shadow-lg mx-auto"
                     />
                   </div>
@@ -151,7 +151,7 @@ export default function Home() {
                 >
                   <div className="p-6 h-32 flex flex-col justify-between">
                     <div>
-                      <h5 className="text-lg font-semibold mb-2 text-gray-800">iDIG Lens</h5>
+                      <h5 className="text-lg font-semibold mb-2 text-gray-800">i<em>DIG</em> Lens</h5>
                       <p className="text-xs text-gray-600 line-clamp-2">
                         Highlight, save, and explore insights
                       </p>
@@ -174,7 +174,7 @@ export default function Home() {
                 >
                   <div className="p-6 h-32 flex flex-col justify-between">
                     <div>
-                      <h5 className="text-lg font-semibold mb-2 text-gray-800">iDIG Feeds</h5>
+                      <h5 className="text-lg font-semibold mb-2 text-gray-800">i<em>DIG</em> Feeds</h5>
                       <p className="text-xs text-gray-600 line-clamp-2">
                         Turn searches into discovery engines
                       </p>
@@ -197,7 +197,7 @@ export default function Home() {
                 >
                   <div className="p-6 h-32 flex flex-col justify-between">
                     <div>
-                      <h5 className="text-lg font-semibold mb-2 text-gray-800">iDIG Matching</h5>
+                      <h5 className="text-lg font-semibold mb-2 text-gray-800">i<em>DIG</em> Matching</h5>
                       <p className="text-xs text-gray-600 line-clamp-2">
                         AI-powered skill and experience matching
                       </p>
@@ -220,7 +220,7 @@ export default function Home() {
                 >
                   <div className="p-6 h-32 flex flex-col justify-between">
                     <div>
-                      <h5 className="text-lg font-semibold mb-2 text-gray-800">iDIG Scenes</h5>
+                      <h5 className="text-lg font-semibold mb-2 text-gray-800">i<em>DIG</em> Scenes</h5>
                       <p className="text-xs text-gray-600 line-clamp-2">
                         Curate rich experiences around ideas
                       </p>
@@ -260,9 +260,9 @@ export default function Home() {
           <div className="max-w-4xl mx-auto px-6">
             <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200 mb-16">
               <div className="text-center">
-                <h2 className="text-4xl md:text-5xl font-light mb-6">About iDIG</h2>
+                <h2 className="text-4xl md:text-5xl font-light mb-6">About i<em>DIG</em></h2>
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
-                  iDIG (Deep Inquiry Generator) is a framework and community in development designed to amplify human curiosity through the use of tools to encourage deep and contextual insights into the information we engage with. 
+                  i<em>DIG</em> (Deep Inquiry Generator) is a framework and community in development designed to amplify human curiosity through the use of tools to encourage deep and contextual insights into the information we engage with. 
                 </p>
                 <Link href="/about" className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium">
                   More
@@ -275,7 +275,7 @@ export default function Home() {
 
             <div className="grid md:grid-cols-2 gap-12 mb-16">
               <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
-                <h3 className="text-2xl font-medium mb-4">iDIG Principles</h3>
+                <h3 className="text-2xl font-medium mb-4">i<em>DIG</em> Principles</h3>
                 <ul className="text-gray-600 leading-relaxed space-y-3">
                   <li>• Local storage or private storage for what is consumed, created or shared</li>
                   <li>• No cookies to track or share activity</li>
@@ -287,10 +287,10 @@ export default function Home() {
               </div>
               
               <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
-                <h3 className="text-2xl font-medium mb-4">The iDIG Vision</h3>
+                <h3 className="text-2xl font-medium mb-4">The i<em>DIG</em> Vision</h3>
                 <div className="text-gray-600 leading-relaxed space-y-3">
                   <p>To work toward building resonance in the connection by creating tools to align opportunities, resources, and information with those deep within communities.</p>
-                  <p>To inspire builders to create their own frameworks or collaborate with iDIG to add more resonance into the connection.</p>
+                  <p>To inspire builders to create their own frameworks or collaborate with i<em>DIG</em> to add more resonance into the connection.</p>
                   <p>To build tools for positive social and community impact.</p>
                   <p>To build tools to encourage deep inquiry and purposeful engagement.</p>
                 </div>
@@ -393,7 +393,7 @@ export default function Home() {
           </div>
           
           <div className="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
-            <p>&copy; 2024 iDIG.io. All rights reserved. Built for curious minds.</p>
+            <p>&copy; 2024 i<em>DIG</em>.io. All rights reserved. Built for curious minds.</p>
           </div>
         </div>
       </footer>

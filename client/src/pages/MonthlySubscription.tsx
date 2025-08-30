@@ -14,7 +14,7 @@ export default function MonthlySubscription() {
               <div className="text-center">
                 <h1 className="text-4xl md:text-5xl font-light mb-6">The Resonant Builders Monthly</h1>
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-                  Join our monthly newsletter featuring curated insights, community spotlights, and early access to iDIG features.
+                  Join our monthly newsletter featuring curated insights, community spotlights, and early access to i<em>DIG</em> features.
                 </p>
                 
                 <div className="max-w-2xl mx-auto text-left mb-8">
@@ -34,7 +34,7 @@ export default function MonthlySubscription() {
                     </div>
                     <div>
                       <h3 className="font-medium mb-2">Early Access</h3>
-                      <p className="text-sm">First looks at iDIG features and exclusive beta access opportunities.</p>
+                      <p className="text-sm">First looks at i<em>DIG</em> features and exclusive beta access opportunities.</p>
                     </div>
                   </div>
                 </div>
@@ -62,7 +62,7 @@ export default function MonthlySubscription() {
                     </svg>
                   </Link>
                   <Link href="/about" className="inline-flex items-center text-green-600 hover:text-green-700 transition-colors font-medium">
-                    Learn About iDIG
+                    Learn About i<em>DIG</em>
                     <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
