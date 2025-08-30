@@ -105,9 +105,18 @@ export default function Home() {
                     )}
                   </div>
 
-                  <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-                    {currentDemo.description}
-                  </p>
+                  <div className="text-gray-600 mb-6 max-w-2xl mx-auto">
+                    {selectedDemo === 'idig-feeds' ? (
+                      <div className="space-y-4">
+                        <p>Bring information into iDIG Lens through imports, RSS Feeds, and API calls.</p>
+                        <p>Organize ingested content into filterable cards for tunable discovery. Use cases include ingesting news, statistical data, resumes, job descriptions, contact info, affiliate products/services, research documents, etc.</p>
+                        <p>Discover and organize insights across diverse information streams, applying tags, search, highlights, and microlinks for deeper navigation.</p>
+                        <p>All information remains in local or private storage, ensuring sovereignty over what is discovered and shared.</p>
+                      </div>
+                    ) : (
+                      <p>{currentDemo.description}</p>
+                    )}
+                  </div>
                   {currentDemo.features && (
                     <div className="mb-6 text-center">
                       <div className="text-gray-600 text-sm max-w-2xl mx-auto">
