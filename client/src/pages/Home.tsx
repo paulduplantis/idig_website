@@ -86,8 +86,8 @@ export default function Home() {
             <div className="mb-8" data-testid="demo-section">
               
               {/* Main Demo Player */}
-              <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200 mb-8">
-                <div className="text-center">
+              <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200 mb-8 h-96">
+                <div className="text-center h-full flex flex-col">
                   <div className="mb-6">
                     <h4 className="text-2xl font-medium mb-4 charcoal">
                       {selectedDemo === 'idig-lens' && <>i<em>DIG</em> Lens</>}
