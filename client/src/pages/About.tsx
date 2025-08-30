@@ -30,15 +30,14 @@ export default function About() {
               </div>
               
               <div className="bg-white rounded-2xl p-8 shadow-md">
-                <h2 className="text-2xl font-medium mb-4">The Vision</h2>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  A web where every curious mind has access to tools that amplify their ability to learn, 
-                  connect, and create. Where technology serves human curiosity rather than exploiting it.
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  We envision a future where digital tools enhance our capacity for deep thinking, 
-                  meaningful learning, and authentic connection with the world around us.
-                </p>
+                <h2 className="text-2xl font-medium mb-4">The iDIG Vision</h2>
+                <div className="text-gray-600 leading-relaxed space-y-3">
+                  <p>A web where every curious mind has access to tools to amplify their ability to learn, connect, create, and collaborate. Where technology serves human curiosity more than influencing it.</p>
+                  <p>To work toward building resonance in the connection by creating tools to align opportunities, resources, and information with those deep within communities.</p>
+                  <p>To inspire builders to create their own frameworks or collaborate with iDIG to add more resonance into the connection.</p>
+                  <p>To build tools for positive social and community impact.</p>
+                  <p>To build tools to encourage deep inquiry and purposeful engagement.</p>
+                </div>
               </div>
             </div>
 

@@ -282,11 +282,14 @@ export default function Home() {
               </div>
               
               <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
-                <h3 className="text-2xl font-medium mb-4">The Vision</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  A web where every curious mind has access to tools that amplify their ability to learn, 
-                  connect, and create. Where technology serves human curiosity rather than exploiting it.
-                </p>
+                <h3 className="text-2xl font-medium mb-4">The iDIG Vision</h3>
+                <div className="text-gray-600 leading-relaxed space-y-3">
+                  <p>A web where every curious mind has access to tools to amplify their ability to learn, connect, create, and collaborate. Where technology serves human curiosity more than influencing it.</p>
+                  <p>To work toward building resonance in the connection by creating tools to align opportunities, resources, and information with those deep within communities.</p>
+                  <p>To inspire builders to create their own frameworks or collaborate with iDIG to add more resonance into the connection.</p>
+                  <p>To build tools for positive social and community impact.</p>
+                  <p>To build tools to encourage deep inquiry and purposeful engagement.</p>
+                </div>
               </div>
             </div>
 
