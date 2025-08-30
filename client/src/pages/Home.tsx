@@ -107,13 +107,10 @@ export default function Home() {
                     {currentDemo.description}
                   </p>
                   {currentDemo.features && (
-                    <div className="mb-6">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-600 text-sm max-w-2xl mx-auto">
+                    <div className="mb-6 text-center">
+                      <div className="text-gray-600 text-sm max-w-2xl mx-auto">
                         {currentDemo.features.map((feature, index) => (
-                          <div key={index} className="flex items-center justify-center">
-                            <svg className="w-4 h-4 text-blue-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                            </svg>
+                          <div key={index} className="text-center">
                             {feature}
                           </div>
                         ))}
