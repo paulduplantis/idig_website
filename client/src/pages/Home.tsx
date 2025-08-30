@@ -94,7 +94,7 @@ export default function Home() {
               {/* Main Demo Player */}
               <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200 mb-8 h-96">
                 <div className="text-center h-full flex flex-col">
-                  <div className="mb-6">
+                  <div className="mb-2">
                     <h4 className="text-2xl font-medium charcoal mb-0">
                       {selectedDemo === 'idig-lens' && <>i<em>DIG</em> Lens</>}
                       {selectedDemo === 'idig-feeds' && <>i<em>DIG</em> Feeds</>}
@@ -112,7 +112,7 @@ export default function Home() {
                     )}
                   </div>
 
-                  <div className="text-gray-600 mb-6 max-w-2xl mx-auto">
+                  <div className="text-gray-600 mb-4 max-w-2xl mx-auto">
                     {selectedDemo === 'idig-feeds' ? (
                       <div className="space-y-4">
                         <p>Bring information into iDIG Lens through imports, RSS Feeds, and API calls.</p>
