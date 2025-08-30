@@ -62,7 +62,7 @@ export default function Home() {
       <Navigation />
       
       {/* Hero Section */}
-      <main>
+      <main className="pt-20">
         <section className="min-h-screen flex flex-col justify-center">
           <div className="max-w-4xl mx-auto px-6 text-center">
             
