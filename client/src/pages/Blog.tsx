@@ -92,40 +92,6 @@ export default function Blog() {
               </div>
             </div>
 
-            {/* Categories */}
-            <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200 mb-16">
-              <div className="text-center mb-8">
-                <h2 className="text-3xl font-light mb-4">Explore by Category</h2>
-                <p className="text-gray-600">Discover content organized around key themes and topics.</p>
-              </div>
-              
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="text-center p-6 border border-gray-200 rounded-lg hover:border-blue-300 transition-colors">
-                  <h3 className="font-medium mb-2">Philosophy</h3>
-                  <p className="text-sm text-gray-600">Ethics, values, and principles behind resonant tool building</p>
-                </div>
-                <div className="text-center p-6 border border-gray-200 rounded-lg hover:border-blue-300 transition-colors">
-                  <h3 className="font-medium mb-2">Technology</h3>
-                  <p className="text-sm text-gray-600">Technical approaches, architectures, and implementation insights</p>
-                </div>
-                <div className="text-center p-6 border border-gray-200 rounded-lg hover:border-blue-300 transition-colors">
-                  <h3 className="font-medium mb-2">Community</h3>
-                  <p className="text-sm text-gray-600">Building connections and collaborative practices</p>
-                </div>
-                <div className="text-center p-6 border border-gray-200 rounded-lg hover:border-blue-300 transition-colors">
-                  <h3 className="font-medium mb-2">Case Studies</h3>
-                  <p className="text-sm text-gray-600">Real-world examples and lessons learned</p>
-                </div>
-                <div className="text-center p-6 border border-gray-200 rounded-lg hover:border-blue-300 transition-colors">
-                  <h3 className="font-medium mb-2">Tools</h3>
-                  <p className="text-sm text-gray-600">Reviews, tutorials, and deep dives into specific tools</p>
-                </div>
-                <div className="text-center p-6 border border-gray-200 rounded-lg hover:border-blue-300 transition-colors">
-                  <h3 className="font-medium mb-2">Future</h3>
-                  <p className="text-sm text-gray-600">Emerging trends and the future of human-centered technology</p>
-                </div>
-              </div>
-            </div>
 
             {/* Blog Subscription */}
             <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200">
