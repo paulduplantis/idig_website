@@ -119,11 +119,6 @@ export default function Home() {
                       </div>
                     </div>
                   )}
-                  <Link href={`/demo/${currentDemo.id}`}>
-                    <Button className="apple-button px-8 py-3 font-medium">
-                      {currentDemo.videoUrl ? 'View Full Demo' : 'Start Demo'}
-                    </Button>
-                  </Link>
                 </div>
               </div>
 
