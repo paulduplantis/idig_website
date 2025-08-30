@@ -74,7 +74,12 @@ export default function SlidePresentation() {
             {slide.title}
           </h2>
           <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-            {slide.content}
+            {slide.id === 1 && (
+              <>i<em>DIG</em>.io is a curiosity engine in development to empower people to explore, connect, and create resonantly without surrendering their privacy or agency. Data is stored locally or in private data stores for people to remain the sovereign curator of their own discoveries.</>
+            )}
+            {slide.id === 2 && (
+              <>i<em>DIG</em> is also a model to inspire a community of resonant builders to build within i<em>DIG</em> or on their own for the health of the connection as much as the wealth generated from it.</>
+            )}
           </p>
         </div>
       </div>
