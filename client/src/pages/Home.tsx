@@ -36,8 +36,8 @@ const demoContents: Record<string, DemoContent> = {
   'idig-matching': {
     id: 'idig-matching',
     title: 'i<em>DIG</em> Matching Demo',
-    description: 'Intelligent matching system that connects your skills, interests, and learning goals with relevant opportunities, people, and resources across the web.',
-    features: ['AI-powered skill matching', 'Connect with opportunities', 'Find relevant resources', 'Network with like-minded people']
+    description: 'Connect cards with each other whether they are profiles, articles, videos, audio, or resources. Highlight meaningful relationships that might otherwise remain hidden. Use cases include matching resumes to job descriptions, social worker profiles to individuals in need, or data to emerging trends. Accelerate decision-making by surfacing the strongest alignments across diverse inputs. Enable teams to reduce noise by tuning matches to their specific context and goals. All matches remain stored in local or private environments, protecting sensitive information.',
+    features: ['Status: Next in development after iDIG Feeds']
   },
   'idig-scenes': {
     id: 'idig-scenes',
@@ -96,7 +96,7 @@ export default function Home() {
                       {selectedDemo === 'idig-scenes' && <>i<em>DIG</em> Scenes</>}
                       {selectedDemo === 'idig-demo' && <>i<em>DIG</em></>}
                     </h4>
-                    {selectedDemo !== 'idig-feeds' && (
+                    {selectedDemo !== 'idig-feeds' && selectedDemo !== 'idig-matching' && (
                       <img 
                         src="/attached_assets/image_1756278431066.png" 
                         alt="i<em>DIG</em> Interface"
