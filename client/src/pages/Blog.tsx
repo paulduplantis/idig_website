@@ -13,8 +13,8 @@ export default function Blog() {
     <div className="min-h-screen bg-white">
       <Navigation />
       
-      <main className="pt-24">
-        <section className="py-8">
+      <main className="pt-10">
+        <section className="pt-0 pb-8">
           <div className="max-w-4xl mx-auto px-6">
             <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200 mb-8">
               <div className="text-center">
