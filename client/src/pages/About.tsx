@@ -18,16 +18,15 @@ export default function About() {
 
             <div className="grid md:grid-cols-2 gap-12 mb-16">
               <div className="bg-white rounded-2xl p-8 shadow-md">
-                <h2 className="text-2xl font-medium mb-4">Our Principles</h2>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  We believe the web should be a place for deep engagement, not surface-level consumption. 
-                  iDIG provides resonant tools that help you create meaningful connections with content, 
-                  fostering understanding and insight.
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  Our browser extension and web platform enable users to capture, organize, and reflect on 
-                  the content they discover, creating a personal knowledge base that grows with their curiosity.
-                </p>
+                <h2 className="text-2xl font-medium mb-4">iDIG Principles</h2>
+                <ul className="text-gray-600 leading-relaxed space-y-3">
+                  <li>• Local storage or private storage for what is consumed, created or shared</li>
+                  <li>• No cookies to track or share activity</li>
+                  <li>• No 3rd party ad networks</li>
+                  <li>• No passive popups</li>
+                  <li>• User Interface to encourage resonant and deep discovery through the use of highlighting, microlinks, filtering, and resonant sharing</li>
+                  <li>• AI summaries controlled by the user</li>
+                </ul>
               </div>
               
               <div className="bg-white rounded-2xl p-8 shadow-md">

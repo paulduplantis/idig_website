@@ -270,11 +270,15 @@ export default function Home() {
 
             <div className="grid md:grid-cols-2 gap-12 mb-16">
               <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
-                <h3 className="text-2xl font-medium mb-4">Our Principles</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  No cookies to track or resell user activity. No passive popups. No data handled outside local or private storage. No outside advertising networks. UI built around user agency.
-
-                </p>
+                <h3 className="text-2xl font-medium mb-4">iDIG Principles</h3>
+                <ul className="text-gray-600 leading-relaxed space-y-3">
+                  <li>• Local storage or private storage for what is consumed, created or shared</li>
+                  <li>• No cookies to track or share activity</li>
+                  <li>• No 3rd party ad networks</li>
+                  <li>• No passive popups</li>
+                  <li>• User Interface to encourage resonant and deep discovery through the use of highlighting, microlinks, filtering, and resonant sharing</li>
+                  <li>• AI summaries controlled by the user</li>
+                </ul>
               </div>
               
               <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
