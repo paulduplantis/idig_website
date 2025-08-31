@@ -35,7 +35,11 @@ export default function Newsletter() {
                   <span className="text-gray-400 mx-2">•</span>
                   <span className="text-sm text-gray-500">By Paul Duplantis</span>
                 </div>
-                <h3 className="text-3xl font-medium mb-6">
+                <h3 
+                  className="text-3xl font-medium mb-6 hover:text-blue-600 transition-colors cursor-pointer"
+                  data-testid="link-newsletter-issue-title"
+                  onClick={() => window.location.href = '/newsletter/issue-1'}
+                >
                   The Resonant Builders Monthly - Issue #1
                 </h3>
                 <div className="text-gray-700 leading-relaxed space-y-4 flex-1 overflow-hidden">
@@ -50,11 +54,16 @@ export default function Newsletter() {
                   <p>This isn't just another tech newsletter - it's a conversation starter about what becomes possible when we build for the health of connections rather than the wealth extracted from them.</p>
                 </div>
                 <div className="mt-auto pt-4 border-t border-gray-200">
-                  <div className="text-center">
-                    <p className="text-gray-500 text-sm">
-                      First issue publishes when we reach our initial subscriber milestone
-                    </p>
-                  </div>
+                  <button 
+                    onClick={() => window.location.href = '/newsletter/issue-1'}
+                    className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium"
+                    data-testid="button-read-full-newsletter"
+                  >
+                    Read Full Newsletter
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>

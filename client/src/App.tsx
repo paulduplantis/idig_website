@@ -14,6 +14,7 @@ import Contact from "@/pages/Contact";
 import Chapter from "@/pages/Chapter";
 import Demo from "@/pages/Demo";
 import BlogPost from "@/pages/BlogPost";
+import NewsletterIssue from "@/pages/NewsletterIssue";
 import Admin from "@/pages/Admin";
 import NotFound from "@/pages/not-found";
 
@@ -23,6 +24,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/newsletter" component={Newsletter} />
+      <Route path="/newsletter/:issueId" component={NewsletterIssue} />
       <Route path="/monthly-subscription" component={MonthlySubscription} />
       <Route path="/blog-subscription" component={BlogSubscription} />
       <Route path="/blog/:id" component={BlogPost} />
