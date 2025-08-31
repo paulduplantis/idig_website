@@ -65,20 +65,6 @@ export default function Home() {
         <section className="min-h-screen flex flex-col justify-center">
           <div className="max-w-4xl mx-auto px-6 text-center">
             
-            {/* Logo and Tagline */}
-            <div className="mb-16">
-              <h1 className="text-5xl md:text-7xl font-light mb-6">
-                i<em>DIG</em>
-              
-              </h1>
-              <p className="text-xl md:text-2xl font-medium">
-                <span className="apple-blue">Resonant</span>
-                <span className="charcoal"> Tools for </span>
-                <span className="apple-blue">Curious</span>
-                <span className="charcoal"> Minds</span>
-              </p>
-            </div>
-
             {/* About iDIG Card */}
             <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200 mb-16">
               <div className="text-center">

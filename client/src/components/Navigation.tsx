@@ -36,6 +36,7 @@ export default function Navigation() {
 i<em>DIG</em>
               <span className="logo-io">.io</span>
             </span>
+            <span className="ml-4 text-lg text-gray-600">Resonant Tools</span>
           </Link>
 
           <div className="flex items-center gap-4">
