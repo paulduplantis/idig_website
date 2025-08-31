@@ -311,20 +311,6 @@ export default function Home() {
         {/* About Preview Section */}
         <section className="pt-8 pb-20">
           <div className="max-w-4xl mx-auto px-6">
-            <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200 mb-16">
-              <div className="text-center">
-                <h2 className="text-4xl md:text-5xl font-light mb-6">About i<em>DIG</em></h2>
-                <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
-                  i<em>DIG</em> (Deep Inquiry Generator) is a framework and community in development designed to amplify human curiosity through the use of tools to encourage deep and contextual insights into the information we engage with. 
-                </p>
-                <Link href="/about" className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium">
-                  More
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
 
             <div className="grid md:grid-cols-2 gap-12 mb-16">
               <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">

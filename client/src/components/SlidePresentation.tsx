@@ -15,8 +15,8 @@ const slides: Slide[] = [
   },
   {
     id: 2,
-    title: "Building a Resonant Community", 
-    content: "i<em>DIG</em> is also a model to inspire a community of resonant builders to build within i<em>DIG</em> or on their own for the health of the connection as much as the wealth generated from it."
+    title: "About i<em>DIG</em>",
+    content: "i<em>DIG</em> (Deep Inquiry Generator) is a framework and community in development designed to amplify human curiosity through the use of tools to encourage deep and contextual insights into the information we engage with."
   }
   // Additional slides can be added here in the future
 ];
@@ -78,7 +78,7 @@ export default function SlidePresentation() {
               <>i<em>DIG</em>.io is a curiosity engine in development to empower people to explore, connect, and create resonantly without surrendering their privacy or agency. Data is stored locally or in private data stores for people to remain the sovereign curator of their own discoveries.</>
             )}
             {slide.id === 2 && (
-              <>i<em>DIG</em> is also a model to inspire a community of resonant builders to build within i<em>DIG</em> or on their own for the health of the connection as much as the wealth generated from it.</>
+              <>i<em>DIG</em> (Deep Inquiry Generator) is a framework and community in development designed to amplify human curiosity through the use of tools to encourage deep and contextual insights into the information we engage with.</>
             )}
           </p>
         </div>
