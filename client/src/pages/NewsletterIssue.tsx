@@ -31,7 +31,7 @@ export default function NewsletterIssue() {
                     <span className="text-gray-400 mx-2">•</span>
                     <span className="text-sm text-gray-500">September 2025</span>
                   </div>
-                  <h1 className="text-4xl md:text-5xl font-light mb-6">Welcome to The Resonant Builders Monthly</h1>
+                  <h1 className="text-4xl md:text-5xl font-light mb-6">The Resonant Builders Monthly</h1>
                   <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                     Exploring tools that amplify human curiosity and foster meaningful digital experiences.
                   </p>
