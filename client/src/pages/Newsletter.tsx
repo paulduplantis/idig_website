@@ -12,7 +12,7 @@ export default function Newsletter() {
           <div className="max-w-4xl mx-auto px-6">
             <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200 mb-8">
               <div className="text-center">
-                <h1 className="text-4xl md:text-5xl font-light mb-6">The Resonant Builders Monthly</h1>
+                <h1 className="text-3xl md:text-4xl font-light mb-6">The Resonant Builders Monthly</h1>
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
                   Join our community of builders creating tools that amplify human curiosity and foster meaningful engagement with digital content.
                 </p>
