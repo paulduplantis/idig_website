@@ -30,19 +30,21 @@ export default function Navigation() {
     <nav className="bg-white border-b border-gray-200 relative">
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <span className="text-2xl font-medium">
+          {/* Logo - Centered */}
+          <div className="flex-1 flex justify-center">
+            <Link href="/" className="flex items-center">
+              <span className="text-2xl font-medium">
 i<em>DIG</em>
-              <span className="logo-io">.io</span>
-            </span>
-            <span className="ml-4 text-lg font-medium">
-              <span className="apple-blue">Resonant</span>
-              <span className="charcoal"> Tools for </span>
-              <span className="apple-blue">Curious</span>
-              <span className="charcoal"> Minds</span>
-            </span>
-          </Link>
+                <span className="logo-io">.io</span>
+              </span>
+              <span className="ml-4 text-lg font-medium">
+                <span className="apple-blue">Resonant</span>
+                <span className="charcoal"> Tools for </span>
+                <span className="apple-blue">Curious</span>
+                <span className="charcoal"> Minds</span>
+              </span>
+            </Link>
+          </div>
 
           <div className="flex items-center gap-4">
             {/* Subscribe Button */}
