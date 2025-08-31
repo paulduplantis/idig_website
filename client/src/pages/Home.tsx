@@ -66,7 +66,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto px-6 text-center">
             
             {/* About iDIG Card */}
-            <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200 mb-16">
+            <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200 mb-8">
               <div className="text-center">
                 <h2 className="text-4xl md:text-5xl font-light mb-6">About i<em>DIG</em></h2>
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
