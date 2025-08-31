@@ -403,48 +403,13 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-16">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8 mb-12">
-            <div>
-              <div className="text-xl font-medium mb-4">
-                <span className="logo-i">i</span>
-                <span className="logo-dig ml-1">DIG</span>
-                <span className="logo-io">.io</span>
-              </div>
-              <p className="text-gray-400 text-sm">
-                Resonant Tools for Curious Minds
-              </p>
+          <div className="text-center">
+            <div className="text-xl font-medium mb-4 text-blue-400">
+              iDIG.io
             </div>
-            
-            <div>
-              <h4 className="font-medium mb-4">Product</h4>
-              <div className="space-y-2 text-sm text-gray-400">
-                <div><Link href="#" className="hover:text-white transition-colors">Features</Link></div>
-                <div><Link href="#" className="hover:text-white transition-colors">Early Access</Link></div>
-                <div><Link href="#" className="hover:text-white transition-colors">Documentation</Link></div>
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="font-medium mb-4">Resources</h4>
-              <div className="space-y-2 text-sm text-gray-400">
-                <div><Link href="/book" className="hover:text-white transition-colors">We the Resonant Builders</Link></div>
-                <div><Link href="#" className="hover:text-white transition-colors">Blog</Link></div>
-                <div><Link href="#" className="hover:text-white transition-colors">Newsletter</Link></div>
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="font-medium mb-4">Company</h4>
-              <div className="space-y-2 text-sm text-gray-400">
-                <div><Link href="/about" className="hover:text-white transition-colors">About</Link></div>
-                <div><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></div>
-                <div><Link href="#" className="hover:text-white transition-colors">Privacy</Link></div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
-            <p>&copy; 2024 i<em>DIG</em>.io. All rights reserved. Built for curious minds.</p>
+            <p className="text-gray-400 text-sm">
+              Resonant Tools for Curious Minds
+            </p>
           </div>
         </div>
       </footer>

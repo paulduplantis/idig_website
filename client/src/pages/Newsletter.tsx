@@ -137,20 +137,12 @@ export default function Newsletter() {
       <footer className="bg-gray-800 text-white py-16">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center">
-            <div className="text-xl font-medium mb-4">
-              <span className="logo-i text-blue-500">i</span>
-              <span className="logo-dig ml-1 text-blue-500">DIG</span>
-              <span className="logo-io text-blue-500">.io</span>
+            <div className="text-xl font-medium mb-4 text-blue-400">
+              iDIG.io
             </div>
             <p className="text-gray-400 text-sm">
               Resonant Tools for Curious Minds
             </p>
-            {/* Admin link */}
-            <div className="mt-4">
-              <Link href="/admin" className="text-gray-600 hover:text-blue-500 text-sm transition-colors" data-testid="link-admin">
-                Admin
-              </Link>
-            </div>
           </div>
         </div>
       </footer>
