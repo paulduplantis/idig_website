@@ -401,7 +401,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-16">
+      <footer className="bg-gray-800 text-white py-8">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center">
             <div className="text-xl font-medium mb-4 text-blue-400">
