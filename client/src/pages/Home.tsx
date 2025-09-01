@@ -81,11 +81,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* iDIG Solutions Header */}
-            <div className="text-center mb-8">
-              <h2 className="text-4xl md:text-5xl font-light mb-6">i<em>DIG</em> Solutions</h2>
-            </div>
-
             {/* Demo Player */}
             <div className="mb-8" data-testid="demo-section">
               
