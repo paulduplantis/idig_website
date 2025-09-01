@@ -141,6 +141,13 @@ export default function Home() {
                           </div>
                         ))}
                       </div>
+                      {selectedDemo === 'idig-lens' && (
+                        <div className="mt-4">
+                          <Button className="apple-button px-6 py-2 text-sm font-medium" data-testid="button-watch-demo">
+                            Watch Demo
+                          </Button>
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
