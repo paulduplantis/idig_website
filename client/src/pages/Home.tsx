@@ -143,28 +143,27 @@ export default function Home() {
                       </div>
                     </div>
                   )}
-                </div>
-              </div>
 
-              {/* Demo Selector Carousel */}
-              <div className="flex items-center gap-4">
-                {/* Left Arrow */}
-                <button 
-                  onClick={() => {
-                    const carousel = document.getElementById('demo-carousel');
-                    if (carousel) {
-                      carousel.scrollBy({ left: -280, behavior: 'smooth' });
-                    }
-                  }}
-                  className="flex-shrink-0 w-10 h-10 bg-white rounded-full shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-200 apple-button"
-                >
-                  <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
+                  {/* Demo Selector Carousel */}
+                  <div className="mt-auto">
+                    <div className="flex items-center gap-4 justify-center">
+                      {/* Left Arrow */}
+                      <button 
+                        onClick={() => {
+                          const carousel = document.getElementById('demo-carousel');
+                          if (carousel) {
+                            carousel.scrollBy({ left: -280, behavior: 'smooth' });
+                          }
+                        }}
+                        className="flex-shrink-0 w-10 h-10 bg-white rounded-full shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-200 apple-button"
+                      >
+                        <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                        </svg>
+                      </button>
 
-                {/* Carousel Container */}
-                <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide flex-1" id="demo-carousel">
+                      {/* Carousel Container */}
+                      <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide flex-1" id="demo-carousel">
                 {/* iDIG Lens Card */}
                 <div 
                   onClick={() => setSelectedDemo('idig-lens')}
@@ -279,22 +278,24 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                </div>
 
-                {/* Right Arrow */}
-                <button 
-                  onClick={() => {
-                    const carousel = document.getElementById('demo-carousel');
-                    if (carousel) {
-                      carousel.scrollBy({ left: 280, behavior: 'smooth' });
-                    }
-                  }}
-                  className="flex-shrink-0 w-10 h-10 bg-white rounded-full shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-200 apple-button"
-                >
-                  <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
+                      {/* Right Arrow */}
+                      <button 
+                        onClick={() => {
+                          const carousel = document.getElementById('demo-carousel');
+                          if (carousel) {
+                            carousel.scrollBy({ left: 280, behavior: 'smooth' });
+                          }
+                        }}
+                        className="flex-shrink-0 w-10 h-10 bg-white rounded-full shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-200 apple-button"
+                      >
+                        <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
