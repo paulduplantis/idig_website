@@ -141,9 +141,13 @@ export default function Home() {
                           </div>
                         ))}
                       </div>
-                      {selectedDemo === 'idig-lens' && (
+                      {selectedDemo === 'idig-lens' && currentDemo.videoUrl && (
                         <div className="mt-4">
-                          <Button className="apple-button px-6 py-2 text-sm font-medium" data-testid="button-watch-demo">
+                          <Button 
+                            onClick={() => window.open(currentDemo.videoUrl, '_blank')}
+                            className="apple-button px-6 py-2 text-sm font-medium" 
+                            data-testid="button-watch-demo"
+                          >
                             Watch Demo
                           </Button>
                         </div>
