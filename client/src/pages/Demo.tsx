@@ -265,7 +265,19 @@ export default function Demo() {
           >
             ← Back to i<em>DIG</em>
           </button>
-          <h1 className="text-xl font-medium">{presentation.title}</h1>
+          <h1 className="text-xl font-medium">
+            {slug === 'idig-lens' ? (
+              <>i<em>DIG</em> Lens Demo</>
+            ) : slug === 'idig-feeds' ? (
+              <>i<em>DIG</em> Feeds</>
+            ) : slug === 'idig-matching' ? (
+              <>i<em>DIG</em> Matching</>
+            ) : slug === 'idig-scenes' ? (
+              <>i<em>DIG</em> Scenes</>
+            ) : (
+              <>i<em>DIG</em> Demo</>
+            )}
+          </h1>
           <div className="flex items-center space-x-3">
             {currentSlideData?.type === 'video' && (
               <button
