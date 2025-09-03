@@ -54,7 +54,6 @@ const demoContents: Record<string, DemoContent> = {
 
 export default function Home() {
   const [selectedDemo, setSelectedDemo] = useState<string>('idig-lens');
-  const [showVideoModal, setShowVideoModal] = useState(false);
   const currentDemo = demoContents[selectedDemo];
 
   return (
@@ -145,7 +144,7 @@ export default function Home() {
                       {selectedDemo === 'idig-lens' && currentDemo.videoUrl && (
                         <div className="mt-4">
                           <Button 
-                            onClick={() => setShowVideoModal(true)}
+                            onClick={() => window.location.href = '/demo/idig-lens'}
                             className="apple-button px-6 py-2 text-sm font-medium" 
                             data-testid="button-watch-demo"
                           >
@@ -407,29 +406,6 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* Video Modal */}
-      {showVideoModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" onClick={() => setShowVideoModal(false)}>
-          <div className="bg-white rounded-lg p-6 max-w-4xl w-full mx-4 relative" onClick={(e) => e.stopPropagation()}>
-            <button 
-              onClick={() => setShowVideoModal(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold"
-            >
-              ×
-            </button>
-            <div className="aspect-video">
-              <video 
-                controls 
-                className="w-full h-full rounded"
-                autoPlay
-              >
-                <source src={currentDemo.videoUrl} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
