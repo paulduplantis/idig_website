@@ -1,0 +1,102 @@
+The Resonant Builder Monthly Issue #1
+September 2025
+
+Building tools that bring more resonance and less noise—together, with voices from every community.
+A Letter from the Editor
+Welcome to the inaugural issue of Resonant Builders Monthly. It is my hope that this and future issues open a dialogue with a community of builders who believe technology should inspire human curiosity more than influence it.
+This first issue is a bit sparse and only a rough sketch 
+This newsletter exists because I believe we are at a pivotal moment for building tools that increase human agency, privacy, and health in the connection—at a time when these tools are needed the most.
+Context and user control are missing in the noisy world we live in, where feeds and platforms often decide for us what matters, limit how we discover, track us, hold our data hostage, and hit us with noisy popups and ad networks.
+What’s missing are tools that help people shape their own pathways, rediscover relevance, and bring resonance back into how we explore ideas and connect with one another.
+Resonant Builders Monthly is a conversation starter—an invitation to imagine and build tools that bring more resonance and less noise into the social order, whether personal, commercial, professional, or political.
+Most importantly, it is a vehicle for listening—drawing in voices from communities and all facets of life so that this dialogue reflects not just builders, but the people these tools are meant to serve. 
+Resonant builders are not only those writing code—they are the boots on the ground in workplaces, schools, governments, churches, neighborhoods, and every community where connection matters. Your experiences, challenges, and insights are what will shape these tools for resonance, ensuring they serve real needs in real lives.
+This newsletter is meant to be a resonance generator—a space where ideas and people can find each other. Coders, designers, and builders of all kinds may discover resonance with community members who carry lived experience and needs worth building around. 
+These connections begin as conversations, not contracts, with the shared goal of exploring what resonance might look like in practice. I will be looking to spotlight ideas that emerge from these conversations in future issues for us all to learn from and possibly act on.
+If you feel called to share, explore, or build, I invite you to reach out. Your voice and ideas may help shape the next generation of tools for resonance.
+
+— Paul Duplantis, Founder of iDIG
+
+FROM THE iDIG BLOG
+
+iDIG Blog - #1 - Introduction to iDIG - Direct link to blog
+
+I have to admit, I don’t know what iDIG will become or if it will become anything of note for that matter. All I know is I needed to build it. Maybe just to prove to myself I could but also to possibly start a conversation around what role the individual has in the information they create, consume, and share. Should they be in the driver seat or merely the passengers? Should they be in control of their experiences or should these experiences become available to the highest bidder?
+
+I have lived long enough to watch the birth of the web founded on the principles of openness and collaboration evolve into a siloed web of influence we see today. Certainly much good has come from it but it would be hard to argue that people are in control. 
+
+But what if they were in control and the resulting experiences were centered on providing agency and privacy? What if every element they engaged with was intended to spark curiosity and understanding of a subject to provide context and clarity in service of the quality of interactions rather than just the quantity of them. 
+
+To me iDIG is an experiment to explore the possibilities of this intention to service quality over quantity. What I am launching today is what I am calling Phase I. This is in an Alpha test phase and is a very rough sketch of an idea I have been carrying for over 20 years. 
+
+The rise of GenAI allowed me to manifest these ideas into reality as I am neither a coder nor a software developer. Not to say blood, sweat, and tears were not shed over the last year, as iDIG was built from scratch. I can say from experience that GenAI does not magically build solutions for you, especially at this level.
+
+But moving forward I don’t see iDIG as a traditional company to own these ideas but more of a path to explore. Or if I do find traction, the only path I could see moving forward to maintain quality of experiences in scaling this framework would be to set up a worker co-op to provide resonant ownership of the framework to every person involved in the growth of it.  
+
+But at the very least, maybe this effort inspires potential collaborators to work with me on seeing where this path will lead or maybe it inspires somebody to build something on their own to provide agency and privacy to people. It doesn’t matter to me. I just want to be part of the conversation. 
+
+In service of this conversation, I am also launching the iDIG blog which will feature ideas and updates on the iDIG framework journey as well as The Resonant Builders Monthly which will be a monthly newsletter to feature recent blog posts but more importantly feature what other builders are up to in service of building a web more in tune with people being in control of their experiences. 
+
+I am also wrapping up a book on this journey titled We the Resonant Builders. Coming soon!
+
+I argue what is possible when more people start to build for the health of the connection more than the wealth extracted from it. This is the conversation I want to start.  
+
+With iDIG, I personally want to explore new methodologies to surface opportunities for resonant alignment between people and information. For example, I am currently researching quantum social sciences theory and how this might help define what I call the iDIG attractor that is in development. I just think we are ready to evolve beyond traditional filtering for the way we discover information. I will be writing more about this in my next blog post!
+
+Something else I want to explore is how people pay for access. As socially conscious as I am I do realize there is no way to scale tech like this without having some way to pay for it. But, what I won’t do is trap the user in difficult to cancel monthly subscriptions, or collect data to target ads against their attention. To answer this, I have built in a token usage system into the framework to look at charging per use and will always make it easy to cancel if monthly is the option chosen. 
+
+I am also working on incorporating an ad model I call Tunable Ads where the user will be able to filter products and services independently as well as when they are baked into native content. I had written an essay a few years back on this as this is one of my biggest gripes about the evolution of the web in how noisy it has become with ads. I argue it is not advertising if you are interested, so why not build tools to support this? This will be part of the attractor model I will be building where I will experiment with affiliate products and services to begin with. 
+
+Eventually, I would love to get iDIG to a place where the user interface is highly customizable to allow people to tune the framework and AI summaries to how they see the world. Or to allow communities to customize the framework for their needs. I believe mental health should be the next collective moonshot and see iDIG as a potential tool to privately align social workers more resonantly with people in need to provide access to initial conversations outside institutional barriers. I will be covering this journey in the blog and Resonant Builders Monthly in the future. 
+
+Of course, I don’t plan on tackling all of this overnight. It is a journey that I needed to build a foundation to start and build off of. Hopefully with collaborators and community members but at this stage, I really don't know what iDIG is. I almost don't want to define it. Maybe it's part hobby and part obsession. All I know is I have built the foundation and am ready to explore where it can go. As well as what I might uncover from what other people are building that could help mold this into something more than what I can imagine and possibly inspire others to build what they have not imagined. 
+
+But the end goal is to build tools for people to harness their own potential and purpose, not in service of what is built but what resides within them. Tools to help people align resonantly with opportunities, resources for social services, news, products, services or what interests them. 
+
+This tool is not special. People are special or can be special. This tool is to illuminate this potential, not influence it.
+
+As far as how I want to promote iDIG, my preference is to grow the framework and the community organically one resonant exchange at a time. Please consider sharing if these ideas resonant with you and/or you know someone who could add to the conversation. 
+
+ILLUMINATION
+What Makes a Tool “Resonant”?
+What is resonance in the first place? When it comes to human connection, resonance can be understood as a deep, positive emotional alignment with others—one that makes people feel seen, heard, and valued.
+The word implies qualities such as emotional intelligence, self-awareness, mindfulness, empathy, compassion, authenticity, vision, and hope.
+A resonant communication tool, then, is not designed to manipulate outcomes, but to create the conditions where these traits naturally emerge in an exchange. Yet how can such traits thrive when people lack agency in the discovery process—and cannot trust that what they create, consume, and share won’t be used to influence their decisions for the benefit of outside interests?
+Another word that helps capture the arc of resonance is understanding. To deeply understand a situation, a news article, a point made in a book, or the words of a politician is to carry weight in your decision-making. Understanding informs healthy choices for oneself, one’s family, and one’s community.
+Think of reading a page of text: you read not just to recognize the words, but to grasp meaning—whether for entertainment, information, or both. Yet in most communication tools on the market, context is often stripped away. How important is context when a historical anecdote is offered without depth, when a quote is detached from its source, or when a statistic is shown without background? Without context, discovery collapses into noise.
+The iDIG framework is only one example of an attempt to apply these principles by placing people back in control of their discovery process. Every interaction aimed to spark curiosity and provide context—not to maximize clicks or time-on-page, but to foster resonance, clarity, and understanding while maintaining controls over the data engaged with. 
+What else is being built to foster resonance in the connection? 
+COMMUNITY SPOTLIGHT
+In the following issues, Resonant Builders Monthly will spotlight resonant technologies and the community and commercial needs they can address.
+The goal is to highlight builders working with similar intent—from privacy-first frameworks to learning tools that favor depth over speed and quality over quantity.
+Below, I have shared a featured use case centered around potential iDIG solutions. I am curious what also is in the market currently speaking to this type of tech. If this exists, I would like to promote it for others to engage with. As long as the tech follows the iDIG principles, I would love to share. 
+Contact paul@i-dig.io to share.
+FEATURED USE CASE
+Discovering Resonant Movies with the iDIG Lens
+*The iDIG Lens is currently in development as a Chrome extension which is currently entering Alpha Testing. All use cases are potential in nature as the extension continues to be built out. In the case of the following use case, all of what is covered is operating except for the related AI movie summaries feature. 
+This month we’re kicking off our first use case by looking at something familiar – movies.  Instead of relying on random recommendations, the iDIG Lens helps you find films that truly resonate with your unique taste—and turns the process into a journey you can share with others.
+Step 1: Highlight What You Love
+Start with a movie you already enjoy. As you read about it—on a Wikipedia page or a film site—use different colored highlights to discover the moments that matter most to you. Maybe it’s a surprising twist, a powerful character arc, or a scene that stirs deep emotion.
+Step 2: Create a Breadcrumb
+Turn those highlights into a breadcrumb—a microlinked note capturing what stood out. This breadcrumb becomes part of your personal iDIG path, a trail of the themes and stories resonating with you.
+Step 3: Let the iDIG Lens do the work
+The Lens uses that breadcrumb in your path to create an AI summary to recommend related movies with similar themes, tones, or plot elements. Instead of generic suggestions, a curated list of films that match the specific qualities you highlighted is provided in your Lens stored on your local device.
+Step 4: Share and Explore Together
+Your breadcrumb can be shared with friends or fellow movie lovers, where they can follow the same path, discover the recommended films, and even add their own highlights—turning movie discovery into a collaborative experience.
+The Bigger Picture
+How could this use case be applied to books, podcasts, training materials, and beyond. iDIG is designed to help people highlight what matters, link directly back to those insights, and explore resonant content together.
+Join the Conversation
+But this is just one pathway to spark ideas. What could be built off of the iDIG framework to lay down resonant pathways? Or what could you build on your own? 
+Q & A
+Do you have a question for The Resonant Builders Monthly? 
+
+Submit a question to be answered in the following issue. 
+
+Next Month - Resonant Builders Monthly - Issue #2
+
+Next month, I will highlight work I am focusing on around Quantum Social Sciences and the iDIG attractor. What could be built in service of engaging social workers more resonantly with people in need of their services. 
+
+
+
+
+
