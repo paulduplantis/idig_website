@@ -69,13 +69,21 @@ export default function Blog() {
                   
                   <p>I argue what is possible when more people start to build for the health of the connection more than the wealth extracted from it. This is the conversation I want to start.</p>
                   
-                  <p>With i<em>DIG</em>, I personally want to explore new methodologies to surface opportunities for resonant alignment between people and information. I have been recently researching quantum social sciences theory and how this might help define what I call the i<em>DIG</em> attractor that is in development. I just think we are ready to evolve beyond traditional filtering for the way we discover information. I will be writing more about this in my next blog post!</p>
+                  <p>With i<em>DIG</em>, I personally want to explore new methodologies to surface opportunities for resonant alignment between people and information. For example, I am currently researching quantum social sciences theory and how this might help define what I call the i<em>DIG</em> attractor that is in development. I just think we are ready to evolve beyond traditional filtering for the way we discover information. I will be writing more about this in my next blog post!</p>
                   
-                  <p>Again, I really don't know what i<em>DIG</em> is. I almost don't want to define it. Maybe it's part hobby and part obsession. All I know is I have built the foundation of it and am ready to explore where it can go. More importantly what I might uncover from what other people are building that could help mold this into something more than what I can imagine and possibly inspire others to build what they have not imagined.</p>
+                  <p>Something else I want to explore is how people pay for access. As socially conscious as I am I do realize there is no way to scale tech like this without having some way to pay for it. But, what I won't do is trap the user in difficult to cancel monthly subscriptions, or collect data to target ads against their attention. To answer this, I have built in a token usage system into the framework to look at charging per use and will always make it easy to cancel if monthly is the option chosen.</p>
                   
-                  <p>But the end goal is to build tools for people to harness their own potential and purpose, not in service of what is built but what resides within them. Tools to help people align resonantly with opportunities, resources for social services, news, or what interests them.</p>
+                  <p>I am also working on incorporating an ad model I call Tunable Ads where the user will be able to filter products and services independently as well as when they are baked into native content. I had written an essay a few years back on this as this is one of my biggest gripes about the evolution of the web in how noisy it has become with ads. I argue it is not advertising if you are interested, so why not build tools to support this?</p>
                   
-                  <p>This tool is not special. People are or can be special. This tool is to illuminate this potential, not influence it.</p>
+                  <p>Eventually, I would love to get i<em>DIG</em> to a place where the user interface is highly customizable to allow people to tune the framework and AI summaries to how they see the world. Or to allow communities to customize the framework for their needs. I believe mental health should be the next collective moonshot and see i<em>DIG</em> as a potential tool to privately align social workers more resonantly with people in need to provide access to initial conversations outside institutional barriers.</p>
+                  
+                  <p>Of course, I don't plan on tackling all of this overnight. It is a journey that I needed to build a foundation to start and build off of. Hopefully with collaborators and community members but at this stage, I really don't know what i<em>DIG</em> is. I almost don't want to define it. Maybe it's part hobby and part obsession. All I know is I have built the foundation and am ready to explore where it can go.</p>
+                  
+                  <p>But the end goal is to build tools for people to harness their own potential and purpose, not in service of what is built but what resides within them. Tools to help people align resonantly with opportunities, resources for social services, news, products, services or what interests them.</p>
+                  
+                  <p>This tool is not special. People are special or can be special. This tool is to illuminate this potential, not influence it.</p>
+                  
+                  <p>As far as how I want to promote i<em>DIG</em>, my preference is to grow the framework and the community organically one resonant exchange at a time. Please consider sharing if these ideas resonant with you and/or you know someone who could add to the conversation.</p>
                 </div>
                 <div className="mt-auto pt-4 border-t border-gray-200">
                   <button 
