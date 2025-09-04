@@ -103,8 +103,8 @@ export default function BlogPost() {
     <div className="min-h-screen bg-white">
       <Navigation />
       
-      <main className="pt-20">
-        <section className="py-20">
+      <main className="pt-10">
+        <section className="pb-8">
           <div className="max-w-4xl mx-auto px-6">
             {/* Back to Blog Link */}
             <div className="mb-8">
