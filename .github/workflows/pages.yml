@@ -24,16 +24,12 @@ jobs:
         with:
           node-version: 20
 
-      # Install dependencies at repo root (your Vite config points into client/)
       - run: npm ci
-
-      # Build your app (outputs to dist/public per your vite.config.ts)
       - run: npm run build
 
-      # SPA fix (optional but recommended): make deep links work on Pages
+      # SPA fix for deep links
       - run: cp dist/public/index.html dist/public/404.html
 
-      # Upload the built site to Pages
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist/public
