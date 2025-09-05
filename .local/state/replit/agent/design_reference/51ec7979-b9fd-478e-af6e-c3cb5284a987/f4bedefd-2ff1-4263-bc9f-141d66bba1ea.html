@@ -1,0 +1,886 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iDIG.io - Resonant Tools for Curious Minds</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'system': ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'system-ui', 'sans-serif']
+                    },
+                    colors: {
+                        'apple-blue': '#007AFF',
+                        'charcoal': '#333333',
+                        'off-white': '#FAFAFA'
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; }
+        .slide-transition { transition: all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1); }
+        .apple-shadow { box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .apple-button { transition: all 0.2s ease-in-out; }
+        .apple-button:hover { transform: translateY(-1px); box-shadow: 0 8px 25px rgba(0,122,255,0.3); }
+    </style>
+</head>
+<body class="font-system bg-off-white text-charcoal">
+    <!-- Navigation -->
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="#home" class="text-2xl font-bold text-charcoal">
+                        iDIG.<span class="text-apple-blue">io</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-charcoal hover:text-apple-blue transition-colors duration-200 font-medium">Home</a>
+                    <a href="#about" class="nav-link text-charcoal hover:text-apple-blue transition-colors duration-200 font-medium">About</a>
+                    <a href="#book" class="nav-link text-charcoal hover:text-apple-blue transition-colors duration-200 font-medium">We the Resonant Builders</a>
+                    <a href="#contact" class="nav-link text-charcoal hover:text-apple-blue transition-colors duration-200 font-medium">Contact</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-charcoal hover:text-apple-blue transition-colors duration-200">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-charcoal hover:text-apple-blue transition-colors duration-200 font-medium">Home</a>
+                <a href="#about" class="block px-3 py-2 text-charcoal hover:text-apple-blue transition-colors duration-200 font-medium">About</a>
+                <a href="#book" class="block px-3 py-2 text-charcoal hover:text-apple-blue transition-colors duration-200 font-medium">We the Resonant Builders</a>
+                <a href="#contact" class="block px-3 py-2 text-charcoal hover:text-apple-blue transition-colors duration-200 font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="min-h-screen bg-gradient-to-b from-white to-off-white">
+        <!-- Hero Section -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-charcoal mb-6 leading-tight">
+                    Resonant Tools for<br>
+                    <span class="text-apple-blue">Curious Minds</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+                    Engage deeply with content found on the web through our innovative browser extension and web-based tools.
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+                    <button class="apple-button bg-apple-blue text-white px-8 py-4 rounded-xl font-semibold text-lg apple-shadow">
+                        Request Early Access
+                    </button>
+                    <button class="apple-button bg-white text-charcoal px-8 py-4 rounded-xl font-semibold text-lg border border-gray-200 hover:border-apple-blue">
+                        Watch Demo
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Slide Presentation -->
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+            <div class="bg-white rounded-2xl apple-shadow overflow-hidden">
+                <!-- Slide Container -->
+                <div class="relative h-96 md:h-[500px] lg:h-[600px] overflow-hidden">
+                    <!-- @COMPONENT: SlidePresentation [8 slides with auto-loop functionality] -->
+                    
+                    <!-- Slide 1 -->
+                    <div class="slide absolute inset-0 slide-transition opacity-100" data-slide="1">
+                        <div class="flex flex-col md:flex-row h-full">
+                            <div class="flex-1 p-8 md:p-12 flex flex-col justify-center">
+                                <h2 class="text-3xl md:text-4xl font-bold text-charcoal mb-6">Welcome to iDIG.io</h2>
+                                <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                                    Transform how you interact with web content through our innovative browser extension that enables deep, meaningful engagement with any webpage.
+                                </p>
+                                <ul class="space-y-3 text-gray-600">
+                                    <li class="flex items-center">
+                                        <div class="w-2 h-2 bg-apple-blue rounded-full mr-3"></div>
+                                        Smart content analysis and extraction
+                                    </li>
+                                    <li class="flex items-center">
+                                        <div class="w-2 h-2 bg-apple-blue rounded-full mr-3"></div>
+                                        Interactive note-taking and annotation
+                                    </li>
+                                    <li class="flex items-center">
+                                        <div class="w-2 h-2 bg-apple-blue rounded-full mr-3"></div>
+                                        Seamless knowledge management
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flex-1 p-4 flex items-center justify-center">
+                                <!-- Modern workspace with laptop and coffee -->
+                                <img src="https://pixabay.com/get/g4e037d42282212fa79a37b018569e436e494d2bcfb608abe0af58aa0456433dca729e4b572e17d3021ebc1264072527cdab5e5508caaf22e5c0d6104397e7e54_1280.jpg" 
+                                     alt="Modern workspace setup" 
+                                     class="rounded-xl shadow-lg w-full h-auto max-w-md" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="slide absolute inset-0 slide-transition opacity-0 translate-x-full" data-slide="2">
+                        <div class="flex flex-col md:flex-row h-full">
+                            <div class="flex-1 p-4 flex items-center justify-center">
+                                <!-- Person reading with digital device -->
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
+                                     alt="Reading and digital note-taking" 
+                                     class="rounded-xl shadow-lg w-full h-auto max-w-md" />
+                            </div>
+                            <div class="flex-1 p-8 md:p-12 flex flex-col justify-center">
+                                <h2 class="text-3xl md:text-4xl font-bold text-charcoal mb-6">Smart Content Analysis</h2>
+                                <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                                    Our AI-powered engine automatically identifies key concepts, themes, and connections within any web content, helping you understand complex information faster.
+                                </p>
+                                <div class="bg-off-white rounded-lg p-4">
+                                    <p class="text-sm text-gray-500 mb-2">Featured Capability:</p>
+                                    <p class="font-semibold text-charcoal">Automatic concept mapping and relationship detection</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="slide absolute inset-0 slide-transition opacity-0 translate-x-full" data-slide="3">
+                        <div class="flex flex-col md:flex-row h-full">
+                            <div class="flex-1 p-8 md:p-12 flex flex-col justify-center">
+                                <h2 class="text-3xl md:text-4xl font-bold text-charcoal mb-6">Interactive Annotations</h2>
+                                <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                                    Highlight, annotate, and create interactive notes that persist across sessions. Your insights become part of a growing knowledge network.
+                                </p>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-off-white rounded-lg p-4 text-center">
+                                        <div class="text-2xl font-bold text-apple-blue mb-2">∞</div>
+                                        <p class="text-sm text-gray-600">Persistent Notes</p>
+                                    </div>
+                                    <div class="bg-off-white rounded-lg p-4 text-center">
+                                        <div class="text-2xl font-bold text-apple-blue mb-2">🔗</div>
+                                        <p class="text-sm text-gray-600">Smart Linking</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-1 p-4 flex items-center justify-center">
+                                <!-- Digital tools and technology workspace -->
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
+                                     alt="Digital tools and technology interface" 
+                                     class="rounded-xl shadow-lg w-full h-auto max-w-md" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="slide absolute inset-0 slide-transition opacity-0 translate-x-full" data-slide="4">
+                        <div class="flex flex-col md:flex-row h-full">
+                            <div class="flex-1 p-4 flex items-center justify-center">
+                                <!-- Organized workspace with notebooks -->
+                                <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
+                                     alt="Organized note-taking and planning workspace" 
+                                     class="rounded-xl shadow-lg w-full h-auto max-w-md" />
+                            </div>
+                            <div class="flex-1 p-8 md:p-12 flex flex-col justify-center">
+                                <h2 class="text-3xl md:text-4xl font-bold text-charcoal mb-6">Knowledge Networks</h2>
+                                <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                                    Build interconnected knowledge graphs that reveal hidden patterns and relationships across all your research and discoveries.
+                                </p>
+                                <div class="space-y-3">
+                                    <div class="flex items-center text-gray-600">
+                                        <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                                        Cross-reference related content automatically
+                                    </div>
+                                    <div class="flex items-center text-gray-600">
+                                        <div class="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
+                                        Discover unexpected connections
+                                    </div>
+                                    <div class="flex items-center text-gray-600">
+                                        <div class="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
+                                        Export insights to other tools
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5 -->
+                    <div class="slide absolute inset-0 slide-transition opacity-0 translate-x-full" data-slide="5">
+                        <div class="flex flex-col md:flex-row h-full">
+                            <div class="flex-1 p-8 md:p-12 flex flex-col justify-center">
+                                <h2 class="text-3xl md:text-4xl font-bold text-charcoal mb-6">Browser Extension</h2>
+                                <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                                    Seamlessly integrate with your existing browsing habits. No complex setup required – just install and start exploring.
+                                </p>
+                                <div class="bg-gradient-to-r from-apple-blue to-blue-600 rounded-lg p-6 text-white">
+                                    <h3 class="font-semibold mb-2">Coming Soon</h3>
+                                    <p class="text-sm opacity-90">Request early access to be among the first to experience the future of web engagement.</p>
+                                </div>
+                            </div>
+                            <div class="flex-1 p-4 flex items-center justify-center">
+                                <!-- Modern tech setup with multiple screens -->
+                                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
+                                     alt="Modern technology workspace with computer" 
+                                     class="rounded-xl shadow-lg w-full h-auto max-w-md" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6 -->
+                    <div class="slide absolute inset-0 slide-transition opacity-0 translate-x-full" data-slide="6">
+                        <div class="flex flex-col md:flex-row h-full">
+                            <div class="flex-1 p-4 flex items-center justify-center">
+                                <!-- Study and research setup -->
+                                <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
+                                     alt="Study and research workspace with books" 
+                                     class="rounded-xl shadow-lg w-full h-auto max-w-md" />
+                            </div>
+                            <div class="flex-1 p-8 md:p-12 flex flex-col justify-center">
+                                <h2 class="text-3xl md:text-4xl font-bold text-charcoal mb-6">Collaborative Learning</h2>
+                                <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                                    Share insights, build collective knowledge, and learn from a community of curious minds exploring the same topics.
+                                </p>
+                                <div class="grid grid-cols-1 gap-3">
+                                    <div class="flex items-center justify-between bg-off-white rounded-lg p-3">
+                                        <span class="text-sm font-medium">Community Insights</span>
+                                        <span class="text-xs bg-apple-blue text-white px-2 py-1 rounded">Beta</span>
+                                    </div>
+                                    <div class="flex items-center justify-between bg-off-white rounded-lg p-3">
+                                        <span class="text-sm font-medium">Shared Annotations</span>
+                                        <span class="text-xs bg-apple-blue text-white px-2 py-1 rounded">Beta</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 7 -->
+                    <div class="slide absolute inset-0 slide-transition opacity-0 translate-x-full" data-slide="7">
+                        <div class="flex flex-col md:flex-row h-full">
+                            <div class="flex-1 p-8 md:p-12 flex flex-col justify-center">
+                                <h2 class="text-3xl md:text-4xl font-bold text-charcoal mb-6">Privacy First</h2>
+                                <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                                    Your data stays yours. We use local processing and encrypted storage to ensure your research and insights remain private and secure.
+                                </p>
+                                <div class="space-y-4">
+                                    <div class="flex items-center">
+                                        <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                            <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
+                                            </svg>
+                                        </div>
+                                        <span class="text-gray-600">End-to-end encryption</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                            <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
+                                            </svg>
+                                        </div>
+                                        <span class="text-gray-600">Local data processing</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                            <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
+                                            </svg>
+                                        </div>
+                                        <span class="text-gray-600">No tracking or ads</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-1 p-4 flex items-center justify-center">
+                                <!-- Secure workspace with laptop -->
+                                <img src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
+                                     alt="Secure digital workspace" 
+                                     class="rounded-xl shadow-lg w-full h-auto max-w-md" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 8 -->
+                    <div class="slide absolute inset-0 slide-transition opacity-0 translate-x-full" data-slide="8">
+                        <div class="flex flex-col h-full justify-center items-center text-center p-8 md:p-12">
+                            <h2 class="text-4xl md:text-5xl font-bold text-charcoal mb-6">Ready to Begin?</h2>
+                            <p class="text-xl text-gray-600 mb-8 max-w-2xl leading-relaxed">
+                                Join the growing community of curious minds who are transforming how they engage with web content.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                                <button class="apple-button bg-apple-blue text-white px-8 py-4 rounded-xl font-semibold text-lg apple-shadow">
+                                    Request Early Access
+                                </button>
+                                <button class="apple-button bg-white text-charcoal px-8 py-4 rounded-xl font-semibold text-lg border border-gray-200 hover:border-apple-blue">
+                                    Learn More
+                                </button>
+                            </div>
+                            <div class="bg-off-white rounded-lg p-6 max-w-md">
+                                <p class="text-sm text-gray-500 mb-2">Newsletter Signup</p>
+                                <p class="font-medium text-charcoal mb-3">The Resonant Builders Almanac</p>
+                                <div class="flex gap-2">
+                                    <input type="email" placeholder="your@email.com" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-apple-blue">
+                                    <button class="bg-apple-blue text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-600 transition-colors">
+                                        Subscribe
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- @END_COMPONENT: SlidePresentation -->
+                </div>
+
+                <!-- Slide Controls -->
+                <div class="bg-gray-50 px-6 py-4 flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <button id="prev-slide" class="p-2 rounded-full hover:bg-gray-200 transition-colors">
+                            <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button id="play-pause" class="p-2 rounded-full hover:bg-gray-200 transition-colors">
+                            <svg id="play-icon" class="w-5 h-5 text-gray-600 hidden" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+                            </svg>
+                            <svg id="pause-icon" class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <button id="next-slide" class="p-2 rounded-full hover:bg-gray-200 transition-colors">
+                            <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <!-- Slide Indicators -->
+                    <div class="flex space-x-2">
+                        <button class="slide-indicator w-2 h-2 rounded-full bg-apple-blue" data-slide="1"></button>
+                        <button class="slide-indicator w-2 h-2 rounded-full bg-gray-300" data-slide="2"></button>
+                        <button class="slide-indicator w-2 h-2 rounded-full bg-gray-300" data-slide="3"></button>
+                        <button class="slide-indicator w-2 h-2 rounded-full bg-gray-300" data-slide="4"></button>
+                        <button class="slide-indicator w-2 h-2 rounded-full bg-gray-300" data-slide="5"></button>
+                        <button class="slide-indicator w-2 h-2 rounded-full bg-gray-300" data-slide="6"></button>
+                        <button class="slide-indicator w-2 h-2 rounded-full bg-gray-300" data-slide="7"></button>
+                        <button class="slide-indicator w-2 h-2 rounded-full bg-gray-300" data-slide="8"></button>
+                    </div>
+
+                    <div class="text-sm text-gray-500">
+                        <span id="current-slide">1</span> / 8
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-charcoal mb-6">About iDIG.io</h2>
+                <p class="text-xl text-gray-600 leading-relaxed">
+                    Empowering curious minds with tools for deeper web engagement
+                </p>
+            </div>
+
+            <div class="prose prose-lg mx-auto text-gray-600 leading-relaxed">
+                <p class="text-xl mb-8">
+                    iDIG.io represents a fundamental shift in how we interact with web content. Rather than passively consuming information, our platform enables active, thoughtful engagement that turns browsing into learning and discovery into knowledge.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-12 mb-16">
+                    <div>
+                        <h3 class="text-2xl font-bold text-charcoal mb-4">Our Mission</h3>
+                        <p>
+                            To transform the web from a collection of isolated content into an interconnected knowledge ecosystem where every piece of information can be deeply understood, connected, and built upon.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-charcoal mb-4">Our Vision</h3>
+                        <p>
+                            A world where curious minds have the tools to think deeper, learn faster, and discover connections that were previously hidden in the vast expanse of web content.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-off-white rounded-2xl p-8 mb-16">
+                    <h3 class="text-2xl font-bold text-charcoal mb-6 text-center">Why iDIG.io Matters</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-apple-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                </svg>
+                            </div>
+                            <h4 class="font-semibold text-charcoal mb-2">Deep Understanding</h4>
+                            <p class="text-sm text-gray-600">Move beyond surface-level reading to genuine comprehension and insight.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-apple-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                                </svg>
+                            </div>
+                            <h4 class="font-semibold text-charcoal mb-2">Knowledge Connections</h4>
+                            <p class="text-sm text-gray-600">Discover relationships between ideas across different sources and domains.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-apple-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                            </div>
+                            <h4 class="font-semibold text-charcoal mb-2">Collaborative Learning</h4>
+                            <p class="text-sm text-gray-600">Learn from and contribute to a community of engaged learners.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold text-charcoal mb-6">Early Access Program</h3>
+                    <p class="text-lg mb-8">
+                        We're building iDIG.io with a select group of early users who share our vision for deeper web engagement. Join our invite-only beta to help shape the future of how we interact with information online.
+                    </p>
+                    <button class="apple-button bg-apple-blue text-white px-8 py-4 rounded-xl font-semibold text-lg apple-shadow">
+                        Request Your Invitation
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Section -->
+    <section id="book" class="py-20 bg-off-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-charcoal mb-6">We the Resonant Builders</h2>
+                <p class="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                    A comprehensive exploration of building resonant tools and systems for the curious mind. Read online or access individual chapters below.
+                </p>
+            </div>
+
+            <!-- Book Introduction -->
+            <div class="bg-white rounded-2xl apple-shadow p-8 md:p-12 mb-12">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/3">
+                        <div class="bg-gradient-to-br from-apple-blue to-blue-700 rounded-xl p-8 text-white text-center">
+                            <h3 class="text-2xl font-bold mb-4">Book Preview</h3>
+                            <p class="text-lg opacity-90 mb-6">26 Chapters</p>
+                            <div class="bg-white/20 rounded-lg p-4">
+                                <p class="text-sm">Coming Soon</p>
+                                <p class="text-xs opacity-75">Digital & Print Editions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl font-bold text-charcoal mb-4">About the Book</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            "We the Resonant Builders" explores the principles, practices, and philosophies behind creating tools that truly resonate with human curiosity and learning. This book serves as both a manifesto and a practical guide for anyone interested in building technology that amplifies human potential.
+                        </p>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Through 26 carefully crafted chapters, we examine how to design systems that don't just process information, but help humans think, learn, and discover in fundamentally better ways.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-off-white px-3 py-1 rounded-full text-sm text-gray-600">Design Philosophy</span>
+                            <span class="bg-off-white px-3 py-1 rounded-full text-sm text-gray-600">Human-Centered Technology</span>
+                            <span class="bg-off-white px-3 py-1 rounded-full text-sm text-gray-600">Knowledge Systems</span>
+                            <span class="bg-off-white px-3 py-1 rounded-full text-sm text-gray-600">Curiosity & Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapter Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- @MAP: chapters.map(chapter => ( -->
+                
+                <!-- Sample chapters - replace with actual chapter data -->
+                <div class="bg-white rounded-xl p-6 apple-shadow hover:shadow-lg transition-shadow cursor-pointer group">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="bg-apple-blue text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">
+                            1
+                        </div>
+                        <div class="text-xs text-gray-400">5 min read</div>
+                    </div>
+                    <h4 class="font-semibold text-charcoal mb-2 group-hover:text-apple-blue transition-colors">The Resonant Mind</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">An introduction to the concept of resonance in human learning and how it applies to tool design.</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 apple-shadow hover:shadow-lg transition-shadow cursor-pointer group">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="bg-apple-blue text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">
+                            2
+                        </div>
+                        <div class="text-xs text-gray-400">7 min read</div>
+                    </div>
+                    <h4 class="font-semibold text-charcoal mb-2 group-hover:text-apple-blue transition-colors">Beyond the Interface</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">Why traditional user interfaces fall short and what comes next in human-computer interaction.</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 apple-shadow hover:shadow-lg transition-shadow cursor-pointer group">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="bg-apple-blue text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">
+                            3
+                        </div>
+                        <div class="text-xs text-gray-400">6 min read</div>
+                    </div>
+                    <h4 class="font-semibold text-charcoal mb-2 group-hover:text-apple-blue transition-colors">Curiosity as a Design Principle</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">How to build systems that enhance rather than replace human curiosity and discovery.</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 apple-shadow hover:shadow-lg transition-shadow cursor-pointer group">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="bg-apple-blue text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">
+                            4
+                        </div>
+                        <div class="text-xs text-gray-400">8 min read</div>
+                    </div>
+                    <h4 class="font-semibold text-charcoal mb-2 group-hover:text-apple-blue transition-colors">The Knowledge Web</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">Understanding how information connects and how we can design tools to reveal these connections.</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 apple-shadow hover:shadow-lg transition-shadow cursor-pointer group">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="bg-apple-blue text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">
+                            5
+                        </div>
+                        <div class="text-xs text-gray-400">9 min read</div>
+                    </div>
+                    <h4 class="font-semibold text-charcoal mb-2 group-hover:text-apple-blue transition-colors">Annotation as Thought</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">The profound impact of annotation systems on human thinking and knowledge creation.</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 apple-shadow hover:shadow-lg transition-shadow cursor-pointer group">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="bg-apple-blue text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">
+                            6
+                        </div>
+                        <div class="text-xs text-gray-400">7 min read</div>
+                    </div>
+                    <h4 class="font-semibold text-charcoal mb-2 group-hover:text-apple-blue transition-colors">Building for Serendipity</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">How to design systems that facilitate unexpected discoveries and meaningful coincidences.</p>
+                </div>
+
+                <!-- More chapters would continue this pattern... -->
+                <div class="bg-gray-100 rounded-xl p-6 border-2 border-dashed border-gray-300 flex items-center justify-center">
+                    <div class="text-center">
+                        <p class="text-gray-500 mb-2">20 More Chapters</p>
+                        <p class="text-sm text-gray-400">Available in full book</p>
+                    </div>
+                </div>
+
+                <!-- @END_MAP )) -->
+            </div>
+
+            <div class="text-center mt-12">
+                <button class="apple-button bg-apple-blue text-white px-8 py-4 rounded-xl font-semibold text-lg apple-shadow mr-4">
+                    Pre-order Full Book
+                </button>
+                <button class="apple-button bg-white text-charcoal px-8 py-4 rounded-xl font-semibold text-lg border border-gray-200 hover:border-apple-blue">
+                    Read Free Chapters
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-charcoal mb-6">Get In Touch</h2>
+                <p class="text-xl text-gray-600 leading-relaxed">
+                    Have questions about iDIG.io or want to join our early access program? We'd love to hear from you.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-off-white rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-charcoal mb-6">Send us a message</h3>
+                    <form class="space-y-6">
+                        <!-- @FUNCTIONALITY: Contact form should implement proper validation and submission -->
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-charcoal mb-2">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-apple-blue transition-colors" placeholder="Your full name">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-charcoal mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-apple-blue transition-colors" placeholder="your@email.com">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-charcoal mb-2">Subject</label>
+                            <select id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-apple-blue transition-colors">
+                                <option>Early Access Request</option>
+                                <option>General Inquiry</option>
+                                <option>Partnership</option>
+                                <option>Book Questions</option>
+                                <option>Technical Support</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-charcoal mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-apple-blue transition-colors" placeholder="Tell us about your interest in iDIG.io..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full apple-button bg-apple-blue text-white py-3 rounded-lg font-semibold apple-shadow">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-charcoal mb-6">Early Access Program</h3>
+                        <div class="bg-gradient-to-r from-apple-blue to-blue-600 rounded-xl p-6 text-white mb-6">
+                            <h4 class="font-semibold mb-2">Join the Beta</h4>
+                            <p class="text-sm opacity-90 mb-4">Be among the first to experience iDIG.io and help shape its development.</p>
+                            <button class="bg-white text-apple-blue px-4 py-2 rounded-lg font-medium text-sm hover:bg-gray-100 transition-colors">
+                                Request Invitation
+                            </button>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed">
+                            Our early access program is invite-only and limited to users who can provide meaningful feedback during development. If you're selected, you'll get free access to all features and direct input into our product roadmap.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-semibold text-charcoal mb-4">Newsletter</h4>
+                        <div class="bg-off-white rounded-lg p-6">
+                            <p class="text-sm text-gray-600 mb-4">Subscribe to "The Resonant Builders Almanac" for updates on iDIG.io development, early access opportunities, and insights about building resonant tools.</p>
+                            <div class="flex gap-2">
+                                <input type="email" placeholder="your@email.com" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-apple-blue">
+                                <button class="bg-apple-blue text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-600 transition-colors">
+                                    Subscribe
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-semibold text-charcoal mb-4">Connect</h4>
+                        <div class="space-y-3">
+                            <a href="#" class="flex items-center text-gray-600 hover:text-apple-blue transition-colors">
+                                <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                                </svg>
+                                hello@idig.io
+                            </a>
+                            <a href="#" class="flex items-center text-gray-600 hover:text-apple-blue transition-colors">
+                                <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                                </svg>
+                                Follow our development blog
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-2xl font-bold mb-4">
+                        iDIG.<span class="text-apple-blue">io</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Resonant tools for curious minds. Building the future of web engagement and knowledge discovery.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">Product</h5>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Browser Extension</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Web App</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Early Access</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">Resources</h5>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#book" class="hover:text-white transition-colors">We the Resonant Builders</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Newsletter</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">Company</h5>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2024 iDIG.io. All rights reserved. Building resonant tools for curious minds.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // Slide Presentation Logic
+            let currentSlide = 1;
+            const totalSlides = 8;
+            let isPlaying = true;
+            let slideInterval;
+
+            const slides = document.querySelectorAll('.slide');
+            const indicators = document.querySelectorAll('.slide-indicator');
+            const currentSlideSpan = document.getElementById('current-slide');
+            const playButton = document.getElementById('play-icon');
+            const pauseButton = document.getElementById('pause-icon');
+
+            function showSlide(slideNumber) {
+                // Hide all slides
+                slides.forEach((slide, index) => {
+                    slide.style.opacity = '0';
+                    slide.style.transform = 'translateX(100%)';
+                });
+
+                // Show current slide
+                const currentSlideElement = document.querySelector(`[data-slide="${slideNumber}"]`);
+                if (currentSlideElement) {
+                    currentSlideElement.style.opacity = '1';
+                    currentSlideElement.style.transform = 'translateX(0)';
+                }
+
+                // Update indicators
+                indicators.forEach((indicator, index) => {
+                    indicator.classList.toggle('bg-apple-blue', index + 1 === slideNumber);
+                    indicator.classList.toggle('bg-gray-300', index + 1 !== slideNumber);
+                });
+
+                // Update slide counter
+                currentSlideSpan.textContent = slideNumber;
+                currentSlide = slideNumber;
+            }
+
+            function nextSlide() {
+                const next = currentSlide >= totalSlides ? 1 : currentSlide + 1;
+                showSlide(next);
+            }
+
+            function prevSlide() {
+                const prev = currentSlide <= 1 ? totalSlides : currentSlide - 1;
+                showSlide(prev);
+            }
+
+            function startAutoPlay() {
+                slideInterval = setInterval(nextSlide, 5000); // 5 seconds per slide
+            }
+
+            function stopAutoPlay() {
+                clearInterval(slideInterval);
+            }
+
+            function togglePlayPause() {
+                isPlaying = !isPlaying;
+                playButton.classList.toggle('hidden', isPlaying);
+                pauseButton.classList.toggle('hidden', !isPlaying);
+                
+                if (isPlaying) {
+                    startAutoPlay();
+                } else {
+                    stopAutoPlay();
+                }
+            }
+
+            // Event Listeners
+            document.getElementById('next-slide').addEventListener('click', () => {
+                nextSlide();
+                if (isPlaying) {
+                    stopAutoPlay();
+                    startAutoPlay(); // Restart timer
+                }
+            });
+
+            document.getElementById('prev-slide').addEventListener('click', () => {
+                prevSlide();
+                if (isPlaying) {
+                    stopAutoPlay();
+                    startAutoPlay(); // Restart timer
+                }
+            });
+
+            document.getElementById('play-pause').addEventListener('click', togglePlayPause);
+
+            // Indicator clicks
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    showSlide(index + 1);
+                    if (isPlaying) {
+                        stopAutoPlay();
+                        startAutoPlay(); // Restart timer
+                    }
+                });
+            });
+
+            // Mobile Navigation
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Smooth Scrolling for Navigation Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        // Close mobile menu if open
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Initialize
+            showSlide(1);
+            startAutoPlay();
+
+            // Pause auto-play when user hovers over slide area
+            const slideContainer = document.querySelector('.slide-transition').parentElement;
+            slideContainer.addEventListener('mouseenter', () => {
+                if (isPlaying) stopAutoPlay();
+            });
+            slideContainer.addEventListener('mouseleave', () => {
+                if (isPlaying) startAutoPlay();
+            });
+
+            // TODO: Implement form submission handlers
+            // TODO: Implement newsletter subscription functionality
+            // TODO: Add analytics tracking for slide interactions
+            // TODO: Implement keyboard navigation (arrow keys)
+            // TODO: Add touch/swipe support for mobile slide navigation
+        })();
+    </script>
+</body>
+</html>

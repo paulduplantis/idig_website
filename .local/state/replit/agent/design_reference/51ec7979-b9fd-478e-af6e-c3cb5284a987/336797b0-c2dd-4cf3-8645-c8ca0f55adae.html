@@ -1,0 +1,518 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iDIG.io - Resonant Tools for Curious Minds</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                    colors: {
+                        'apple-blue': '#007AFF',
+                        'charcoal': '#1D1D1F',
+                        'light-gray': '#F5F5F7',
+                        'border-gray': '#D2D2D7',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-in': 'slideIn 0.3s ease-out',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .slide-transition {
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="font-inter bg-white text-charcoal">
+    <!-- @COMPONENT: Navigation -->
+    <nav class="bg-white/80 backdrop-blur-md border-b border-border-gray sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- @COMPONENT: Logo -->
+                <div class="flex items-center space-x-8">
+                    <a href="#home" class="text-2xl font-semibold">
+                        <span class="italic">i</span><span class="uppercase">DIG</span><span class="text-apple-blue">.io</span>
+                    </a>
+                </div>
+                <!-- @END_COMPONENT: Logo -->
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-charcoal hover:text-apple-blue transition-colors duration-200">Home</a>
+                    <a href="#about" class="text-charcoal hover:text-apple-blue transition-colors duration-200">About</a>
+                    <a href="#book" class="text-charcoal hover:text-apple-blue transition-colors duration-200">We the Resonant Builders</a>
+                    <a href="#contact" class="text-charcoal hover:text-apple-blue transition-colors duration-200">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-lg hover:bg-light-gray transition-colors duration-200" data-event="click:toggleMobileMenu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="md:hidden mt-4 pb-4 border-t border-border-gray hidden" data-mobile-menu>
+                <div class="flex flex-col space-y-4 pt-4">
+                    <a href="#home" class="text-charcoal hover:text-apple-blue transition-colors duration-200">Home</a>
+                    <a href="#about" class="text-charcoal hover:text-apple-blue transition-colors duration-200">About</a>
+                    <a href="#book" class="text-charcoal hover:text-apple-blue transition-colors duration-200">We the Resonant Builders</a>
+                    <a href="#contact" class="text-charcoal hover:text-apple-blue transition-colors duration-200">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: HomePage -->
+    <main id="home" class="min-h-screen">
+        <!-- Hero Section -->
+        <section class="max-w-6xl mx-auto px-6 py-16">
+            <div class="text-center animate-fade-in">
+                <!-- Large Logo -->
+                <div class="mb-6">
+                    <h1 class="text-6xl md:text-8xl font-light tracking-tight">
+                        <span class="italic">i</span><span class="uppercase font-medium">DIG</span><span class="text-apple-blue">.io</span>
+                    </h1>
+                </div>
+                
+                <!-- Tagline -->
+                <p class="text-2xl md:text-3xl text-apple-blue font-medium mb-16">
+                    Resonant Tools for Curious Minds
+                </p>
+                
+                <!-- @COMPONENT: SlidePresentation -->
+                <div class="max-w-4xl mx-auto mb-16">
+                    <div class="bg-light-gray rounded-2xl p-8 md:p-12 shadow-sm">
+                        <div class="flex items-center justify-between mb-6">
+                            <button class="p-3 rounded-full hover:bg-white transition-colors duration-200 group" data-event="click:previousSlide">
+                                <svg class="w-6 h-6 text-charcoal group-hover:text-apple-blue transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                </svg>
+                            </button>
+                            
+                            <div class="flex-1 px-8">
+                                <!-- @STATE: currentSlide:number = 0 -->
+                                <div class="slide-content slide-transition" data-slide="0">
+                                    <h2 class="text-2xl md:text-3xl font-medium text-charcoal mb-6">
+                                        Engage deeply with content
+                                    </h2>
+                                    <p class="text-lg text-charcoal/80 leading-relaxed">
+                                        iDIG transforms how you interact with web content. Our browser extension allows you to annotate, 
+                                        highlight, and build connections across everything you discover online. Turn passive browsing 
+                                        into active learning and create your personal knowledge network.
+                                    </p>
+                                </div>
+                                
+                                <!-- Additional slides can be added here -->
+                                <!-- @FUNCTIONALITY: Slide navigation should cycle through multiple presentation slides -->
+                            </div>
+                            
+                            <button class="p-3 rounded-full hover:bg-white transition-colors duration-200 group" data-event="click:nextSlide">
+                                <svg class="w-6 h-6 text-charcoal group-hover:text-apple-blue transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <!-- Slide Indicators -->
+                        <div class="flex justify-center space-x-2">
+                            <div class="w-2 h-2 rounded-full bg-apple-blue" data-slide-indicator="0"></div>
+                            <div class="w-2 h-2 rounded-full bg-border-gray" data-slide-indicator="1"></div>
+                            <div class="w-2 h-2 rounded-full bg-border-gray" data-slide-indicator="2"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- @END_COMPONENT: SlidePresentation -->
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-24">
+                    <button class="bg-apple-blue text-white px-8 py-4 rounded-xl font-medium hover:bg-blue-600 transition-colors duration-200 shadow-lg" data-event="click:requestAccess">
+                        Request Early Access
+                    </button>
+                    <button class="border border-border-gray text-charcoal px-8 py-4 rounded-xl font-medium hover:bg-light-gray transition-colors duration-200" data-event="click:watchDemo">
+                        Watch Demo
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Features Section -->
+        <section class="bg-light-gray py-24">
+            <div class="max-w-6xl mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-light text-center mb-16">Why iDIG?</h2>
+                
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-apple-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-apple-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-medium mb-4">Deep Engagement</h3>
+                        <p class="text-charcoal/70 leading-relaxed">Transform passive reading into active learning with powerful annotation and highlighting tools.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-apple-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-apple-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-medium mb-4">Connected Knowledge</h3>
+                        <p class="text-charcoal/70 leading-relaxed">Build relationships between ideas across different websites and create your personal knowledge graph.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-apple-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-apple-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-medium mb-4">Seamless Integration</h3>
+                        <p class="text-charcoal/70 leading-relaxed">Works with any website through our lightweight browser extension. No disruption to your browsing experience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Newsletter Section -->
+        <section class="py-24">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-light mb-6">The Resonant Builders Almanac</h2>
+                <p class="text-xl text-charcoal/70 mb-12">Join our newsletter for insights on deep thinking, knowledge building, and resonant learning.</p>
+                
+                <!-- @COMPONENT: NewsletterForm -->
+                <form class="max-w-md mx-auto" data-event="submit:subscribeNewsletter">
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <input 
+                            type="email" 
+                            placeholder="Enter your email" 
+                            class="flex-1 px-4 py-3 border border-border-gray rounded-xl focus:outline-none focus:ring-2 focus:ring-apple-blue focus:border-transparent"
+                            required
+                            data-mock="true"
+                        />
+                        <button 
+                            type="submit" 
+                            class="bg-apple-blue text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-600 transition-colors duration-200"
+                        >
+                            Subscribe
+                        </button>
+                    </div>
+                </form>
+                <!-- @END_COMPONENT: NewsletterForm -->
+            </div>
+        </section>
+    </main>
+    <!-- @END_COMPONENT: HomePage -->
+
+    <!-- @COMPONENT: AboutPage -->
+    <section id="about" class="min-h-screen bg-light-gray py-24 hidden">
+        <div class="max-w-4xl mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl font-light text-center mb-16">About iDIG</h1>
+            
+            <div class="prose prose-lg mx-auto">
+                <div class="bg-white rounded-2xl p-8 md:p-12 shadow-sm">
+                    <p class="text-xl leading-relaxed mb-8">
+                        iDIG was born from a simple belief: the web should be a place for deep engagement, not just passive consumption.
+                    </p>
+                    
+                    <p class="leading-relaxed mb-6">
+                        In an age of information overload, we've created tools that help curious minds dig deeper into the content they encounter online. Our browser extension transforms any webpage into an interactive canvas where you can annotate, highlight, and connect ideas across the vast landscape of the internet.
+                    </p>
+                    
+                    <p class="leading-relaxed mb-6">
+                        Whether you're a researcher building knowledge networks, a student making connections between concepts, or simply someone who wants to engage more meaningfully with what you read online, iDIG provides the resonant tools you need.
+                    </p>
+                    
+                    <p class="leading-relaxed">
+                        Join us in building a more thoughtful web, where every piece of content becomes part of your personal knowledge ecosystem.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: AboutPage -->
+
+    <!-- @COMPONENT: BookPage -->
+    <section id="book" class="min-h-screen py-24 hidden">
+        <div class="max-w-6xl mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl font-light text-center mb-16">We the Resonant Builders</h1>
+            
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <p class="text-xl text-charcoal/70 leading-relaxed">
+                    A guide to building meaningful connections in our digital age, exploring how technology can amplify human potential rather than diminish it.
+                </p>
+            </div>
+            
+            <!-- Chapter Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- @MAP: chapters.map(chapter => ( -->
+                <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer" data-chapter="1">
+                    <h3 class="font-medium mb-2" data-bind="chapter.title">Chapter 1: The Foundation</h3>
+                    <p class="text-sm text-charcoal/70" data-bind="chapter.description">Understanding resonance in human systems</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer" data-chapter="2">
+                    <h3 class="font-medium mb-2">Chapter 2: Digital Amplification</h3>
+                    <p class="text-sm text-charcoal/70">How technology can enhance human connection</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer" data-chapter="3">
+                    <h3 class="font-medium mb-2">Chapter 3: Building Blocks</h3>
+                    <p class="text-sm text-charcoal/70">Essential elements of resonant systems</p>
+                </div>
+                
+                <!-- Additional chapters would be generated dynamically -->
+                <!-- @FUNCTIONALITY: Generate 26 total chapter pages with content -->
+                <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer opacity-50" data-chapter="4">
+                    <h3 class="font-medium mb-2">Chapter 4: Coming Soon</h3>
+                    <p class="text-sm text-charcoal/70">More chapters to be revealed</p>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: BookPage -->
+
+    <!-- @COMPONENT: ContactPage -->
+    <section id="contact" class="min-h-screen bg-light-gray py-24 hidden">
+        <div class="max-w-4xl mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl font-light text-center mb-16">Get in Touch</h1>
+            
+            <div class="bg-white rounded-2xl p-8 md:p-12 shadow-sm">
+                <form class="space-y-6" data-event="submit:contactForm">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Name</label>
+                            <input 
+                                type="text" 
+                                class="w-full px-4 py-3 border border-border-gray rounded-xl focus:outline-none focus:ring-2 focus:ring-apple-blue focus:border-transparent"
+                                data-mock="true"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Email</label>
+                            <input 
+                                type="email" 
+                                class="w-full px-4 py-3 border border-border-gray rounded-xl focus:outline-none focus:ring-2 focus:ring-apple-blue focus:border-transparent"
+                                data-mock="true"
+                                required
+                            />
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Subject</label>
+                        <input 
+                            type="text" 
+                            class="w-full px-4 py-3 border border-border-gray rounded-xl focus:outline-none focus:ring-2 focus:ring-apple-blue focus:border-transparent"
+                            data-mock="true"
+                            required
+                        />
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Message</label>
+                        <textarea 
+                            rows="6"
+                            class="w-full px-4 py-3 border border-border-gray rounded-xl focus:outline-none focus:ring-2 focus:ring-apple-blue focus:border-transparent resize-none"
+                            data-mock="true"
+                            required
+                        ></textarea>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button 
+                            type="submit" 
+                            class="bg-apple-blue text-white px-8 py-4 rounded-xl font-medium hover:bg-blue-600 transition-colors duration-200 shadow-lg"
+                        >
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-charcoal/70">
+                    Or reach out directly at <a href="mailto:hello@idig.io" class="text-apple-blue hover:underline">hello@idig.io</a>
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ContactPage -->
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white py-16">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center">
+                <div class="mb-6">
+                    <span class="text-2xl font-semibold">
+                        <span class="italic">i</span><span class="uppercase">DIG</span><span class="text-apple-blue">.io</span>
+                    </span>
+                </div>
+                <p class="text-white/70 mb-8">Resonant Tools for Curious Minds</p>
+                <div class="flex justify-center space-x-8 text-sm">
+                    <a href="#home" class="text-white/70 hover:text-white transition-colors duration-200">Home</a>
+                    <a href="#about" class="text-white/70 hover:text-white transition-colors duration-200">About</a>
+                    <a href="#book" class="text-white/70 hover:text-white transition-colors duration-200">Book</a>
+                    <a href="#contact" class="text-white/70 hover:text-white transition-colors duration-200">Contact</a>
+                </div>
+                <div class="mt-8 pt-8 border-t border-white/20 text-sm text-white/50">
+                    <p>&copy; 2024 iDIG.io. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // Simple navigation functionality
+            const navLinks = document.querySelectorAll('nav a[href^="#"], footer a[href^="#"]');
+            const sections = document.querySelectorAll('main, section[id]');
+            const mobileMenuBtn = document.querySelector('[data-event="click:toggleMobileMenu"]');
+            const mobileMenu = document.querySelector('[data-mobile-menu]');
+            
+            // Navigation handling
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').slice(1);
+                    
+                    // Hide all sections
+                    sections.forEach(section => {
+                        section.classList.add('hidden');
+                    });
+                    
+                    // Show target section
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.remove('hidden');
+                    }
+                    
+                    // Close mobile menu if open
+                    if (mobileMenu) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+            
+            // Mobile menu toggle
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+            
+            // Slide navigation
+            let currentSlide = 0;
+            const slides = [
+                {
+                    title: "Engage deeply with content",
+                    content: "iDIG transforms how you interact with web content. Our browser extension allows you to annotate, highlight, and build connections across everything you discover online. Turn passive browsing into active learning and create your personal knowledge network."
+                },
+                {
+                    title: "Build your knowledge graph", 
+                    content: "Connect ideas across different websites and sources. iDIG helps you see patterns and relationships that weren't visible before, turning scattered information into organized wisdom."
+                },
+                {
+                    title: "Research with purpose",
+                    content: "Whether you're a student, researcher, or lifelong learner, iDIG provides the tools to capture insights and build upon them over time. Every annotation becomes part of your evolving understanding."
+                }
+            ];
+            
+            const slideContent = document.querySelector('.slide-content');
+            const indicators = document.querySelectorAll('[data-slide-indicator]');
+            const prevBtn = document.querySelector('[data-event="click:previousSlide"]');
+            const nextBtn = document.querySelector('[data-event="click:nextSlide"]');
+            
+            function updateSlide() {
+                if (slideContent) {
+                    const slide = slides[currentSlide];
+                    slideContent.innerHTML = `
+                        <h2 class="text-2xl md:text-3xl font-medium text-charcoal mb-6">
+                            ${slide.title}
+                        </h2>
+                        <p class="text-lg text-charcoal/80 leading-relaxed">
+                            ${slide.content}
+                        </p>
+                    `;
+                }
+                
+                // Update indicators
+                indicators.forEach((indicator, index) => {
+                    if (index === currentSlide) {
+                        indicator.classList.remove('bg-border-gray');
+                        indicator.classList.add('bg-apple-blue');
+                    } else {
+                        indicator.classList.remove('bg-apple-blue');
+                        indicator.classList.add('bg-border-gray');
+                    }
+                });
+            }
+            
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function() {
+                    currentSlide = currentSlide > 0 ? currentSlide - 1 : slides.length - 1;
+                    updateSlide();
+                });
+            }
+            
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function() {
+                    currentSlide = currentSlide < slides.length - 1 ? currentSlide + 1 : 0;
+                    updateSlide();
+                });
+            }
+            
+            // Form handling placeholders
+            const contactForm = document.querySelector('[data-event="submit:contactForm"]');
+            const newsletterForm = document.querySelector('[data-event="submit:subscribeNewsletter"]');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement contact form submission
+                    alert('Contact form submitted! (This is a demo)');
+                });
+            }
+            
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement newsletter subscription
+                    alert('Newsletter subscription successful! (This is a demo)');
+                });
+            }
+            
+            // Initialize with home page visible
+            sections.forEach(section => {
+                if (section.id !== 'home') {
+                    section.classList.add('hidden');
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

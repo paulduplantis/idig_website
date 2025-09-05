@@ -1,0 +1,533 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>idig.io - Resonant Tools for Curious Minds</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                    colors: {
+                        'apple-gray': '#1D1D1F',
+                        'apple-secondary': '#6E6E73',
+                        'apple-blue': '#007AFF',
+                        'apple-bg': '#F5F5F7',
+                        'apple-border': '#D2D2D7',
+                    },
+                    fontSize: {
+                        'hero': '3.5rem',
+                        'xl-custom': '1.375rem',
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '22': '5.5rem',
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .slide-transition {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .apple-shadow {
+            box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.1);
+        }
+        
+        .apple-button-shadow {
+            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+        }
+        
+        .nav-transition {
+            transition: all 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-white text-apple-gray font-inter">
+    
+    <!-- @COMPONENT: NavigationHeader -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md border-b border-apple-border z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-1">
+                    <span class="text-2xl font-semibold text-apple-gray">idig</span>
+                    <span class="text-2xl font-semibold text-apple-blue">.io</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-transition text-apple-gray hover:text-apple-blue font-medium" data-page="home">Home</a>
+                    <a href="#about" class="nav-transition text-apple-secondary hover:text-apple-blue font-medium" data-page="about">About</a>
+                    <a href="#book" class="nav-transition text-apple-secondary hover:text-apple-blue font-medium" data-page="book">We the Resonant Builders</a>
+                    <a href="#contact" class="nav-transition text-apple-secondary hover:text-apple-blue font-medium" data-page="contact">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2" id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="pt-4 pb-2 space-y-2">
+                    <a href="#home" class="block py-2 text-apple-gray hover:text-apple-blue font-medium" data-page="home">Home</a>
+                    <a href="#about" class="block py-2 text-apple-secondary hover:text-apple-blue font-medium" data-page="about">About</a>
+                    <a href="#book" class="block py-2 text-apple-secondary hover:text-apple-blue font-medium" data-page="book">We the Resonant Builders</a>
+                    <a href="#contact" class="block py-2 text-apple-secondary hover:text-apple-blue font-medium" data-page="contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: NavigationHeader -->
+
+    <!-- @COMPONENT: HomePage -->
+    <div id="home-page" class="page-content">
+        <!-- Hero Section -->
+        <section class="pt-32 pb-16 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Large Logo -->
+                <div class="mb-8">
+                    <div class="flex items-center justify-center space-x-2 mb-6">
+                        <span class="text-6xl md:text-7xl font-light text-apple-gray">idig</span>
+                        <span class="text-6xl md:text-7xl font-light text-apple-blue">.io</span>
+                    </div>
+                    <h1 class="text-2xl md:text-3xl font-light text-apple-secondary tracking-wide">
+                        Resonant Tools for Curious Minds
+                    </h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- Presentation Slider Section -->
+        <section class="py-16 px-6 bg-apple-bg">
+            <div class="max-w-4xl mx-auto">
+                <div class="relative bg-white rounded-2xl apple-shadow p-12 md:p-16">
+                    <!-- Slide Content -->
+                    <div class="text-center min-h-[200px] flex items-center justify-center">
+                        <div id="slide-content" class="slide-transition">
+                            <h2 class="text-3xl md:text-4xl font-light text-apple-gray mb-6 leading-tight">
+                                Engage deeply with content
+                            </h2>
+                            <p class="text-xl text-apple-secondary font-light leading-relaxed max-w-2xl mx-auto">
+                                Transform your web browsing experience with tools designed to help you connect, reflect, and build meaningful insights from the content you discover.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Arrows -->
+                    <button id="prev-slide" class="absolute left-6 top-1/2 transform -translate-y-1/2 w-12 h-12 rounded-full bg-white apple-button-shadow flex items-center justify-center hover:scale-105 transition-transform">
+                        <svg class="w-6 h-6 text-apple-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    <button id="next-slide" class="absolute right-6 top-1/2 transform -translate-y-1/2 w-12 h-12 rounded-full bg-white apple-button-shadow flex items-center justify-center hover:scale-105 transition-transform">
+                        <svg class="w-6 h-6 text-apple-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                    
+                    <!-- Slide Indicators -->
+                    <div class="flex justify-center mt-8 space-x-2">
+                        <div class="w-2 h-2 rounded-full bg-apple-blue slide-indicator active"></div>
+                        <div class="w-2 h-2 rounded-full bg-apple-border slide-indicator"></div>
+                        <div class="w-2 h-2 rounded-full bg-apple-border slide-indicator"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 px-6">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-light text-apple-gray mb-6">
+                    Request Early Access
+                </h2>
+                <p class="text-xl text-apple-secondary mb-8 font-light">
+                    Join our community of curious minds and get invited access to idig.io
+                </p>
+                <div class="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
+                    <button class="w-full md:w-auto bg-apple-blue text-white px-8 py-4 rounded-xl font-medium hover:bg-blue-600 transition-colors apple-button-shadow">
+                        Watch Demo
+                    </button>
+                    <button class="w-full md:w-auto border border-apple-border text-apple-gray px-8 py-4 rounded-xl font-medium hover:bg-apple-bg transition-colors">
+                        Request Access
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="py-16 px-6 bg-apple-bg">
+            <div class="max-w-2xl mx-auto text-center">
+                <h3 class="text-2xl font-medium text-apple-gray mb-4">The Resonant Builders Almanac</h3>
+                <p class="text-apple-secondary mb-8 font-light">
+                    Stay informed with insights, updates, and reflections on building tools for deeper engagement.
+                </p>
+                <form class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
+                    <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-3 rounded-lg border border-apple-border focus:outline-none focus:ring-2 focus:ring-apple-blue focus:border-transparent" data-implementation="Email validation required">
+                    <button type="submit" class="bg-apple-blue text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-600 transition-colors">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </section>
+    </div>
+    <!-- @END_COMPONENT: HomePage -->
+
+    <!-- @COMPONENT: AboutPage -->
+    <div id="about-page" class="page-content hidden">
+        <section class="pt-32 pb-20 px-6">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-6xl font-light text-apple-gray mb-8 text-center">About idig.io</h1>
+                
+                <div class="prose prose-lg max-w-none">
+                    <div class="bg-apple-bg rounded-2xl p-8 md:p-12 mb-12">
+                        <h2 class="text-3xl font-light text-apple-gray mb-6">Our Mission</h2>
+                        <p class="text-xl text-apple-secondary font-light leading-relaxed mb-6">
+                            iDIG was born from a simple yet profound observation: in our age of information abundance, 
+                            we often consume content without truly digesting it. We browse, we scroll, we move on—but 
+                            do we truly engage?
+                        </p>
+                        <p class="text-xl text-apple-secondary font-light leading-relaxed mb-6">
+                            Our mission is to transform passive consumption into active engagement. We believe that the 
+                            web can be more than a river of information flowing past us—it can be a garden of knowledge 
+                            that we cultivate together.
+                        </p>
+                        <p class="text-xl text-apple-secondary font-light leading-relaxed">
+                            Through thoughtful tools and resonant design, we empower curious minds to dig deeper, 
+                            connect meaningfully, and build understanding that lasts.
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-white rounded-xl p-8 apple-shadow">
+                            <h3 class="text-2xl font-medium text-apple-gray mb-4">Deep Engagement</h3>
+                            <p class="text-apple-secondary font-light leading-relaxed">
+                                Move beyond surface-level browsing to meaningful interaction with the content that matters to you.
+                            </p>
+                        </div>
+                        <div class="bg-white rounded-xl p-8 apple-shadow">
+                            <h3 class="text-2xl font-medium text-apple-gray mb-4">Resonant Tools</h3>
+                            <p class="text-apple-secondary font-light leading-relaxed">
+                                Purpose-built features that amplify your natural curiosity and help you build lasting insights.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- @END_COMPONENT: AboutPage -->
+
+    <!-- @COMPONENT: BookPage -->
+    <div id="book-page" class="page-content hidden">
+        <section class="pt-32 pb-20 px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h1 class="text-5xl md:text-6xl font-light text-apple-gray mb-6">We the Resonant Builders</h1>
+                    <p class="text-xl text-apple-secondary font-light max-w-2xl mx-auto">
+                        A collection of reflections on building tools and communities that resonate with human curiosity and connection.
+                    </p>
+                </div>
+                
+                <!-- Chapter Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- @MAP: chapters.map((chapter, index) => ( -->
+                    <div class="bg-white rounded-xl p-6 apple-shadow hover:scale-105 transition-transform cursor-pointer chapter-card" data-chapter="1">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-sm font-medium text-apple-blue bg-blue-50 px-3 py-1 rounded-full">Chapter 1</span>
+                            <svg class="w-5 h-5 text-apple-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-medium text-apple-gray mb-2">The Foundation of Resonance</h3>
+                        <p class="text-apple-secondary text-sm font-light">Understanding what it means to build tools that truly connect with human nature...</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 apple-shadow hover:scale-105 transition-transform cursor-pointer chapter-card" data-chapter="2">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-sm font-medium text-apple-blue bg-blue-50 px-3 py-1 rounded-full">Chapter 2</span>
+                            <svg class="w-5 h-5 text-apple-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-medium text-apple-gray mb-2">Curiosity as Compass</h3>
+                        <p class="text-apple-secondary text-sm font-light">How natural human curiosity can guide the design of meaningful digital experiences...</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 apple-shadow hover:scale-105 transition-transform cursor-pointer chapter-card" data-chapter="3">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-sm font-medium text-apple-blue bg-blue-50 px-3 py-1 rounded-full">Chapter 3</span>
+                            <svg class="w-5 h-5 text-apple-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-medium text-apple-gray mb-2">Building for Understanding</h3>
+                        <p class="text-apple-secondary text-sm font-light">The principles behind creating tools that enhance comprehension rather than distraction...</p>
+                    </div>
+                    
+                    <!-- Additional chapters would be dynamically generated -->
+                    <div class="bg-apple-bg rounded-xl p-6 border-2 border-dashed border-apple-border">
+                        <div class="text-center py-8">
+                            <div class="text-apple-secondary mb-4">
+                                <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                </svg>
+                            </div>
+                            <p class="text-apple-secondary font-light">23 more chapters available</p>
+                            <p class="text-sm text-apple-secondary mt-2">Explore the complete collection</p>
+                        </div>
+                    </div>
+                    <!-- @END_MAP -->
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- @END_COMPONENT: BookPage -->
+
+    <!-- @COMPONENT: ContactPage -->
+    <div id="contact-page" class="page-content hidden">
+        <section class="pt-32 pb-20 px-6">
+            <div class="max-w-2xl mx-auto">
+                <div class="text-center mb-12">
+                    <h1 class="text-5xl md:text-6xl font-light text-apple-gray mb-6">Get in Touch</h1>
+                    <p class="text-xl text-apple-secondary font-light">
+                        Have questions, ideas, or want to connect? We'd love to hear from you.
+                    </p>
+                </div>
+                
+                <form class="bg-white rounded-2xl p-8 apple-shadow space-y-6" data-implementation="Form validation and submission required">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-apple-gray mb-2">First Name</label>
+                            <input type="text" class="w-full px-4 py-3 border border-apple-border rounded-lg focus:outline-none focus:ring-2 focus:ring-apple-blue focus:border-transparent" placeholder="John">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-apple-gray mb-2">Last Name</label>
+                            <input type="text" class="w-full px-4 py-3 border border-apple-border rounded-lg focus:outline-none focus:ring-2 focus:ring-apple-blue focus:border-transparent" placeholder="Doe">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-apple-gray mb-2">Email</label>
+                        <input type="email" class="w-full px-4 py-3 border border-apple-border rounded-lg focus:outline-none focus:ring-2 focus:ring-apple-blue focus:border-transparent" placeholder="john@example.com">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-apple-gray mb-2">Subject</label>
+                        <select class="w-full px-4 py-3 border border-apple-border rounded-lg focus:outline-none focus:ring-2 focus:ring-apple-blue focus:border-transparent">
+                            <option>General Inquiry</option>
+                            <option>Early Access Request</option>
+                            <option>Partnership</option>
+                            <option>Technical Support</option>
+                            <option>Book Discussion</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-apple-gray mb-2">Message</label>
+                        <textarea rows="6" class="w-full px-4 py-3 border border-apple-border rounded-lg focus:outline-none focus:ring-2 focus:ring-apple-blue focus:border-transparent resize-none" placeholder="Tell us about your interest in idig.io or share your thoughts..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-apple-blue text-white py-4 rounded-lg font-medium hover:bg-blue-600 transition-colors apple-button-shadow">
+                        Send Message
+                    </button>
+                </form>
+                
+                <div class="mt-12 text-center">
+                    <p class="text-apple-secondary font-light mb-4">
+                        Prefer to reach out directly?
+                    </p>
+                    <div class="space-y-2">
+                        <p class="text-apple-gray font-medium" data-mock="true">hello@idig.io</p>
+                        <p class="text-apple-secondary text-sm">We typically respond within 24 hours</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- @END_COMPONENT: ContactPage -->
+
+    <!-- JavaScript for Page Navigation and Interactions -->
+    <script>
+        (function() {
+            // Page Navigation
+            const pages = {
+                'home': document.getElementById('home-page'),
+                'about': document.getElementById('about-page'),
+                'book': document.getElementById('book-page'),
+                'contact': document.getElementById('contact-page')
+            };
+            
+            const navLinks = document.querySelectorAll('[data-page]');
+            
+            function showPage(pageId) {
+                // Hide all pages
+                Object.values(pages).forEach(page => {
+                    if (page) page.classList.add('hidden');
+                });
+                
+                // Show selected page
+                if (pages[pageId]) {
+                    pages[pageId].classList.remove('hidden');
+                }
+                
+                // Update navigation active states
+                navLinks.forEach(link => {
+                    const linkPageId = link.getAttribute('data-page');
+                    if (linkPageId === pageId) {
+                        link.classList.remove('text-apple-secondary');
+                        link.classList.add('text-apple-gray');
+                    } else {
+                        link.classList.remove('text-apple-gray');
+                        link.classList.add('text-apple-secondary');
+                    }
+                });
+            }
+            
+            // Navigation event listeners
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const pageId = link.getAttribute('data-page');
+                    showPage(pageId);
+                    
+                    // Update URL hash
+                    window.location.hash = pageId;
+                });
+            });
+            
+            // Handle initial page load and hash changes
+            function handleHashChange() {
+                const hash = window.location.hash.substring(1);
+                const pageId = hash || 'home';
+                showPage(pageId);
+            }
+            
+            window.addEventListener('hashchange', handleHashChange);
+            handleHashChange(); // Initial load
+            
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+            
+            // Slide functionality
+            const slides = [
+                {
+                    title: "Engage deeply with content",
+                    content: "Transform your web browsing experience with tools designed to help you connect, reflect, and build meaningful insights from the content you discover."
+                },
+                {
+                    title: "Build lasting understanding",
+                    content: "Move beyond passive consumption to active learning. Our tools help you capture, organize, and connect ideas across everything you read and explore online."
+                },
+                {
+                    title: "Connect with curious minds",
+                    content: "Join a community of thoughtful individuals who believe that the web can be more than endless scrolling—it can be a place for genuine intellectual growth."
+                }
+            ];
+            
+            let currentSlide = 0;
+            const slideContent = document.getElementById('slide-content');
+            const prevButton = document.getElementById('prev-slide');
+            const nextButton = document.getElementById('next-slide');
+            const indicators = document.querySelectorAll('.slide-indicator');
+            
+            function updateSlide(index) {
+                if (slideContent) {
+                    slideContent.style.opacity = '0';
+                    
+                    setTimeout(() => {
+                        slideContent.innerHTML = `
+                            <h2 class="text-3xl md:text-4xl font-light text-apple-gray mb-6 leading-tight">
+                                ${slides[index].title}
+                            </h2>
+                            <p class="text-xl text-apple-secondary font-light leading-relaxed max-w-2xl mx-auto">
+                                ${slides[index].content}
+                            </p>
+                        `;
+                        slideContent.style.opacity = '1';
+                    }, 200);
+                }
+                
+                // Update indicators
+                indicators.forEach((indicator, i) => {
+                    if (i === index) {
+                        indicator.classList.remove('bg-apple-border');
+                        indicator.classList.add('bg-apple-blue');
+                    } else {
+                        indicator.classList.remove('bg-apple-blue');
+                        indicator.classList.add('bg-apple-border');
+                    }
+                });
+            }
+            
+            if (prevButton) {
+                prevButton.addEventListener('click', () => {
+                    currentSlide = currentSlide > 0 ? currentSlide - 1 : slides.length - 1;
+                    updateSlide(currentSlide);
+                });
+            }
+            
+            if (nextButton) {
+                nextButton.addEventListener('click', () => {
+                    currentSlide = currentSlide < slides.length - 1 ? currentSlide + 1 : 0;
+                    updateSlide(currentSlide);
+                });
+            }
+            
+            // Chapter card interactions
+            const chapterCards = document.querySelectorAll('.chapter-card');
+            chapterCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const chapterNum = card.getAttribute('data-chapter');
+                    // TODO: Implement chapter page navigation
+                    console.log(`Navigate to chapter ${chapterNum}`);
+                });
+            });
+            
+            // Form submission (placeholder)
+            const contactForm = document.querySelector('form[data-implementation*="Form validation"]');
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    // TODO: Implement form validation and submission
+                    alert('Thank you for your message! We will get back to you soon.');
+                });
+            }
+            
+            // Newsletter subscription (placeholder)
+            const newsletterForm = document.querySelector('form:not([data-implementation*="Form validation"])');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    // TODO: Implement newsletter subscription
+                    alert('Thank you for subscribing to The Resonant Builders Almanac!');
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iDIG.io - Resonant Tools for Curious Minds</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'apple-blue': '#007AFF',
+                        'charcoal': '#333333',
+                        'light-gray': '#F5F5F7',
+                        'border-gray': '#D1D1D6'
+                    },
+                    fontFamily: {
+                        'apple': ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'apple': '0 2px 8px rgba(0, 0, 0, 0.1)',
+                        'apple-lg': '0 4px 16px rgba(0, 0, 0, 0.12)'
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="font-apple text-charcoal bg-white">
+    <!-- @COMPONENT: Header Navigation -->
+    <header class="sticky top-0 bg-white/80 backdrop-blur-md border-b border-border-gray z-50">
+        <nav class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- @COMPONENT: Logo -->
+                <div class="flex items-center">
+                    <span class="text-2xl font-light italic">i</span>
+                    <span class="text-2xl font-semibold">DIG</span>
+                    <span class="text-2xl font-light text-apple-blue">.io</span>
+                </div>
+                <!-- @END_COMPONENT: Logo -->
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-charcoal hover:text-apple-blue transition-colors duration-300">Home</a>
+                    <a href="#about" class="text-charcoal hover:text-apple-blue transition-colors duration-300">About</a>
+                    <a href="#book" class="text-charcoal hover:text-apple-blue transition-colors duration-300">We the Resonant Builders</a>
+                    <a href="#contact" class="text-charcoal hover:text-apple-blue transition-colors duration-300">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2" data-implementation="Toggle mobile menu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="md:hidden mt-4 pb-4 border-t border-border-gray hidden" data-mock="mobile-menu">
+                <div class="flex flex-col space-y-4 pt-4">
+                    <a href="#home" class="text-charcoal hover:text-apple-blue transition-colors duration-300">Home</a>
+                    <a href="#about" class="text-charcoal hover:text-apple-blue transition-colors duration-300">About</a>
+                    <a href="#book" class="text-charcoal hover:text-apple-blue transition-colors duration-300">We the Resonant Builders</a>
+                    <a href="#contact" class="text-charcoal hover:text-apple-blue transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- @END_COMPONENT: Header Navigation -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <section id="home" class="max-w-6xl mx-auto px-6 py-16">
+        <div class="text-center">
+            <!-- Large Logo -->
+            <div class="mb-6">
+                <span class="text-6xl md:text-8xl font-light italic">i</span>
+                <span class="text-6xl md:text-8xl font-semibold">DIG</span>
+                <span class="text-6xl md:text-8xl font-light text-apple-blue">.io</span>
+            </div>
+
+            <!-- Tagline -->
+            <h1 class="text-2xl md:text-3xl font-light text-charcoal mb-16">
+                Resonant Tools for Curious Minds
+            </h1>
+
+            <!-- @COMPONENT: Slide Presentation -->
+            <div class="bg-light-gray rounded-2xl p-8 md:p-12 mb-12 shadow-apple">
+                <div class="flex items-center justify-between max-w-4xl mx-auto">
+                    <!-- Left Arrow -->
+                    <button class="p-3 rounded-full hover:bg-white transition-colors duration-300" data-event="click:previousSlide">
+                        <i class="fas fa-chevron-left text-xl text-charcoal"></i>
+                    </button>
+
+                    <!-- Slide Content -->
+                    <div class="flex-1 mx-8">
+                        <!-- @STATE: currentSlide:number = 0 -->
+                        <div class="slide-container" data-slide="0">
+                            <h2 class="text-2xl md:text-3xl font-semibold text-charcoal mb-6">
+                                Engage deeply with content
+                            </h2>
+                            <p class="text-lg text-charcoal/80 leading-relaxed max-w-2xl mx-auto">
+                                Transform your browsing experience with tools designed to help you think, connect, and understand the web in entirely new ways. Discover insights that matter to you.
+                            </p>
+                        </div>
+                        <!-- Future slides will be added here -->
+                    </div>
+
+                    <!-- Right Arrow -->
+                    <button class="p-3 rounded-full hover:bg-white transition-colors duration-300" data-event="click:nextSlide">
+                        <i class="fas fa-chevron-right text-xl text-charcoal"></i>
+                    </button>
+                </div>
+
+                <!-- Slide Indicators -->
+                <div class="flex justify-center mt-8">
+                    <div class="flex space-x-2">
+                        <button class="w-2 h-2 rounded-full bg-apple-blue" data-slide-indicator="0"></button>
+                        <button class="w-2 h-2 rounded-full bg-border-gray" data-slide-indicator="1"></button>
+                        <button class="w-2 h-2 rounded-full bg-border-gray" data-slide-indicator="2"></button>
+                    </div>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: Slide Presentation -->
+
+            <!-- Call to Action -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+                <button class="bg-apple-blue text-white px-8 py-4 rounded-xl hover:bg-blue-600 transition-colors duration-300 shadow-apple font-medium">
+                    Request Early Access
+                </button>
+                <button class="border border-border-gray text-charcoal px-8 py-4 rounded-xl hover:bg-light-gray transition-colors duration-300 font-medium">
+                    Watch Demo
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: Features Section -->
+    <section class="bg-light-gray/50 py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal mb-4">
+                    Built for Deep Engagement
+                </h2>
+                <p class="text-lg text-charcoal/70 max-w-2xl mx-auto">
+                    More than just browsing. iDIG.io transforms how you interact with web content through intelligent tools designed for the curious mind.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- @MAP: features.map(feature => ( -->
+                <div class="bg-white rounded-2xl p-8 shadow-apple hover:shadow-apple-lg transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-apple-blue/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-search text-apple-blue text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-charcoal mb-4">Intelligent Discovery</h3>
+                    <p class="text-charcoal/70 leading-relaxed">
+                        Uncover hidden connections and insights within the content you encounter across the web.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-apple hover:shadow-apple-lg transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-apple-blue/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-link text-apple-blue text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-charcoal mb-4">Resonant Connections</h3>
+                    <p class="text-charcoal/70 leading-relaxed">
+                        Build meaningful relationships between ideas, articles, and insights that matter to you.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-apple hover:shadow-apple-lg transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-apple-blue/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-apple-blue text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-charcoal mb-4">Thoughtful Tools</h3>
+                    <p class="text-charcoal/70 leading-relaxed">
+                        Designed for reflection and deep thinking, not just quick consumption.
+                    </p>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Features Section -->
+
+    <!-- @COMPONENT: Book Section -->
+    <section id="book" class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="bg-white rounded-3xl shadow-apple-lg overflow-hidden">
+                <div class="grid md:grid-cols-2 gap-0">
+                    <div class="p-12">
+                        <h2 class="text-3xl md:text-4xl font-semibold text-charcoal mb-6">
+                            We the Resonant Builders
+                        </h2>
+                        <p class="text-lg text-charcoal/70 mb-8 leading-relaxed">
+                            A manifesto for those who create, connect, and contribute to a more thoughtful digital world. Explore the principles behind resonant tools and the community that builds them.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button class="bg-apple-blue text-white px-6 py-3 rounded-xl hover:bg-blue-600 transition-colors duration-300 font-medium">
+                                Read Online
+                            </button>
+                            <button class="border border-border-gray text-charcoal px-6 py-3 rounded-xl hover:bg-light-gray transition-colors duration-300 font-medium">
+                                View Chapters
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-apple-blue/5 to-apple-blue/20 p-12 flex items-center justify-center">
+                        <!-- Book cover placeholder -->
+                        <div class="w-48 h-64 bg-white rounded-xl shadow-apple-lg flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-2xl font-semibold text-charcoal mb-2">We the</div>
+                                <div class="text-xl font-light text-apple-blue mb-2">Resonant</div>
+                                <div class="text-2xl font-semibold text-charcoal">Builders</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Book Section -->
+
+    <!-- @COMPONENT: Newsletter Section -->
+    <section class="bg-light-gray/50 py-20">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-semibold text-charcoal mb-6">
+                The Resonant Builders Almanac
+            </h2>
+            <p class="text-lg text-charcoal/70 mb-12 max-w-2xl mx-auto">
+                Join our community of thoughtful builders. Receive insights, updates, and early access to new resonant tools.
+            </p>
+
+            <form class="max-w-md mx-auto" data-implementation="Newsletter signup with validation">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <input 
+                        type="email" 
+                        placeholder="Enter your email" 
+                        class="flex-1 px-4 py-3 rounded-xl border border-border-gray focus:ring-2 focus:ring-apple-blue focus:border-transparent outline-none transition-all duration-300"
+                        data-mock="true"
+                    >
+                    <button 
+                        type="submit" 
+                        class="bg-apple-blue text-white px-6 py-3 rounded-xl hover:bg-blue-600 transition-colors duration-300 font-medium whitespace-nowrap"
+                    >
+                        Subscribe
+                    </button>
+                </div>
+                <p class="text-sm text-charcoal/60 mt-4">
+                    We respect your privacy. Unsubscribe at any time.
+                </p>
+            </form>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Newsletter Section -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-charcoal text-white py-16">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- Logo & Description -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <span class="text-2xl font-light italic">i</span>
+                        <span class="text-2xl font-semibold">DIG</span>
+                        <span class="text-2xl font-light text-apple-blue">.io</span>
+                    </div>
+                    <p class="text-white/70 leading-relaxed">
+                        Resonant tools for curious minds. Transforming how we engage with content on the web.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-semibold mb-4">Quick Links</h3>
+                    <div class="space-y-2">
+                        <a href="#home" class="block text-white/70 hover:text-white transition-colors duration-300">Home</a>
+                        <a href="#about" class="block text-white/70 hover:text-white transition-colors duration-300">About</a>
+                        <a href="#book" class="block text-white/70 hover:text-white transition-colors duration-300">Book</a>
+                        <a href="#contact" class="block text-white/70 hover:text-white transition-colors duration-300">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Connect -->
+                <div>
+                    <h3 class="font-semibold mb-4">Connect</h3>
+                    <div class="space-y-2">
+                        <a href="#" class="block text-white/70 hover:text-white transition-colors duration-300">Newsletter</a>
+                        <a href="#" class="block text-white/70 hover:text-white transition-colors duration-300">Community</a>
+                        <a href="#" class="block text-white/70 hover:text-white transition-colors duration-300">Support</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-white/60 text-sm">
+                    © 2024 iDIG.io. All rights reserved.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-white/60 hover:text-white transition-colors duration-300 text-sm">Privacy</a>
+                    <a href="#" class="text-white/60 hover:text-white transition-colors duration-300 text-sm">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // TODO: Implement slide navigation functionality
+        (function() {
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.slide-container');
+            const indicators = document.querySelectorAll('[data-slide-indicator]');
+            
+            // Placeholder for slide navigation
+            document.querySelectorAll('[data-event^="click:"]').forEach(button => {
+                button.addEventListener('click', function() {
+                    const action = this.getAttribute('data-event').split(':')[1];
+                    console.log(`Action: ${action}`);
+                    // TODO: Implement actual slide navigation logic
+                });
+            });
+
+            // TODO: Implement mobile menu toggle
+            document.querySelector('[data-implementation*="Toggle mobile menu"]').addEventListener('click', function() {
+                const mobileMenu = document.querySelector('[data-mock="mobile-menu"]');
+                mobileMenu.classList.toggle('hidden');
+            });
+        })();
+    </script>
+</body>
+</html>
