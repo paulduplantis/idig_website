@@ -98,7 +98,7 @@ export default function Home() {
                       {selectedDemo === 'idig-demo' && <>i<em>DIG</em></>}
                     </h4>
                     {selectedDemo !== 'idig-feeds' && selectedDemo !== 'idig-matching' && selectedDemo !== 'idig-attractor' && (
-               W       <img 
+                     <img 
                         src="/images/image_1756278431066.png" 
                         alt="i<em>DIG</em> Interface"
                         className="w-full max-w-2xl h-auto rounded-lg shadow-lg mx-auto"
