@@ -3,10 +3,12 @@ import { useMutation } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
+import { useMobile } from "@/hooks/use-mobile";
 
 export default function BlogSignup() {
   const [email, setEmail] = useState("");
   const { toast } = useToast();
+  const isMobile = useMobile();
 
   const blogMutation = useMutation({
     mutationFn: async (email: string) => {
@@ -40,7 +42,7 @@ export default function BlogSignup() {
       <div className="flex gap-2">
         <input
           type="email"
-          placeholder="Enter your email for blog updates"
+          placeholder={isMobile ? "Enter your email" : "Enter your email for blog updates"}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
