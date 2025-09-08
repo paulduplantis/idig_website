@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 
@@ -36,27 +37,25 @@ export default function BlogSignup() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="flex gap-2">
-        <input
-          type="email"
-          placeholder="Enter your email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          required
-          disabled={blogMutation.isPending}
-          data-testid="input-blog-email"
-        />
-        <Button
-          type="submit"
-          className="apple-button px-6 py-3 font-medium"
-          disabled={blogMutation.isPending}
-          data-testid="button-blog-submit"
-        >
-          {blogMutation.isPending ? "Subscribing..." : "Subscribe"}
-        </Button>
-      </div>
+    <form onSubmit={handleSubmit} className="max-w-md mx-auto flex gap-3">
+      <Input 
+        type="email" 
+        placeholder="Enter your email" 
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        className="flex-1"
+        required
+        disabled={blogMutation.isPending}
+        data-testid="input-blog-email"
+      />
+      <Button 
+        type="submit" 
+        className="apple-button px-6"
+        disabled={blogMutation.isPending}
+        data-testid="button-blog-submit"
+      >
+        {blogMutation.isPending ? "Subscribing..." : "Subscribe"}
+      </Button>
     </form>
   );
 }
