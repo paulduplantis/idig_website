@@ -59,14 +59,15 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      
+
       {/* Hero Section */}
       <main className="pt-10">
         <section className="min-h-screen flex flex-col justify-center">
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            
+          {/* Consistent container wrapper for all content */}
+          <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 text-center">
+
             {/* About iDIG Card */}
-            <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200 mb-8">
+            <div className="bg-white rounded-2xl px-6 sm:px-12 pt-6 pb-12 shadow-lg border border-gray-200 mb-8">
               <div className="text-center">
                 <h2 className="text-4xl md:text-5xl font-light mb-6">About i<em>DIG</em></h2>
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
@@ -83,9 +84,9 @@ export default function Home() {
 
             {/* Demo Player */}
             <div className="mb-8" data-testid="demo-section">
-              
+
               {/* Main Demo Player */}
-              <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200 mb-8 h-[28rem]">
+              <div className="bg-white rounded-2xl px-6 sm:px-12 pt-6 pb-12 shadow-lg border border-gray-200 mb-8 min-h-[28rem]">
                 <div className="text-center h-full flex flex-col">
                   <div className="mb-2">
                     <h4 className="text-4xl md:text-5xl font-light mb-4">
@@ -97,8 +98,8 @@ export default function Home() {
                       {selectedDemo === 'idig-demo' && <>i<em>DIG</em></>}
                     </h4>
                     {selectedDemo !== 'idig-feeds' && selectedDemo !== 'idig-matching' && selectedDemo !== 'idig-attractor' && (
-                      <img 
-                  src="/images/image_1756278431066.png"
+               W       <img 
+                        src="/images/image_1756278431066.png" 
                         alt="i<em>DIG</em> Interface"
                         className="w-full max-w-2xl h-auto rounded-lg shadow-lg mx-auto"
                       />
@@ -157,8 +158,8 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Demo Selector Carousel */}
-              <div className="flex items-center gap-4">
+              {/* Demo Selector Carousel - Hidden on mobile */}
+              <div className="hidden md:flex items-center gap-4">
                 {/* Left Arrow */}
                 <button 
                   onClick={() => {
@@ -309,15 +310,200 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Demo Thumbnails - Mobile portrait only */}
+            <div className="mt-8 sm:hidden w-full">
+              <div className="flex items-center gap-4 justify-center w-full">
+                {/* Left Arrow */}
+                <button 
+                  onClick={() => {
+                    const carousel = document.getElementById('mobile-demo-carousel');
+                    if (carousel) {
+                      carousel.scrollBy({ left: -140, behavior: 'smooth' });
+                    }
+                  }}
+                  className="flex-shrink-0 w-8 h-8 bg-white rounded-full shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-200"
+                >
+                  <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+
+                {/* Thumbnails Container */}
+                <div className="flex-1 max-w-sm overflow-hidden">
+                  <div className="flex gap-3 overflow-x-scroll scrollbar-hide pb-2" id="mobile-demo-carousel">
+                    {/* iDIG Lens Card */}
+                    <div 
+                      onClick={() => {
+                        setSelectedDemo('idig-lens');
+                        const demoSection = document.querySelector('[data-testid="demo-section"]');
+                        if (demoSection) {
+                          demoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                      }}
+                      className={`flex-shrink-0 w-48 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 border-2 bg-white ${
+                        selectedDemo === 'idig-lens' ? 'border-blue-500' : 'border-gray-200 hover:border-blue-300'
+                      }`}
+                    >
+                      <div className="p-4 h-32 flex flex-col justify-between">
+                        <div>
+                          <h5 className="text-sm font-semibold mb-1 text-gray-800">i<em>DIG</em> Lens</h5>
+                          <p className="text-xs text-gray-600 line-clamp-2">
+                            Highlight, save, and explore insights
+                          </p>
+                        </div>
+                        <div className="flex items-center text-xs font-medium text-blue-600">
+                          <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h1m4 0h1" />
+                          </svg>
+                          <span>Active</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* iDIG Feeds Card */}
+                    <div 
+                      onClick={() => {
+                        setSelectedDemo('idig-feeds');
+                        const demoSection = document.querySelector('[data-testid="demo-section"]');
+                        if (demoSection) {
+                          demoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                      }}
+                      className={`flex-shrink-0 w-48 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 border-2 bg-white ${
+                        selectedDemo === 'idig-feeds' ? 'border-green-500' : 'border-gray-200 hover:border-green-300'
+                      }`}
+                    >
+                      <div className="p-4 h-32 flex flex-col justify-between">
+                        <div>
+                          <h5 className="text-sm font-semibold mb-1 text-gray-800">i<em>DIG</em> Feeds</h5>
+                          <p className="text-xs text-gray-600 line-clamp-2">
+                            Turn searches into discovery engines
+                          </p>
+                        </div>
+                        <div className="flex items-center text-xs font-medium text-green-600">
+                          <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                          </svg>
+                          <span>Select</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* iDIG Matching Card */}
+                    <div 
+                      onClick={() => {
+                        setSelectedDemo('idig-matching');
+                        const demoSection = document.querySelector('[data-testid="demo-section"]');
+                        if (demoSection) {
+                          demoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                      }}
+                      className={`flex-shrink-0 w-48 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 border-2 bg-white ${
+                        selectedDemo === 'idig-matching' ? 'border-orange-500' : 'border-gray-200 hover:border-orange-300'
+                      }`}
+                    >
+                      <div className="p-4 h-32 flex flex-col justify-between">
+                        <div>
+                          <h5 className="text-sm font-semibold mb-1 text-gray-800">i<em>DIG</em> Matching</h5>
+                          <p className="text-xs text-gray-600 line-clamp-2">
+                            AI-powered skill and experience matching
+                          </p>
+                        </div>
+                        <div className="flex items-center text-xs font-medium text-orange-600">
+                          <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" />
+                          </svg>
+                          <span>Select</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* iDIG Attractor Card */}
+                    <div 
+                      onClick={() => {
+                        setSelectedDemo('idig-attractor');
+                        const demoSection = document.querySelector('[data-testid="demo-section"]');
+                        if (demoSection) {
+                          demoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                      }}
+                      className={`flex-shrink-0 w-48 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 border-2 bg-white ${
+                        selectedDemo === 'idig-attractor' ? 'border-purple-500' : 'border-gray-200 hover:border-purple-300'
+                      }`}
+                    >
+                      <div className="p-4 h-32 flex flex-col justify-between">
+                        <div>
+                          <h5 className="text-sm font-semibold mb-1 text-gray-800">i<em>DIG</em> Attractor</h5>
+                          <p className="text-xs text-gray-600 line-clamp-2">
+                            Shape discovery flow with adaptive AI
+                          </p>
+                        </div>
+                        <div className="flex items-center text-xs font-medium text-purple-600">
+                          <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                          </svg>
+                          <span>Select</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* iDIG Scenes Card */}
+                    <div 
+                      onClick={() => {
+                        setSelectedDemo('idig-scenes');
+                        const demoSection = document.querySelector('[data-testid="demo-section"]');
+                        if (demoSection) {
+                          demoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                      }}
+                      className={`flex-shrink-0 w-48 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 border-2 bg-white ${
+                        selectedDemo === 'idig-scenes' ? 'border-indigo-500' : 'border-gray-200 hover:border-indigo-300'
+                      }`}
+                    >
+                      <div className="p-4 h-32 flex flex-col justify-between">
+                        <div>
+                          <h5 className="text-sm font-semibold mb-1 text-gray-800">i<em>DIG</em> Scenes</h5>
+                          <p className="text-xs text-gray-600 line-clamp-2">
+                            Curate rich experiences around ideas
+                          </p>
+                        </div>
+                        <div className="flex items-center text-xs font-medium text-indigo-600">
+                          <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                          </svg>
+                          <span>Select</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Arrow */}
+                <button 
+                  onClick={() => {
+                    const carousel = document.getElementById('mobile-demo-carousel');
+                    if (carousel) {
+                      carousel.scrollBy({ left: 140, behavior: 'smooth' });
+                    }
+                  }}
+                  className="flex-shrink-0 w-8 h-8 bg-white rounded-full shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-200"
+                >
+                  <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
           </div>
         </section>
 
-        {/* About Preview Section */}
+        {/* About Preview Section - Now with consistent container */}
         <section className="pt-8 pb-20">
-          <div className="max-w-4xl mx-auto px-6">
+          <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 text-center">
 
-            <div className="grid md:grid-cols-2 gap-12 mb-16">
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+            <div className="space-y-12 mb-16">
+              <div className="bg-white rounded-2xl px-6 sm:px-12 pt-6 pb-12 shadow-lg border border-gray-200">
                 <h3 className="text-2xl font-medium mb-4">i<em>DIG</em> Principles</h3>
                 <ul className="text-gray-600 leading-relaxed space-y-3">
                   <li>• Local storage or private storage for what is consumed, created or shared</li>
@@ -328,8 +514,8 @@ export default function Home() {
                   <li>• AI summaries controlled by the user</li>
                 </ul>
               </div>
-              
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+
+              <div className="bg-white rounded-2xl px-6 sm:px-12 pt-6 pb-12 shadow-lg border border-gray-200">
                 <h3 className="text-2xl font-medium mb-4">The i<em>DIG</em> Vision</h3>
                 <div className="text-gray-600 leading-relaxed space-y-3">
                   <p>To work toward building resonance in the connection by creating tools to align opportunities, resources, and information with those deep within communities.</p>
@@ -345,10 +531,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Blog Preview Section */}
+        {/* Blog Preview Section - Now with consistent container */}
         <section className="pb-16">
-          <div className="max-w-4xl mx-auto px-6">
-            <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200">
+          <div className="w-full max-w-4xl mx-auto px-4 sm:px-6">
+            <div className="bg-white rounded-2xl px-6 sm:px-12 pt-6 pb-12 shadow-lg border border-gray-200">
               <div className="text-center">
                 <h2 className="text-4xl md:text-5xl font-light mb-6">The Resonant Builders Blog</h2>
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
@@ -360,20 +546,18 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
-                
+
                 {/* Blog Subscription */}
-                <div className="max-w-md mx-auto">
-                  <BlogSignup />
-                </div>
+                <BlogSignup />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Book Preview Section */}
+        {/* Book Preview Section - Now with consistent container */}
         <section className="pb-20">
-          <div className="max-w-4xl mx-auto px-6">
-            <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200">
+          <div className="w-full max-w-4xl mx-auto px-4 sm:px-6">
+            <div className="bg-white rounded-2xl px-6 sm:px-12 pt-6 pb-12 shadow-lg border border-gray-200">
               <div className="text-center">
                 <h2 className="text-4xl md:text-5xl font-light mb-6">We the Resonant Builders</h2>
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
