@@ -13,7 +13,7 @@ export default function Newsletter() {
             <NewsletterSignup />
 
             {/* Newsletter Preview */}
-            <div className="mb-10">
+            <div className="mt-16 mb-10">
               <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 h-96 flex flex-col">
                 <div className="mb-6">
                   <span className="text-sm text-blue-500 font-medium">Monthly Newsletter</span>
