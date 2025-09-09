@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Navigation() {
   const [location] = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSubscribeDropdownOpen, setIsSubscribeDropdownOpen] = useState(false);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    setIsSubscribeDropdownOpen(false);
   }, [location]);
 
   const navLinks = [
@@ -49,12 +51,37 @@ i<em>DIG</em>
           </div>
 
           <div className="flex items-center gap-4">
-            {/* Subscribe Button */}
-            <Link href="/newsletter">
-              <Button className="apple-button px-4 py-2 text-sm font-medium" data-testid="button-subscribe">
+            {/* Subscribe Dropdown */}
+            <div className="relative">
+              <Button 
+                onClick={() => setIsSubscribeDropdownOpen(!isSubscribeDropdownOpen)}
+                className="apple-button px-4 py-2 text-sm font-medium flex items-center gap-1" 
+                data-testid="button-subscribe"
+              >
                 Subscribe
+                <ChevronDown className="w-4 h-4" />
               </Button>
-            </Link>
+              
+              {/* Subscribe Dropdown Menu */}
+              {isSubscribeDropdownOpen && (
+                <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                  <Link 
+                    href="/newsletter" 
+                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-500 transition-colors duration-200"
+                    onClick={() => setIsSubscribeDropdownOpen(false)}
+                  >
+                    Newsletter
+                  </Link>
+                  <Link 
+                    href="/blog" 
+                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-500 transition-colors duration-200"
+                    onClick={() => setIsSubscribeDropdownOpen(false)}
+                  >
+                    Blog
+                  </Link>
+                </div>
+              )}
+            </div>
             
             {/* Hamburger Menu Button */}
             <button 
