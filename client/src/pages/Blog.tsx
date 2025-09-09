@@ -16,23 +16,10 @@ export default function Blog() {
       <main className="pt-10">
         <section className="pb-8">
           <div className="max-w-4xl mx-auto px-6">
-            <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200 mb-8">
-              <div className="text-center">
-                <h1 className="text-4xl md:text-5xl font-light mb-6">The Resonant Builders Blog</h1>
-                <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
-                  Insights, reflections, and deep explorations into building tools that serve human curiosity and foster meaningful digital experiences.
-                </p>
-                <Link href="/#demo-section" className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium mb-4">
-                  Watch the i<em>DIG</em> Demo
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
+            <BlogSignup />
 
             {/* Introduction to iDIG Blog Post */}
-            <div className="mb-10">
+            <div className="mt-8 mb-10">
               <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 h-96 flex flex-col">
                 <div className="mb-6">
                   <span className="text-sm text-blue-500 font-medium">Introduction</span>
@@ -101,28 +88,17 @@ export default function Blog() {
             </div>
 
 
-            {/* Blog Subscription */}
-            <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200">
-              <div className="text-center mb-8">
-                <h2 className="text-3xl font-light mb-4">Get Blog Updates</h2>
-                <p className="text-gray-600 mb-6">
-                  Subscribe to receive notifications when we publish new blog posts and insights from the resonant building community.
-                </p>
-              </div>
-              
-              <BlogSignup />
-              
-              <div className="mt-6 text-center">
-                <p className="text-sm text-gray-500 mb-2">
-                  Looking for our monthly newsletter instead?
-                </p>
-                <Link href="/newsletter" className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium text-sm">
-                  Subscribe to The Resonant Builders Monthly
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
+            {/* Newsletter Subscription Link */}
+            <div className="mt-6 text-center">
+              <p className="text-sm text-gray-500 mb-2">
+                Looking for our monthly newsletter instead?
+              </p>
+              <Link href="/newsletter" className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium text-sm">
+                Subscribe to The Resonant Builders Monthly
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
             </div>
           </div>
         </section>
