@@ -65,18 +65,19 @@ export default function Newsletter() {
               </div>
               
               <NewsletterSignup />
-              
-              <div className="mt-6 text-center">
-                <p className="text-sm text-gray-500 mb-2">
-                  Looking for blog post notifications instead?
-                </p>
-                <Link href="/blog" className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium text-sm">
-                  Subscribe to Blog Updates
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
+            </div>
+
+            {/* Blog Subscription Link */}
+            <div className="mt-6 text-center">
+              <p className="text-sm text-gray-500 mb-2">
+                Looking for blog post notifications instead?
+              </p>
+              <Link href="/blog" className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium text-sm">
+                Subscribe to Blog Updates
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
             </div>
           </div>
         </section>
