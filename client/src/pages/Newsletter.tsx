@@ -10,20 +10,7 @@ export default function Newsletter() {
       <main className="pt-10">
         <section className="pt-0 pb-8">
           <div className="max-w-4xl mx-auto px-6">
-            <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200 mb-8">
-              <div className="text-center">
-                <h1 className="text-3xl md:text-4xl font-light mb-6">The Resonant Builders Monthly</h1>
-                <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
-                  Join our community of builders creating tools that amplify human curiosity and foster meaningful engagement with digital content.
-                </p>
-                <Link href="/#demo-section" className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium mb-4">
-                  Watch the i<em>DIG</em> Demo
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
+            <NewsletterSignup />
 
             {/* Newsletter Preview */}
             <div className="mb-10">
