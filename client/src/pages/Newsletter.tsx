@@ -55,17 +55,6 @@ export default function Newsletter() {
               </div>
             </div>
 
-            {/* Newsletter Subscription */}
-            <div className="bg-white rounded-2xl px-12 pt-6 pb-12 shadow-lg border border-gray-200">
-              <div className="text-center mb-8">
-                <h2 className="text-3xl font-light mb-4">Subscribe to the Monthly Newsletter</h2>
-                <p className="text-gray-600 mb-6">
-                  Receive The Resonant Builders Monthly with curated insights, community spotlights, and updates from the resonant building community.
-                </p>
-              </div>
-              
-              <NewsletterSignup />
-            </div>
 
             {/* Blog Subscription Link */}
             <div className="mt-6 text-center">
