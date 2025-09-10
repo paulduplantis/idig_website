@@ -1,5 +1,4 @@
 import type { Express } from "express";
-import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertNewsletterSchema, insertBlogSubscriptionSchema, insertContactSchema } from "@shared/schema";
 import { z } from "zod";
@@ -10,7 +9,7 @@ import {
 } from "./objectStorage";
 
 
-export async function registerRoutes(app: Express): Promise<Server> {
+export async function registerRoutes(app: Express): Promise<void> {
   // Newsletter subscription endpoint
   app.post("/api/newsletter", async (req, res) => {
     try {
@@ -184,6 +183,5 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
 
-  const httpServer = createServer(app);
-  return httpServer;
+  // No need to create server for Vercel
 }
