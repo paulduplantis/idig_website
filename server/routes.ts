@@ -9,7 +9,7 @@ import {
 } from "./objectStorage";
 
 
-export async function registerRoutes(app: Express): Promise<void> {
+export function registerRoutes(app: Express): void {
   // Newsletter subscription endpoint
   app.post("/api/newsletter", async (req, res) => {
     try {
