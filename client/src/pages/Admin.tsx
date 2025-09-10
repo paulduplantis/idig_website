@@ -200,14 +200,14 @@ export default function Admin() {
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <button
-                    onClick={() => window.open(`http://localhost:5000/email-templates/monthly-newsletter-template.html`, '_blank')}
+                    onClick={() => window.open(`${window.location.origin}/email-templates/monthly-newsletter-template.html`, '_blank')}
                     className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
                     data-testid="button-monthly-template"
                   >
                     Monthly Newsletter Template
                   </button>
                   <button
-                    onClick={() => window.open(`http://localhost:5000/email-templates/blog-notification-template.html`, '_blank')}
+                    onClick={() => window.open(`${window.location.origin}/email-templates/blog-notification-template.html`, '_blank')}
                     className="inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-sm font-medium"
                     data-testid="button-blog-template"
                   >
