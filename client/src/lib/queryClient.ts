@@ -14,7 +14,7 @@ export async function apiRequest(
 ): Promise<Response> {
   // Use Vercel API URL for production, relative URL for development
   const baseUrl = process.env.NODE_ENV === 'production' 
-    ? 'https://idig-highlighter-extension.vercel.app'
+    ? 'https://idig-highlighter-extension-git-main-paulduplantis-projects.vercel.app'
     : '';
   
   const fullUrl = url.startsWith('/') ? `${baseUrl}${url}` : url;
