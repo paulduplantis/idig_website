@@ -101,7 +101,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
     const { templateName } = req.params;
     const allowedTemplates = [
       'monthly-newsletter-template.html',
-      'blog-notification-template.html'
+      'blog-notification-template.html',
+      'newsletter-template.html'
     ];
     
     if (!allowedTemplates.includes(templateName)) {
