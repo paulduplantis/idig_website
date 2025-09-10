@@ -1,0 +1,26 @@
+warning: in the working copy of 'client/src/pages/Newsletter.tsx', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/client/public/favicon.svg b/client/public/favicon.svg[m
+[1mindex 64e6250..fe6bb38 100644[m
+[1m--- a/client/public/favicon.svg[m
+[1m+++ b/client/public/favicon.svg[m
+[36m@@ -1,6 +1,4 @@[m
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">[m
+   <rect width="32" height="32" fill="#007AFF" rx="4"/>[m
+[31m-  <text x="16" y="22" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">[m
+[31m-    <tspan font-style="normal">i</tspan><tspan font-style="italic">DIG</tspan>[m
+[31m-  </text>[m
+[32m+[m[32m  <text x="16" y="22" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">iDIG</text>[m
+ </svg>[m
+[1mdiff --git a/client/src/pages/Newsletter.tsx b/client/src/pages/Newsletter.tsx[m
+[1mindex b9e487e..7ed75c1 100644[m
+[1m--- a/client/src/pages/Newsletter.tsx[m
+[1m+++ b/client/src/pages/Newsletter.tsx[m
+[36m@@ -13,7 +13,7 @@[m [mexport default function Newsletter() {[m
+             <NewsletterSignup />[m
+ [m
+             {/* Newsletter Preview */}[m
+[31m-            <div className="mt-16 mb-10">[m
+[32m+[m[32m            <div className="mt-10 mb-10">[m
+               <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 h-96 flex flex-col">[m
+                 <div className="mb-6">[m
+                   <span className="text-sm text-blue-500 font-medium">Monthly Newsletter</span>[m
