@@ -7,14 +7,6 @@
       "config": {
         "nodeVersion": "22.x"
       }
-    },
-    {
-      "src": "client/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist",
-        "nodeVersion": "22.x"
-      }
     }
   ],
   "routes": [
