@@ -32,12 +32,30 @@ export default function Admin() {
 
   // Always call hooks - but only enable queries when authenticated
   const newsletterQuery = useQuery<Newsletter[]>({
-    queryKey: ['/api/admin/newsletter-subscribers'],
+    queryKey: ['newsletter-subscribers'],
+    queryFn: async () => {
+      const response = await fetch(
+        process.env.NODE_ENV === 'production' 
+          ? 'https://idig-website.vercel.app/api/admin/newsletter-subscribers'
+          : '/api/admin/newsletter-subscribers'
+      );
+      if (!response.ok) throw new Error('Failed to fetch newsletter subscribers');
+      return response.json();
+    },
     enabled: isAuthenticated && activeTab === 'newsletter'
   });
 
   const blogQuery = useQuery<BlogSubscription[]>({
-    queryKey: ['/api/admin/blog-subscribers'],
+    queryKey: ['blog-subscribers'],
+    queryFn: async () => {
+      const response = await fetch(
+        process.env.NODE_ENV === 'production' 
+          ? 'https://idig-website.vercel.app/api/admin/blog-subscribers'
+          : '/api/admin/blog-subscribers'
+      );
+      if (!response.ok) throw new Error('Failed to fetch blog subscribers');
+      return response.json();
+    },
     enabled: isAuthenticated && activeTab === 'blog'
   });
 
