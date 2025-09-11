@@ -99,6 +99,38 @@ export function registerRoutes(app: Express): void {
     res.json({ status: "ok", message: "iDIG API is running" });
   });
 
+  // URL conversion endpoint for breadcrumb sharing
+  app.post("/api/convert-share-url", (req, res) => {
+    try {
+      const { gistUrl } = req.body;
+      
+      if (!gistUrl) {
+        return res.status(400).json({ message: "gistUrl is required" });
+      }
+      
+      // Extract the filename from the gist URL
+      const gistPattern = /https:\/\/gist\.githack\.com\/paulduplantis\/[^\/]+\/raw\/([^?]+)(\?.*)?$/;
+      const match = gistUrl.match(gistPattern);
+      
+      if (match) {
+        const filename = match[1];
+        const queryParams = match[2] || '';
+        
+        // Convert to i-dig.io/share/ format
+        const shareUrl = `https://www.i-dig.io/share/${filename}${queryParams}`;
+        
+        res.json({ 
+          originalUrl: gistUrl,
+          shareUrl: shareUrl,
+          filename: filename
+        });
+      } else {
+        res.status(400).json({ message: "Invalid gist URL format" });
+      }
+    } catch (error) {
+      res.status(500).json({ message: "Failed to convert URL" });
+    }
+  });
 
   // No need to create server for Vercel
 }
