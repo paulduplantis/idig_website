@@ -52,32 +52,17 @@
     }
     </script>
     
-    <!-- Delayed redirect to allow search engines to index -->
+    <!-- Redirect to main app -->
     <script>
-      setTimeout(function() {
-        if (typeof window !== 'undefined' && window.location) {
-          window.location.href = '/#blog';
-        }
-      }, 3000);
+      window.location.href = '/#blog';
     </script>
-    <meta http-equiv="refresh" content="5;url=/#blog">
   </head>
   <body>
     <div id="root">
-      <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto;">
+      <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
         <h1>The Resonant Builders Blog</h1>
-        <p style="font-size: 18px; line-height: 1.6; color: #333; margin: 20px 0;">
-          Explore insights, reflections, and deep explorations into building tools that serve human curiosity. 
-          Read about digital research, web annotation, and meaningful technology.
-        </p>
-        <p style="margin: 30px 0;">
-          <a href="/#blog" style="background: #3b82f6; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 500;">
-            Read the Blog
-          </a>
-        </p>
-        <p style="font-size: 14px; color: #666;">
-          You will be automatically redirected in a few seconds...
-        </p>
+        <p>Redirecting to the main application...</p>
+        <p><a href="/#blog">Click here if you are not redirected automatically</a></p>
       </div>
     </div>
   </body>
