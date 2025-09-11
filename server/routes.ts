@@ -1,12 +1,11 @@
 import type { Express } from "express";
-import { storage } from "./storage";
+import { MemStorage } from "./storage";
+
+// Use in-memory storage for serverless environment
+const storage = new MemStorage();
 import { insertNewsletterSchema, insertBlogSubscriptionSchema, insertContactSchema } from "@shared/schema";
 import { z } from "zod";
-import * as path from "path";
-import {
-  ObjectStorageService,
-  ObjectNotFoundError,
-} from "./objectStorage";
+// Removed object storage imports for serverless compatibility
 
 
 export function registerRoutes(app: Express): void {
@@ -95,91 +94,9 @@ export function registerRoutes(app: Express): void {
     }
   });
 
-  // Serve email templates
-  app.get("/email-templates/:templateName", (req, res) => {
-    const { templateName } = req.params;
-    const allowedTemplates = [
-      'monthly-newsletter-template.html',
-      'blog-notification-template.html',
-      'newsletter-template.html'
-    ];
-    
-    if (!allowedTemplates.includes(templateName)) {
-      return res.status(404).send('Template not found');
-    }
-    
-    res.sendFile(path.join(process.cwd(), 'email-templates', templateName));
-  });
-
-  // Object storage endpoints for video serving
-  app.get("/objects/:objectPath(*)", async (req, res) => {
-    const objectStorageService = new ObjectStorageService();
-    try {
-      const objectFile = await objectStorageService.getObjectEntityFile(
-        req.path,
-      );
-      objectStorageService.downloadObject(objectFile, res);
-    } catch (error) {
-      console.error("Error accessing object:", error);
-      if (error instanceof ObjectNotFoundError) {
-        return res.sendStatus(404);
-      }
-      return res.sendStatus(500);
-    }
-  });
-
-  // Direct bucket file access for files in bucket root
-  app.get("/bucket-files/:fileName(*)", async (req, res) => {
-    const bucketId = process.env.DEFAULT_OBJECT_STORAGE_BUCKET_ID;
-    if (!bucketId) {
-      return res.status(500).json({ error: "Bucket not configured" });
-    }
-    
-    try {
-      const { objectStorageClient } = await import("./objectStorage");
-      const bucket = objectStorageClient.bucket(bucketId);
-      const file = bucket.file(req.params.fileName);
-      
-      const [exists] = await file.exists();
-      if (!exists) {
-        return res.sendStatus(404);
-      }
-      
-      // Get file metadata
-      const [metadata] = await file.getMetadata();
-      
-      // Set appropriate headers
-      res.set({
-        "Content-Type": metadata.contentType || "application/octet-stream",
-        "Content-Length": metadata.size,
-        "Cache-Control": "public, max-age=3600",
-      });
-
-      // Stream the file to the response
-      const stream = file.createReadStream();
-      stream.on("error", (err) => {
-        console.error("Stream error:", err);
-        if (!res.headersSent) {
-          res.status(500).json({ error: "Error streaming file" });
-        }
-      });
-      stream.pipe(res);
-    } catch (error) {
-      console.error("Error accessing bucket file:", error);
-      return res.sendStatus(500);
-    }
-  });
-
-  // Upload URL endpoint for video uploads
-  app.post("/api/objects/upload", async (req, res) => {
-    const objectStorageService = new ObjectStorageService();
-    try {
-      const uploadURL = await objectStorageService.getObjectEntityUploadURL();
-      res.json({ uploadURL });
-    } catch (error) {
-      console.error("Error getting upload URL:", error);
-      res.status(500).json({ error: "Failed to get upload URL" });
-    }
+  // Basic health check endpoint
+  app.get("/api/health", (req, res) => {
+    res.json({ status: "ok", message: "iDIG API is running" });
   });
 
 

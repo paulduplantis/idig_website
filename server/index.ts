@@ -1,5 +1,9 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
+import { MemStorage } from "./storage";
+
+// Use in-memory storage for serverless environment
+const storage = new MemStorage();
 
 const app = express();
 
