@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import BlogSignup from "@/components/BlogSignup";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { useState } from "react";
@@ -58,6 +59,12 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="iDIG - Resonant Tools for Curious Minds"
+        description="Discover iDIG, an innovative web highlighter and annotation tool designed to foster curiosity, enhance research, and build meaningful digital experiences. Join The Resonant Builders community."
+        keywords="web highlighter, annotation tool, research tool, digital curiosity, web research, knowledge management, browser extension, iDIG"
+        url="https://www.i-dig.io/"
+      />
       <Navigation />
 
       {/* Hero Section */}

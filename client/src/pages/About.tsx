@@ -1,10 +1,17 @@
 import Navigation from "@/components/Navigation";
 import NewsletterSignup from "@/components/NewsletterSignup";
+import SEO from "@/components/SEO";
 import { Link } from "wouter";
 
 export default function About() {
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="About iDIG - Deep Inquiry Generator for Curious Minds"
+        description="Learn about iDIG's mission to amplify human curiosity through innovative web tools. Discover how our Deep Inquiry Generator framework fosters meaningful digital exploration and research."
+        keywords="about iDIG, deep inquiry generator, curiosity tools, web research, digital exploration, annotation framework"
+        url="https://www.i-dig.io/about"
+      />
       <Navigation />
       
       <main className="pt-10">
