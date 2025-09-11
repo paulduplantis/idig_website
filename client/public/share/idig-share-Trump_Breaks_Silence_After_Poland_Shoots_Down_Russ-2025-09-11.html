@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iDIG Share - Redirecting...</title>
+    <title>iDIG Share - Trump Breaks Silence After Poland Shoots Down Russian Missile</title>
     <meta name="description" content="Redirecting to shared iDIG content...">
     <style>
         body {
@@ -38,19 +38,8 @@
         }
     </style>
     <script>
-        // Get the path after /share/
-        const path = window.location.pathname.replace('/share/', '');
-        
-        if (path && path !== '') {
-            // Construct the gist URL by replacing the domain
-            const gistUrl = `https://gist.githack.com/paulduplantis/77f4ea8750d99707f34368e09e83634b/raw/${path}`;
-            
-            // Redirect immediately
-            window.location.href = gistUrl;
-        } else {
-            // Fallback for direct /share.html access
-            window.location.href = 'https://gist.githack.com/paulduplantis/77f4ea8750d99707f34368e09e83634b/raw/idig-share-Trump_Breaks_Silence_After_Poland_Shoots_Down_Russ-2025-09-11.html?highlight=6aa0c7e0-a9ac-48a0-8401-27d9a7769589';
-        }
+        // Redirect to the actual gist URL
+        window.location.href = 'https://gist.githack.com/paulduplantis/77f4ea8750d99707f34368e09e83634b/raw/idig-share-Trump_Breaks_Silence_After_Poland_Shoots_Down_Russ-2025-09-11.html?highlight=6aa0c7e0-a9ac-48a0-8401-27d9a7769589';
     </script>
 </head>
 <body>
@@ -58,16 +47,7 @@
         <div class="spinner"></div>
         <h2>iDIG Share</h2>
         <p>Redirecting to shared content...</p>
-        <p><small>If you're not redirected automatically, <a href="#" id="fallback-link" style="color: #fff; text-decoration: underline;">click here</a>.</small></p>
+        <p><small>If you're not redirected automatically, <a href="https://gist.githack.com/paulduplantis/77f4ea8750d99707f34368e09e83634b/raw/idig-share-Trump_Breaks_Silence_After_Poland_Shoots_Down_Russ-2025-09-11.html?highlight=6aa0c7e0-a9ac-48a0-8401-27d9a7769589" style="color: #fff; text-decoration: underline;">click here</a>.</small></p>
     </div>
-    
-    <script>
-        // Set fallback link
-        const path = window.location.pathname.replace('/share/', '');
-        if (path && path !== '') {
-            const gistUrl = `https://gist.githack.com/paulduplantis/77f4ea8750d99707f34368e09e83634b/raw/${path}`;
-            document.getElementById('fallback-link').href = gistUrl;
-        }
-    </script>
 </body>
 </html>

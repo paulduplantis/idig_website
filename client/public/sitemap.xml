@@ -67,7 +67,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.i-dig.io/share.html</loc>
+    <loc>https://www.i-dig.io/share/</loc>
+    <lastmod>2025-01-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.i-dig.io/share/idig-share-Trump_Breaks_Silence_After_Poland_Shoots_Down_Russ-2025-09-11.html</loc>
     <lastmod>2025-01-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
