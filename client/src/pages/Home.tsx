@@ -505,7 +505,7 @@ export default function Home() {
         </section>
 
         {/* About Preview Section - Now with consistent container */}
-        <section className="pt-8 pb-20">
+        <section className="pt-8 pb-8">
           <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 text-center">
 
             <div className="space-y-12 mb-16">
