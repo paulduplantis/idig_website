@@ -1,5 +1,4 @@
 import Navigation from "@/components/Navigation";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import BlogSignup from "@/components/BlogSignup";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
@@ -533,8 +532,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Newsletter Signup */}
-            <NewsletterSignup />
           </div>
         </section>
 
