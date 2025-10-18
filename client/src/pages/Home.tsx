@@ -544,15 +544,13 @@ export default function Home() {
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
                   Insights, reflections, and deep explorations into building tools that serve human curiosity and foster meaningful digital experiences.
                 </p>
-                <Link href="/blog" className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium mb-8">
+                <Link href="/blog" className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium ">
                   Explore the Blog
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
 
-                {/* Blog Subscription */}
-                <BlogSignup />
               </div>
             </div>
           </div>
