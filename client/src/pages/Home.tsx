@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import BlogSignup from "@/components/BlogSignup";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
@@ -135,195 +136,190 @@ export default function Home() {
                         <p>The design draws on ideas from Quantum Social Sciences, exploring how entangled patterns might guide collective insight.</p>
                         <p>All attractor settings remain in local or private storage, ensuring sovereignty over what is discovered and shared.</p>
                       </div>
-                    ) : selectedDemo === 'idig-scenes' ? (
-                      <div className="space-y-4">
-                        <p>Create immersive, contextual environments around your ideas. Organize related content, conversations, and insights into rich, explorable scenes.</p>
-                      </div>
-                    ) : selectedDemo === 'idig-lens' ? (
-                      <p>Universal bookmarking, highlighting, microlinking and web reader. Take snapshots of full pages, generate customized AI summaries, share microlinks to serve as breadcrumbs for discovery. Tag and filter content stored on local devices.</p>
                     ) : (
-                      <p>Interactive demonstration of i<em>DIG</em> capabilities including the movable menu system and core features.</p>
+                      <p>{currentDemo.description}</p>
                     )}
                   </div>
-
                   {currentDemo.features && (
-                    <div className="text-sm text-gray-500 space-y-1 max-w-2xl mx-auto">
-                      {currentDemo.features.map((feature, idx) => (
-                        <div key={idx}>{feature}</div>
-                      ))}
-                    </div>
-                  )}
-
-                  {currentDemo.videoUrl && (
-                    <div className="mt-6 flex-grow flex items-center justify-center">
-                      <video
-                        src={currentDemo.videoUrl}
-                        controls
-                        className="w-full max-w-3xl rounded-lg shadow-lg"
-                        playsInline
-                      >
-                        Your browser does not support the video tag.
-                      </video>
+                    <div className="mb-6 text-center">
+                      <div className="text-gray-600 text-sm max-w-2xl mx-auto">
+                        {currentDemo.features.map((feature, index) => (
+                          <div key={index} className="text-center">
+                            {feature}
+                          </div>
+                        ))}
+                      </div>
+                      {selectedDemo === 'idig-lens' && currentDemo.videoUrl && (
+                        <div className="mt-4">
+                          <Button 
+                            onClick={() => window.location.href = '/demo/idig-lens'}
+                            className="apple-button px-6 py-2 text-sm font-medium" 
+                            data-testid="button-watch-demo"
+                          >
+                            Watch Demo
+                          </Button>
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
               </div>
 
-              {/* Demo Selection Cards - Desktop */}
-              <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-4">
+              {/* Demo Selector Carousel - Hidden on mobile */}
+              <div className="hidden md:flex items-center gap-4">
+                {/* Left Arrow */}
+                <button 
+                  onClick={() => {
+                    const carousel = document.getElementById('demo-carousel');
+                    if (carousel) {
+                      carousel.scrollBy({ left: -280, behavior: 'smooth' });
+                    }
+                  }}
+                  className="flex-shrink-0 w-10 h-10 bg-white rounded-full shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-200 apple-button"
+                >
+                  <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+
+                {/* Carousel Container */}
+                <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide flex-1" id="demo-carousel">
                 {/* iDIG Lens Card */}
                 <div 
                   onClick={() => setSelectedDemo('idig-lens')}
-                  className={`bg-white rounded-xl p-4 border-2 transition-all duration-200 cursor-pointer ${
-                    selectedDemo === 'idig-lens' 
-                      ? 'border-indigo-500 shadow-lg' 
-                      : 'border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-md'
+                  className={`flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 bg-white ${
+                    selectedDemo === 'idig-lens' ? 'border-blue-500' : 'border-gray-200 hover:border-blue-300'
                   }`}
                 >
-                  <div className="flex items-start justify-between mb-2">
-                    <h4 className="text-sm font-semibold text-gray-900">
-                      i<em>DIG</em> Lens
-                    </h4>
-                    {selectedDemo === 'idig-lens' && (
-                      <svg className="w-5 h-5 text-indigo-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  <div className="p-6 h-32 flex flex-col justify-between">
+                    <div>
+                      <h5 className="text-lg font-semibold mb-2 text-gray-800">i<em>DIG</em> Lens</h5>
+                      <p className="text-xs text-gray-600 line-clamp-2">
+                        Highlight, save, and explore insights
+                      </p>
+                    </div>
+                    <div className="flex items-center text-xs font-medium text-blue-600">
+                      <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h1m4 0h1" />
                       </svg>
-                    )}
-                  </div>
-                  <p className="text-xs text-gray-600 line-clamp-2">
-                    Universal bookmarking & web reader
-                  </p>
-                  <div className="mt-3 flex items-center text-xs font-medium text-indigo-600">
-                    <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                    </svg>
-                    <span>Select</span>
+                      <span>Active</span>
+                    </div>
                   </div>
                 </div>
 
                 {/* iDIG Feeds Card */}
                 <div 
                   onClick={() => setSelectedDemo('idig-feeds')}
-                  className={`bg-white rounded-xl p-4 border-2 transition-all duration-200 cursor-pointer ${
-                    selectedDemo === 'idig-feeds' 
-                      ? 'border-indigo-500 shadow-lg' 
-                      : 'border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-md'
+                  className={`flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 bg-white ${
+                    selectedDemo === 'idig-feeds' ? 'border-green-500' : 'border-gray-200 hover:border-green-300'
                   }`}
                 >
-                  <div className="flex items-start justify-between mb-2">
-                    <h4 className="text-sm font-semibold text-gray-900">
-                      i<em>DIG</em> Feeds
-                    </h4>
-                    {selectedDemo === 'idig-feeds' && (
-                      <svg className="w-5 h-5 text-indigo-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  <div className="p-6 h-32 flex flex-col justify-between">
+                    <div>
+                      <h5 className="text-lg font-semibold mb-2 text-gray-800">i<em>DIG</em> Feeds</h5>
+                      <p className="text-xs text-gray-600 line-clamp-2">
+                        Turn searches into discovery engines
+                      </p>
+                    </div>
+                    <div className="flex items-center text-xs font-medium text-green-600">
+                      <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
                       </svg>
-                    )}
-                  </div>
-                  <p className="text-xs text-gray-600 line-clamp-2">
-                    Organize content streams
-                  </p>
-                  <div className="mt-3 flex items-center text-xs font-medium text-indigo-600">
-                    <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                    </svg>
-                    <span>Select</span>
+                      <span>Select</span>
+                    </div>
                   </div>
                 </div>
 
                 {/* iDIG Matching Card */}
                 <div 
                   onClick={() => setSelectedDemo('idig-matching')}
-                  className={`bg-white rounded-xl p-4 border-2 transition-all duration-200 cursor-pointer ${
-                    selectedDemo === 'idig-matching' 
-                      ? 'border-indigo-500 shadow-lg' 
-                      : 'border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-md'
+                  className={`flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 bg-white ${
+                    selectedDemo === 'idig-matching' ? 'border-orange-500' : 'border-gray-200 hover:border-orange-300'
                   }`}
                 >
-                  <div className="flex items-start justify-between mb-2">
-                    <h4 className="text-sm font-semibold text-gray-900">
-                      i<em>DIG</em> Matching
-                    </h4>
-                    {selectedDemo === 'idig-matching' && (
-                      <svg className="w-5 h-5 text-indigo-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  <div className="p-6 h-32 flex flex-col justify-between">
+                    <div>
+                      <h5 className="text-lg font-semibold mb-2 text-gray-800">i<em>DIG</em> Matching</h5>
+                      <p className="text-xs text-gray-600 line-clamp-2">
+                        AI-powered skill and experience matching
+                      </p>
+                    </div>
+                    <div className="flex items-center text-xs font-medium text-orange-600">
+                      <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" />
                       </svg>
-                    )}
-                  </div>
-                  <p className="text-xs text-gray-600 line-clamp-2">
-                    Surface hidden relationships
-                  </p>
-                  <div className="mt-3 flex items-center text-xs font-medium text-indigo-600">
-                    <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                    </svg>
-                    <span>Select</span>
+                      <span>Select</span>
+                    </div>
                   </div>
                 </div>
 
                 {/* iDIG Attractor Card */}
                 <div 
                   onClick={() => setSelectedDemo('idig-attractor')}
-                  className={`bg-white rounded-xl p-4 border-2 transition-all duration-200 cursor-pointer ${
-                    selectedDemo === 'idig-attractor' 
-                      ? 'border-indigo-500 shadow-lg' 
-                      : 'border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-md'
+                  className={`flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 bg-white ${
+                    selectedDemo === 'idig-attractor' ? 'border-purple-500' : 'border-gray-200 hover:border-purple-300'
                   }`}
                 >
-                  <div className="flex items-start justify-between mb-2">
-                    <h4 className="text-sm font-semibold text-gray-900">
-                      i<em>DIG</em> Attractor
-                    </h4>
-                    {selectedDemo === 'idig-attractor' && (
-                      <svg className="w-5 h-5 text-indigo-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  <div className="p-6 h-32 flex flex-col justify-between">
+                    <div>
+                      <h5 className="text-lg font-semibold mb-2 text-gray-800">i<em>DIG</em> Attractor</h5>
+                      <p className="text-xs text-gray-600 line-clamp-2">
+                        Shape discovery flow with adaptive AI
+                      </p>
+                    </div>
+                    <div className="flex items-center text-xs font-medium text-purple-600">
+                      <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
-                    )}
-                  </div>
-                  <p className="text-xs text-gray-600 line-clamp-2">
-                    Shape discovery flows
-                  </p>
-                  <div className="mt-3 flex items-center text-xs font-medium text-indigo-600">
-                    <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                    </svg>
-                    <span>Select</span>
+                      <span>Select</span>
+                    </div>
                   </div>
                 </div>
 
                 {/* iDIG Scenes Card */}
                 <div 
                   onClick={() => setSelectedDemo('idig-scenes')}
-                  className={`bg-white rounded-xl p-4 border-2 transition-all duration-200 cursor-pointer ${
-                    selectedDemo === 'idig-scenes' 
-                      ? 'border-indigo-500 shadow-lg' 
-                      : 'border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-md'
+                  className={`flex-shrink-0 w-64 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 apple-button border-2 bg-white ${
+                    selectedDemo === 'idig-scenes' ? 'border-indigo-500' : 'border-gray-200 hover:border-indigo-300'
                   }`}
                 >
-                  <div className="flex items-start justify-between mb-2">
-                    <h4 className="text-sm font-semibold text-gray-900">
-                      i<em>DIG</em> Scenes
-                    </h4>
-                    {selectedDemo === 'idig-scenes' && (
-                      <svg className="w-5 h-5 text-indigo-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  <div className="p-6 h-32 flex flex-col justify-between">
+                    <div>
+                      <h5 className="text-lg font-semibold mb-2 text-gray-800">i<em>DIG</em> Scenes</h5>
+                      <p className="text-xs text-gray-600 line-clamp-2">
+                        Curate rich experiences around ideas
+                      </p>
+                    </div>
+                    <div className="flex items-center text-xs font-medium text-indigo-600">
+                      <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                       </svg>
-                    )}
-                  </div>
-                  <p className="text-xs text-gray-600 line-clamp-2">
-                    Curate rich experiences around ideas
-                  </p>
-                  <div className="mt-3 flex items-center text-xs font-medium text-indigo-600">
-                    <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                    </svg>
-                    <span>Select</span>
+                      <span>Select</span>
+                    </div>
                   </div>
                 </div>
-              </div>
+                </div>
 
-              {/* Demo Selection Cards - Mobile Carousel */}
-              <div className="md:hidden flex items-center gap-2">
+                {/* Right Arrow */}
+                <button 
+                  onClick={() => {
+                    const carousel = document.getElementById('demo-carousel');
+                    if (carousel) {
+                      carousel.scrollBy({ left: 280, behavior: 'smooth' });
+                    }
+                  }}
+                  className="flex-shrink-0 w-10 h-10 bg-white rounded-full shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-200 apple-button"
+                >
+                  <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            {/* Demo Thumbnails - Mobile portrait only */}
+            <div className="mt-8 sm:hidden w-full">
+              <div className="flex items-center gap-4 justify-center w-full">
                 {/* Left Arrow */}
                 <button 
                   onClick={() => {
@@ -339,71 +335,61 @@ export default function Home() {
                   </svg>
                 </button>
 
-                {/* Carousel Container */}
-                <div 
-                  id="mobile-demo-carousel"
-                  className="flex-1 overflow-x-auto scrollbar-hide snap-x snap-mandatory"
-                  style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-                >
-                  <div className="flex gap-3 pb-2">
+                {/* Thumbnails Container */}
+                <div className="flex-1 max-w-sm overflow-hidden">
+                  <div className="flex gap-3 overflow-x-scroll scrollbar-hide pb-2" id="mobile-demo-carousel">
                     {/* iDIG Lens Card */}
                     <div 
-                      onClick={() => setSelectedDemo('idig-lens')}
-                      className={`flex-shrink-0 w-32 bg-white rounded-xl p-3 border-2 transition-all duration-200 cursor-pointer snap-center ${
-                        selectedDemo === 'idig-lens' 
-                          ? 'border-indigo-500 shadow-lg' 
-                          : 'border-gray-200 hover:border-gray-300 shadow-sm'
+                      onClick={() => {
+                        setSelectedDemo('idig-lens');
+                        const demoSection = document.querySelector('[data-testid="demo-section"]');
+                        if (demoSection) {
+                          demoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                      }}
+                      className={`flex-shrink-0 w-48 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 border-2 bg-white ${
+                        selectedDemo === 'idig-lens' ? 'border-blue-500' : 'border-gray-200 hover:border-blue-300'
                       }`}
                     >
-                      <div className="flex flex-col h-full">
-                        <div className="flex items-start justify-between mb-2">
-                          <h4 className="text-xs font-semibold text-gray-900 leading-tight">
-                            i<em>DIG</em> Lens
-                          </h4>
-                          {selectedDemo === 'idig-lens' && (
-                            <svg className="w-4 h-4 text-indigo-500 flex-shrink-0 ml-1" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                            </svg>
-                          )}
+                      <div className="p-4 h-32 flex flex-col justify-between">
+                        <div>
+                          <h5 className="text-sm font-semibold mb-1 text-gray-800">i<em>DIG</em> Lens</h5>
+                          <p className="text-xs text-gray-600 line-clamp-2">
+                            Highlight, save, and explore insights
+                          </p>
                         </div>
-                        <p className="text-xs text-gray-600 line-clamp-2 mb-2">
-                          Universal bookmarking
-                        </p>
-                        <div className="mt-auto flex items-center text-xs font-medium text-indigo-600">
+                        <div className="flex items-center text-xs font-medium text-blue-600">
                           <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h1m4 0h1" />
                           </svg>
-                          <span>Select</span>
+                          <span>Active</span>
                         </div>
                       </div>
                     </div>
 
                     {/* iDIG Feeds Card */}
                     <div 
-                      onClick={() => setSelectedDemo('idig-feeds')}
-                      className={`flex-shrink-0 w-32 bg-white rounded-xl p-3 border-2 transition-all duration-200 cursor-pointer snap-center ${
-                        selectedDemo === 'idig-feeds' 
-                          ? 'border-indigo-500 shadow-lg' 
-                          : 'border-gray-200 hover:border-gray-300 shadow-sm'
+                      onClick={() => {
+                        setSelectedDemo('idig-feeds');
+                        const demoSection = document.querySelector('[data-testid="demo-section"]');
+                        if (demoSection) {
+                          demoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                      }}
+                      className={`flex-shrink-0 w-48 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 border-2 bg-white ${
+                        selectedDemo === 'idig-feeds' ? 'border-green-500' : 'border-gray-200 hover:border-green-300'
                       }`}
                     >
-                      <div className="flex flex-col h-full">
-                        <div className="flex items-start justify-between mb-2">
-                          <h4 className="text-xs font-semibold text-gray-900 leading-tight">
-                            i<em>DIG</em> Feeds
-                          </h4>
-                          {selectedDemo === 'idig-feeds' && (
-                            <svg className="w-4 h-4 text-indigo-500 flex-shrink-0 ml-1" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                            </svg>
-                          )}
+                      <div className="p-4 h-32 flex flex-col justify-between">
+                        <div>
+                          <h5 className="text-sm font-semibold mb-1 text-gray-800">i<em>DIG</em> Feeds</h5>
+                          <p className="text-xs text-gray-600 line-clamp-2">
+                            Turn searches into discovery engines
+                          </p>
                         </div>
-                        <p className="text-xs text-gray-600 line-clamp-2 mb-2">
-                          Organize streams
-                        </p>
-                        <div className="mt-auto flex items-center text-xs font-medium text-indigo-600">
+                        <div className="flex items-center text-xs font-medium text-green-600">
                           <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
                           </svg>
                           <span>Select</span>
                         </div>
@@ -412,30 +398,27 @@ export default function Home() {
 
                     {/* iDIG Matching Card */}
                     <div 
-                      onClick={() => setSelectedDemo('idig-matching')}
-                      className={`flex-shrink-0 w-32 bg-white rounded-xl p-3 border-2 transition-all duration-200 cursor-pointer snap-center ${
-                        selectedDemo === 'idig-matching' 
-                          ? 'border-indigo-500 shadow-lg' 
-                          : 'border-gray-200 hover:border-gray-300 shadow-sm'
+                      onClick={() => {
+                        setSelectedDemo('idig-matching');
+                        const demoSection = document.querySelector('[data-testid="demo-section"]');
+                        if (demoSection) {
+                          demoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                      }}
+                      className={`flex-shrink-0 w-48 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 border-2 bg-white ${
+                        selectedDemo === 'idig-matching' ? 'border-orange-500' : 'border-gray-200 hover:border-orange-300'
                       }`}
                     >
-                      <div className="flex flex-col h-full">
-                        <div className="flex items-start justify-between mb-2">
-                          <h4 className="text-xs font-semibold text-gray-900 leading-tight">
-                            i<em>DIG</em> Matching
-                          </h4>
-                          {selectedDemo === 'idig-matching' && (
-                            <svg className="w-4 h-4 text-indigo-500 flex-shrink-0 ml-1" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                            </svg>
-                          )}
+                      <div className="p-4 h-32 flex flex-col justify-between">
+                        <div>
+                          <h5 className="text-sm font-semibold mb-1 text-gray-800">i<em>DIG</em> Matching</h5>
+                          <p className="text-xs text-gray-600 line-clamp-2">
+                            AI-powered skill and experience matching
+                          </p>
                         </div>
-                        <p className="text-xs text-gray-600 line-clamp-2 mb-2">
-                          Surface relationships
-                        </p>
-                        <div className="mt-auto flex items-center text-xs font-medium text-indigo-600">
+                        <div className="flex items-center text-xs font-medium text-orange-600">
                           <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" />
                           </svg>
                           <span>Select</span>
                         </div>
@@ -444,30 +427,27 @@ export default function Home() {
 
                     {/* iDIG Attractor Card */}
                     <div 
-                      onClick={() => setSelectedDemo('idig-attractor')}
-                      className={`flex-shrink-0 w-32 bg-white rounded-xl p-3 border-2 transition-all duration-200 cursor-pointer snap-center ${
-                        selectedDemo === 'idig-attractor' 
-                          ? 'border-indigo-500 shadow-lg' 
-                          : 'border-gray-200 hover:border-gray-300 shadow-sm'
+                      onClick={() => {
+                        setSelectedDemo('idig-attractor');
+                        const demoSection = document.querySelector('[data-testid="demo-section"]');
+                        if (demoSection) {
+                          demoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                      }}
+                      className={`flex-shrink-0 w-48 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 border-2 bg-white ${
+                        selectedDemo === 'idig-attractor' ? 'border-purple-500' : 'border-gray-200 hover:border-purple-300'
                       }`}
                     >
-                      <div className="flex flex-col h-full">
-                        <div className="flex items-start justify-between mb-2">
-                          <h4 className="text-xs font-semibold text-gray-900 leading-tight">
-                            i<em>DIG</em> Attractor
-                          </h4>
-                          {selectedDemo === 'idig-attractor' && (
-                            <svg className="w-4 h-4 text-indigo-500 flex-shrink-0 ml-1" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                            </svg>
-                          )}
+                      <div className="p-4 h-32 flex flex-col justify-between">
+                        <div>
+                          <h5 className="text-sm font-semibold mb-1 text-gray-800">i<em>DIG</em> Attractor</h5>
+                          <p className="text-xs text-gray-600 line-clamp-2">
+                            Shape discovery flow with adaptive AI
+                          </p>
                         </div>
-                        <p className="text-xs text-gray-600 line-clamp-2 mb-2">
-                          Shape flows
-                        </p>
-                        <div className="mt-auto flex items-center text-xs font-medium text-indigo-600">
+                        <div className="flex items-center text-xs font-medium text-purple-600">
                           <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                           </svg>
                           <span>Select</span>
                         </div>
@@ -476,27 +456,24 @@ export default function Home() {
 
                     {/* iDIG Scenes Card */}
                     <div 
-                      onClick={() => setSelectedDemo('idig-scenes')}
-                      className={`flex-shrink-0 w-32 bg-white rounded-xl p-3 border-2 transition-all duration-200 cursor-pointer snap-center ${
-                        selectedDemo === 'idig-scenes' 
-                          ? 'border-indigo-500 shadow-lg' 
-                          : 'border-gray-200 hover:border-gray-300 shadow-sm'
+                      onClick={() => {
+                        setSelectedDemo('idig-scenes');
+                        const demoSection = document.querySelector('[data-testid="demo-section"]');
+                        if (demoSection) {
+                          demoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                      }}
+                      className={`flex-shrink-0 w-48 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 border-2 bg-white ${
+                        selectedDemo === 'idig-scenes' ? 'border-indigo-500' : 'border-gray-200 hover:border-indigo-300'
                       }`}
                     >
-                      <div className="flex flex-col h-full">
-                        <div className="flex items-start justify-between mb-2">
-                          <h4 className="text-xs font-semibold text-gray-900 leading-tight">
-                            i<em>DIG</em> Scenes
-                          </h4>
-                          {selectedDemo === 'idig-scenes' && (
-                            <svg className="w-4 h-4 text-indigo-500 flex-shrink-0 ml-1" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                            </svg>
-                          )}
+                      <div className="p-4 h-32 flex flex-col justify-between">
+                        <div>
+                          <h5 className="text-sm font-semibold mb-1 text-gray-800">i<em>DIG</em> Scenes</h5>
+                          <p className="text-xs text-gray-600 line-clamp-2">
+                            Curate rich experiences around ideas
+                          </p>
                         </div>
-                        <p className="text-xs text-gray-600 line-clamp-2">
-                          Curate rich experiences around ideas
-                        </p>
                         <div className="flex items-center text-xs font-medium text-indigo-600">
                           <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
@@ -556,6 +533,8 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Newsletter Signup */}
+            <NewsletterSignup />
           </div>
         </section>
 
