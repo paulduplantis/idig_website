@@ -13,7 +13,7 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-white">
       <SEO 
-        title="The Resonant Builders Blog - iDIG Insights & Research"
+        title="The Resonant Builder - iDIG Insights & Research"
         description="Explore insights, reflections, and deep explorations into building tools that serve human curiosity. Read about digital research, web annotation, and meaningful technology."
         keywords="iDIG blog, resonant builders, web research blog, annotation tools, digital curiosity, technology insights"
         url="https://www.i-dig.io/blog"
