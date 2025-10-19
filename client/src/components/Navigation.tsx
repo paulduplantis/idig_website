@@ -16,9 +16,7 @@ export default function Navigation() {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
-    { href: "/newsletter", label: "The Resonant Builders Monthly" },
-    { href: "/blog", label: "The Resonant Builders Blog" },
-    { href: "/book", label: "We the Resonant Builders" },
+    { href: "/blog", label: "The Resonant Builder" },
     { href: "/contact", label: "Contact" },
   ];
 
