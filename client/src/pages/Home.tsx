@@ -508,7 +508,7 @@ export default function Home() {
         <section className="pt-8 pb-16">
           <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 text-center">
 
-            <div className="space-y-12 mb-16">
+            <div className="space-y-12 ">
               <div className="bg-white rounded-2xl px-6 sm:px-12 pt-6 pb-12 shadow-lg border border-gray-200">
                 <h3 className="text-2xl font-medium mb-4">i<em>DIG</em> Principles</h3>
                 <ul className="text-gray-600 leading-relaxed space-y-3">
