@@ -38,7 +38,7 @@ export default function BlogSignup() {
 
   return (
     <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 text-center">
-      <h3 className="text-4xl md:text-5xl font-light mb-4">The Resonant Builders Blog</h3>
+      <h3 className="text-4xl md:text-5xl font-light mb-4">The Resonant Builder</h3>
       <p className="text-gray-600 mb-4">
         Insights, reflections, and deep explorations into building tools that serve human curiosity and foster meaningful digital experiences.
       </p>
