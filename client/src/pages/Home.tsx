@@ -505,7 +505,7 @@ export default function Home() {
         </section>
 
         {/* About Preview Section - Now with consistent container */}
-        <section className="pt-8 pb-8">
+        <section className="pt-8 pb-16">
           <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 text-center">
 
             <div className="space-y-12 mb-16">
@@ -540,12 +540,12 @@ export default function Home() {
           <div className="w-full max-w-4xl mx-auto px-4 sm:px-6">
             <div className="bg-white rounded-2xl px-6 sm:px-12 pt-6 pb-12 shadow-lg border border-gray-200">
               <div className="text-center">
-                <h2 className="text-4xl md:text-5xl font-light mb-6">The Resonant Builders Blog</h2>
+                <h2 className="text-4xl md:text-5xl font-light mb-6">The Resonant Builder</h2>
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
                   Insights, reflections, and deep explorations into building tools that serve human curiosity and foster meaningful digital experiences.
                 </p>
                 <Link href="/blog" className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium ">
-                  Explore the Blog
+                  Explore
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
