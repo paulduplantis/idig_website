@@ -33,7 +33,7 @@ export default function Blog() {
                   <span className="text-gray-400 mx-2">•</span>
                   <span className="text-sm text-gray-500">August 30, 2025</span>
                   <span className="text-gray-400 mx-2">•</span>
-                  <span className="text-sm text-gray-500">By Paul Duplantis</span>
+                  <span className="text-sm text-gray-500">By The Resonant Builder</span>
                 </div>
                 <h3 
                   onClick={handleBlogPostClick}
