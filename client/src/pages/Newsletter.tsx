@@ -20,7 +20,7 @@ export default function Newsletter() {
                   <span className="text-gray-400 mx-2">•</span>
                   <span className="text-sm text-gray-500">Issue #1 Coming Soon</span>
                   <span className="text-gray-400 mx-2">•</span>
-                  <span className="text-sm text-gray-500">By Paul Duplantis</span>
+                  <span className="text-sm text-gray-500">By The Resonant Builder</span>
                 </div>
                 <h3 
                   className="text-3xl font-medium mb-6 hover:text-blue-600 transition-colors cursor-pointer"
