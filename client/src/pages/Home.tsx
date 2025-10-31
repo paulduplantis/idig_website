@@ -24,7 +24,7 @@ const demoContents: Record<string, DemoContent> = {
     title: 'i<em>DIG</em> Lens Demo',
     description: 'Universal bookmarking, highlighting, microlinking and web reader. Take snapshots of full pages, generate customized AI summaries, share microlinks to serve as breadcrumbs for discovery. Tag and filter content stored on local devices.',
     features: ['Status: Chrome extension in alpha testing.'],
-    videoUrl: 'https://f004.backblazeb2.com/file/idigdemo/idig_demo_final.mp4'
+    videoUrl: 'https://f004.backblazeb2.com/file/idigdemo/idig_demo_v2.mp4'
   },
   'idig-feeds': {
     id: 'idig-feeds',
