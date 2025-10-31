@@ -28,7 +28,7 @@ export default function About() {
                   </p>
                   
                   <p>
-                    My name is Paul Duplantis. I am not a programmer or coder. I've spent my life as a marketer, consultant, recruiter, and a lifelong learner, but I've carried a vision which is to create tools that make discovery more meaningful, private, and human than what has evolved. Upon the arrival of generative AI, I decided to build a framework from scratch with only the assistance of GenAI tools to test this vision.
+                  I am not a programmer or coder. I've spent my life as a marketer, consultant, recruiter, and a lifelong learner, but I've carried a vision which is to create tools that make discovery more meaningful, private, and human than what has evolved. Upon the arrival of generative AI, I decided to build a framework from scratch with only the assistance of GenAI tools to test this vision.
                   </p>
                   
                   <p>
