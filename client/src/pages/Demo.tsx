@@ -48,7 +48,7 @@ export default function Demo() {
               id: '1',
               type: 'video',
               title: 'i<em>DIG</em> Lens Demo',
-              videoUrl: 'https://f004.backblazeb2.com/file/idigdemo/idig_demo_final.mp4',
+              videoUrl: 'https://f004.backblazeb2.com/file/idigdemo/idig_demo_v2.mp4',
               order: 1
             }
           ]
