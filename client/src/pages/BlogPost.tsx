@@ -17,7 +17,7 @@ const blogPosts: Record<string, BlogPostData> = {
     title: "Introduction to iDIG",
     category: "Introduction",
     date: "August 30, 2025",
-    author: "Paul Duplantis",
+    author: "The Resonant Builder",
     content: [
       "I have to admit, I don't know what iDIG will become or if it will become anything of note for that matter. All I know is I needed to build it. Maybe just to prove to myself I could but also to possibly start a conversation around what role the individual has in the information they create, consume, and share. Should they be in the driver seat or merely the passengers? Should they be in control of their experiences or should these experiences become available to the highest bidder?",
       "I have lived long enough to watch the birth of the web founded on the principles of openness and collaboration evolve into a siloed web of influence we see today. Certainly much good has come from it but it would be hard to argue that people are in control.",
