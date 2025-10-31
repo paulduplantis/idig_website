@@ -71,7 +71,7 @@ export default function NewsletterIssue() {
                   
                   <div className="mt-8 pt-6 border-t border-gray-200 text-center">
                     <p className="text-gray-600 italic">
-                      — Paul Duplantis, Founder of i<em>DIG</em>
+                      — The Resonant Builder, Founder of i<em>DIG</em>
                     </p>
                   </div>
                   
