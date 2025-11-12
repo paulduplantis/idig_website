@@ -23,21 +23,10 @@ export default function About() {
                 <h1 className="text-4xl md:text-5xl font-light mb-8 text-center">About i<em>DIG</em></h1>
                 
                 <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-                  <p>
-                    i<em>DIG</em> (Deep Inquiry Generator) is a framework and community in development designed to amplify human curiosity through the use of tools to encourage deep and contextual insights into the information we engage with.
-                  </p>
-                  
-                  <p>
-                  I am not a programmer or coder. I've spent my life as a marketer, consultant, recruiter, and a lifelong learner, but I've carried a vision which is to create tools that make discovery more meaningful, private, and human than what has evolved. Upon the arrival of generative AI, I decided to build a framework from scratch with only the assistance of GenAI tools to test this vision.
-                  </p>
-                  
-                  <p>
-                    The idea all along was to get the framework to a fully functioning demo then collaborate to scale the framework from there.
-                  </p>
-                  
-                  <p>
-                    Check out my <Link href="/blog/introduction-to-idig" className="text-blue-500 hover:text-blue-600 transition-colors font-medium">introductory blog</Link> for a better idea of the plan. Feel free to <Link href="/contact" className="text-blue-500 hover:text-blue-600 transition-colors font-medium">contact me</Link> with questions, ideas for collaboration, feedback, or would like to share what you are building that speak to these ideas as I am looking for tech to feature in my monthly newsletter, <Link href="/newsletter" className="text-blue-500 hover:text-blue-600 transition-colors font-medium">The Resonant Builders Monthly</Link>.
-                  </p>
+                  <p>iDIG (Deep Inquiry Generator) is a research and discovery framework built to help people explore information through context, connection, and resonance. Designed for professionals, researchers, and curious minds alike, iDIG goes beyond conventional search by revealing the underlying relationships between ideas, people, and knowledge.</p> 
+                  <p>iDIG functions as a lens placed over web pages, APIs, RSS feeds, and uploaded materials — transforming raw information into interactive fields of inquiry. Through multi-color search highlights, users can visualize how themes and connections emerge within and across sources. Microlinks extend those highlights into breadcrumbs — small, shareable anchors that preserve context and open new pathways of exploration. An advanced filtering system allows users to tune their focus across records, domains, and timeframes, refining their view of complex subjects with precision.</p>
+                 <p>The next phase of development centers on the Attractor — a resonance-based system inspired by quantum theory and Hilbert space mathematics, where ideas exist not as isolated points but as states within a shared field of potential. Within this quantum framework, iDIG models how meaning evolves, entangles, and coheres across sources, allowing users to perceive relationships that linear search cannot capture.</p>
+                 <p>More than a research tool, iDIG is a framework for inquiry itself — one that treats curiosity as a living field of discovery, where observation, interaction, and reflection give rise to deeper understanding.</p>   
                 </div>
               </div>
             </div>
