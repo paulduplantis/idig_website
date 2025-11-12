@@ -77,7 +77,7 @@ export default function Home() {
               <div className="text-center">
                 <h2 className="text-4xl md:text-5xl font-light mb-6">About i<em>DIG</em></h2>
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
-                  i<em>DIG</em> (Deep Inquiry Generator) is a framework and community in development designed to amplify human curiosity through the use of tools to encourage deep and contextual insights into the information we engage with. 
+                  i<em>DIG</em> (Deep Inquiry Generator) is a research and discovery framework in development built to help people explore information through context, connection, and resonance. Designed for professionals, researchers, and curious minds alike, iDIG goes beyond conventional search by revealing the underlying relationships between ideas, people, and knowledge.
                 </p>
                 <Link href="/about" className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium">
                   More
