@@ -1,5 +1,4 @@
 import Navigation from "@/components/Navigation";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import SEO from "@/components/SEO";
 import { Link } from "wouter";
 
@@ -30,9 +29,7 @@ export default function About() {
                 </div>
               </div>
             </div>
-
-            {/* Newsletter Signup */}
-            <NewsletterSignup />
+      
           </div>
         </section>
       </main>
