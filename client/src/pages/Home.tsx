@@ -510,7 +510,7 @@ export default function Home() {
 
             <div className="space-y-12 ">
               <div className="bg-white rounded-2xl px-6 sm:px-12 pt-6 pb-12 shadow-lg border border-gray-200">
-                <h3 className="text-2xl font-medium mb-4">i<em>DIG</em> Principles</h3>
+                <h2 className="text-4xl md:text-5xl font-light mb-6">i<em>DIG</em> Principles</h2>
                 <ul className="text-gray-600 leading-relaxed space-y-3">
                   <li>• Local storage or private storage for what is consumed, created or shared</li>
                   <li>• No cookies to track or share activity</li>
@@ -522,7 +522,7 @@ export default function Home() {
               </div>
 
               <div className="bg-white rounded-2xl px-6 sm:px-12 pt-6 pb-12 shadow-lg border border-gray-200">
-                <h3 className="text-2xl font-medium mb-4">The i<em>DIG</em> Vision</h3>
+                <h2 className="text-4xl md:text-5xl font-light mb-6">The i<em>DIG</em> Vision</h2>
                 <div className="text-gray-600 leading-relaxed space-y-3">
                   <p>To work toward building resonance in the connection by creating tools to align opportunities, resources, and information with those deep within communities.</p>
                   <p>To inspire builders to create their own frameworks or collaborate with i<em>DIG</em> to add more resonance into the connection.</p>
