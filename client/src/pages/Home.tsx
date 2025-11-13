@@ -555,27 +555,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* Book Preview Section - Now with consistent container */}
-        <section className="pb-20">
-          <div className="w-full max-w-4xl mx-auto px-4 sm:px-6">
-            <div className="bg-white rounded-2xl px-6 sm:px-12 pt-6 pb-12 shadow-lg border border-gray-200">
-              <div className="text-center">
-                <h2 className="text-4xl md:text-5xl font-light mb-6">We the Resonant Builders</h2>
-                <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
-                  A book inviting resonant builders to create tools and systems to encourage human curiosity and foster meaningful engagement.
-                </p>
-                <p className="text-lg text-gray-500 mb-6">Coming Soon</p>
-                <Link href="/book" className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium">
-                  Learn more
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
 
       {/* Footer */}
