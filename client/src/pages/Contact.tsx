@@ -6,14 +6,11 @@ import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, MessageSquare, Users, Globe } from "lucide-react";
 
 interface ContactForm {
   name: string;
   email: string;
-  subject: string;
   message: string;
 }
 
@@ -21,7 +18,6 @@ export default function Contact() {
   const [formData, setFormData] = useState<ContactForm>({
     name: "",
     email: "",
-    subject: "",
     message: "",
   });
   
@@ -36,7 +32,7 @@ export default function Contact() {
         title: "Message sent!",
         description: "Thank you for reaching out. We'll get back to you soon.",
       });
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      setFormData({ name: "", email: "", message: "" });
     },
     onError: (error: any) => {
       toast({
@@ -49,7 +45,7 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name.trim() || !formData.email.trim() || !formData.subject.trim() || !formData.message.trim()) {
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
       toast({
         title: "Missing information",
         description: "Please fill in all required fields.",
@@ -66,10 +62,6 @@ export default function Contact() {
     setFormData(prev => ({ ...prev, [field]: e.target.value }));
   };
 
-  const handleSelectChange = (value: string) => {
-    setFormData(prev => ({ ...prev, subject: value }));
-  };
-
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
@@ -80,15 +72,15 @@ export default function Contact() {
             <div className="text-center mb-16">
               <h1 className="text-4xl md:text-5xl font-light mb-6">Get in Touch</h1>
               <p className="text-xl text-gray-600">
-                Have questions about i<em>DIG</em> or want to join the early access program?
+                Have questions about i<em>DIG</em>?
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-12">
+            <div className="max-w-2xl mx-auto">
               {/* Contact Form */}
               <Card className="shadow-md">
                 <CardContent className="p-8">
-                  <h2 className="text-2xl font-medium mb-6">Send us a message</h2>
+                  <h2 className="text-2xl font-medium mb-6">Send a message</h2>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -115,29 +107,7 @@ export default function Contact() {
                         required
                       />
                     </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Subject *
-                      </label>
-                      <Select 
-                        value={formData.subject} 
-                        onValueChange={handleSelectChange}
-                        disabled={contactMutation.isPending}
-                      >
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select a topic" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="Early Access Request">Early Access Request</SelectItem>
-                          <SelectItem value="General Inquiry">General Inquiry</SelectItem>
-                          <SelectItem value="Book Question">Book Question</SelectItem>
-                          <SelectItem value="Partnership">Partnership</SelectItem>
-                          <SelectItem value="Other">Other</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    
+
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
                         Message *
@@ -162,55 +132,6 @@ export default function Contact() {
                   </form>
                 </CardContent>
               </Card>
-
-              {/* Contact Information */}
-              <div className="space-y-8">
-                <Card className="shadow-md">
-                  <CardContent className="p-8">
-                    <h3 className="text-xl font-medium mb-4">Early Access Program</h3>
-                    <p className="text-gray-600 mb-4">
-                      i<em>DIG</em> is currently in invite-only beta. Join our early access program to be among 
-                      the first to experience resonant tools for curious minds.
-                    </p>
-                    <div className="flex items-center text-blue-500">
-                      <Mail className="w-5 h-5 mr-3" />
-                      <span>early-access@idig.io</span>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="shadow-md">
-                  <CardContent className="p-8">
-                    <h3 className="text-xl font-medium mb-4">Connect With Us</h3>
-                    <div className="space-y-3">
-                      <div className="flex items-center text-gray-600">
-                        <MessageSquare className="w-5 h-5 mr-3 text-blue-500" />
-                        <span>@idig_tools</span>
-                      </div>
-                      <div className="flex items-center text-gray-600">
-                        <Users className="w-5 h-5 mr-3 text-blue-500" />
-                        <span>i<em>DIG</em> Tools</span>
-                      </div>
-                      <div className="flex items-center text-gray-600">
-                        <Globe className="w-5 h-5 mr-3 text-blue-500" />
-                        <span>blog.idig.io</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="shadow-md">
-                  <CardContent className="p-8">
-                    <h3 className="text-xl font-medium mb-4">Response Time</h3>
-                    <p className="text-gray-600 text-sm mb-2">
-                      We typically respond within 24-48 hours during business days.
-                    </p>
-                    <p className="text-gray-600 text-sm">
-                      For urgent matters related to early access, please mention "URGENT" in your subject line.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
             </div>
           </div>
         </section>
