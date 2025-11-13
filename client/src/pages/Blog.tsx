@@ -94,20 +94,6 @@ export default function Blog() {
               </div>
             </div>
 
-
-            {/* Newsletter Subscription Link */}
-            <div className="mt-6 text-center">
-              <p className="text-sm text-gray-500 mb-2">
-                Looking for our monthly newsletter instead?
-              </p>
-              <Link href="/newsletter" className="inline-flex items-center text-blue-500 hover:text-blue-600 transition-colors font-medium text-sm">
-                Subscribe to The Resonant Builders Monthly
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </div>
-
             {/* Admin Link */}
             <div className="mt-4 text-center">
               <Link href="/admin" className="inline-flex items-center text-gray-400 hover:text-gray-600 transition-colors font-medium text-sm">
