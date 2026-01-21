@@ -40,9 +40,9 @@ i<em>DIG</em>
           <div className="absolute left-1/2 transform -translate-x-1/2 hidden sm:block">
             <span className="text-lg font-medium">
               <span className="apple-blue">Signal-Driven</span>
-              <span className="charcoal">Discovery</span>
+              <span className="charcoal"> Discovery</span>
               <span className="apple-blue">&</span>
-              <span className="charcoal">Matching</span>
+              <span className="charcoal"> Matching</span>
             </span>
           </div>
 
