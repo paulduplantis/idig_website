@@ -59,7 +59,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       <SEO 
-        title="iDIG - Resonant Tools for Curious Minds"
+        title="iDIG - Signal-Driven Discovery & Matching"
         description="Discover iDIG, an innovative web highlighter and annotation tool designed to foster curiosity, enhance research, and build meaningful digital experiences. Join The Resonant Builders community."
         keywords="web highlighter, annotation tool, research tool, digital curiosity, web research, knowledge management, browser extension, iDIG"
         url="https://www.i-dig.io/"
