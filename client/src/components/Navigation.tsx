@@ -39,10 +39,10 @@ i<em>DIG</em>
           {/* Centered Tagline - Hidden on mobile portrait only */}
           <div className="absolute left-1/2 transform -translate-x-1/2 hidden sm:block">
             <span className="text-lg font-medium">
-              <span className="apple-blue">Resonant</span>
-              <span className="charcoal"> Tools for </span>
-              <span className="apple-blue">Curious</span>
-              <span className="charcoal"> Minds</span>
+              <span className="apple-blue">Signal-Driven</span>
+              <span className="charcoal">Discovery</span>
+              <span className="apple-blue">&</span>
+              <span className="charcoal">Matching</span>
             </span>
           </div>
 
