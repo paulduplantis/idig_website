@@ -45,7 +45,7 @@ export default function About() {
   <hr className="my-8 border-gray-300" />
 
   <h3 className="text-xl font-semibold text-gray-900">
-    A Note from J. Paul Duplantis
+    A Note from Paul
   </h3>
 
   <p>
