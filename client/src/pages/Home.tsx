@@ -565,7 +565,7 @@ export default function Home() {
               iDIG.io
             </div>
             <p className="text-gray-400 text-sm">
-              Resonant Tools for Curious Minds
+              Signal-Driven Discovery & Matching
             </p>
           </div>
         </div>
