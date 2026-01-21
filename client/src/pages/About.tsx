@@ -21,12 +21,24 @@ export default function About() {
               <div className="text-left max-w-3xl mx-auto">
                 <h1 className="text-4xl md:text-5xl font-light mb-8 text-center">About i<em>DIG</em></h1>
                 
-                <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-                  <p>iDIG (Deep Inquiry Generator) is a research and discovery framework in development built to help people explore information through context, connection, and resonance. Designed for professionals, researchers, and curious minds alike, iDIG goes beyond conventional search by revealing the underlying relationships between ideas, people, and knowledge.</p> 
-                  <p>iDIG functions as a lens placed over web pages, APIs, RSS feeds, and uploaded materials — transforming raw information into interactive fields of inquiry. Through multi-color search highlights, users can visualize how themes and connections emerge within and across sources. Microlinks extend those highlights into breadcrumbs — small, shareable anchors that preserve context and open new pathways of exploration. An advanced filtering system allows users to tune their focus across records, domains, and timeframes, refining their view of complex subjects with precision.</p>
-                 <p>The next phase of development centers on the Attractor — a resonance-based system inspired by quantum theory and Hilbert space mathematics, where ideas exist not as isolated points but as states within a shared field of potential. Within this quantum framework, iDIG models how meaning evolves, entangles, and coheres across sources, allowing users to perceive relationships that linear search cannot capture.</p>
-                 <p>More than a research tool, iDIG is a framework for inquiry itself — one that treats curiosity as a living field of discovery, where observation, interaction, and reflection give rise to deeper understanding.</p>   
-                </div>
+               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+  <p>
+    <strong>iDIG (Signal-Driven Discovery &amp; Matching)</strong> is an applied research and development framework focused on reducing noise and improving judgment within information-heavy workflows. The work explores how AI models can be harnessed to surface meaningful signals—such as relevance, recency, and contextual alignment—without overwhelming users or replacing human decision-making.
+  </p>
+
+  <p>
+    The framework is being developed across two complementary builds. The <strong>iDIG browser extension</strong> functions as a lightweight, in-context signal layer that operates directly on web pages and documents. Through highlighting, filtering, and microlinking, it makes themes, relationships, and patterns visible as people read and research—preserving context while reducing cognitive load.
+  </p>
+
+  <p>
+    In parallel, the core <strong>iDIG discovery and matching framework</strong> models how people, roles, and opportunities align over time. This work focuses on signal-driven matching—treating alignment as a dynamic state shaped by signal strength, recency, and domain relevance rather than static keywords or scores. AI models are used instrumentally to extract, structure, and tune signals, supporting clearer evaluation and better downstream decisions.
+  </p>
+
+  <p>
+    Together, these efforts represent a practical exploration of AI-assisted workflow design—one centered on signal reduction, transparency, and human judgment. iDIG is not positioned as a finished product, but as an evolving framework demonstrating how AI can be applied thoughtfully to real-world discovery, research, and decision-support problems.
+  </p>
+</div>
+
               </div>
             </div>
       
